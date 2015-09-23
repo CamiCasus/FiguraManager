@@ -1,0 +1,47 @@
+﻿@model LogInDto
+@{
+    Layout = "~/Views/Shared/_LayoutAccount.cshtml";
+}
+<div class="titulo-remesa">@WebResources.Intranet</div>
+
+<!-- Login Form -->
+@using (Html.BeginForm("Login", "Account", new { area = "" }, FormMethod.Post, new { @id = "frmLogin", @class = "login-form form-inline" }))
+{
+    if (ViewBag.MessageError != null)
+    {
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            @ViewBag.MessageError
+        </div>
+    }
+    <div class="form-group">
+        <div class="col-xs-12">
+            <div class="input-group lg">
+                @Html.TextBoxFor(model => model.UserName, new { @placeholder = LoginDtoResources.Username, @class = "form-control" })
+                <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+            </div>
+            @Html.ValidationMessageFor(model => model.UserName)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-xs-12">
+            <div class="input-group lg">
+                @Html.PasswordFor(model => model.Password, new { @placeholder = LoginDtoResources.Password, @class = "form-control" })
+                <span class="input-group-addon"><i class="fa fa-asterisk fa-fw"></i></span>
+            </div>
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+    </div>   
+    <div class="btn-group">
+        <button type="submit" id="login-btn-sc" class="btn btn-successlogin"><i class="icon-arrow-right"> @WebResources.BtnIngresar</i></button>
+    </div>
+    <div class="control-group clearfix">
+        <div class="pull-right">
+            <a href="@Url.Action("ForgotPassword")" class="ol_con"><i class="icon-lock">@WebResources.RecuperarContrasenia</i></a>
+        </div>
+    </div>
+}
+<!-- END Login Form -->
+@section scripts{
+    <script type="text/javascript" src="@Url.Script("~/Content/ViewsJs/AccountLogin.js")"></script>
+}

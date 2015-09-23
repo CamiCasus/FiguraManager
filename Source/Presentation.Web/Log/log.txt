@@ -1,0 +1,562 @@
+2015-06-10 12:00:57,635 [40] ERROR SigcomtFramework [(null)] - Mensaje: Referencia a objeto no establecida como instancia de un objeto. Trace:    en Presentation.Web.Controllers.AccountController.GenerarTickectAutenticacion(UsuarioLoginDto usuario, Boolean createPersistentCookie) en d:\Mijail\GitHub\SigcomtFramework\Source\Presentation.Web\Controllers\AccountController.cs:línea 163
+   en Presentation.Web.Controllers.AccountController.Login(LogInDto model, String returnUrl) en d:\Mijail\GitHub\SigcomtFramework\Source\Presentation.Web\Controllers\AccountController.cs:línea 60
+2015-06-10 12:04:11,687 [55] ERROR SigcomtFramework [(null)] - Mensaje: Referencia a objeto no establecida como instancia de un objeto. Trace:    en Presentation.Web.Controllers.AccountController.GenerarTickectAutenticacion(UsuarioLoginDto usuario, Boolean createPersistentCookie) en d:\Mijail\GitHub\SigcomtFramework\Source\Presentation.Web\Controllers\AccountController.cs:línea 163
+   en Presentation.Web.Controllers.AccountController.Login(LogInDto model, String returnUrl) en d:\Mijail\GitHub\SigcomtFramework\Source\Presentation.Web\Controllers\AccountController.cs:línea 60
+2015-06-10 12:58:22,460 [7] ERROR SigcomtFramework [(null)] - Mensaje: Agencia Inactiva Trace:    en Application.MainModule.UsuarioAppService.ValidateUser(String username, String password) en d:\Mijail\GitHub\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 54
+   en Presentation.Web.Controllers.AccountController.Login(LogInDto model, String returnUrl) en d:\Mijail\GitHub\SigcomtFramework\Source\Presentation.Web\Controllers\AccountController.cs:línea 51
+2015-06-10 13:14:18,299 [10] ERROR SigcomtFramework [(null)] - Mensaje: Las credenciales especificadas son incorrectas Trace:    en Application.MainModule.UsuarioAppService.ValidateUser(String username, String password) en d:\Mijail\GitHub\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 52
+   en Presentation.Web.Controllers.AccountController.Login(LogInDto model, String returnUrl) en d:\Mijail\GitHub\SigcomtFramework\Source\Presentation.Web\Controllers\AccountController.cs:línea 51
+2015-06-10 13:14:49,118 [47] ERROR SigcomtFramework [(null)] - Mensaje: Agencia inactiva Trace:    en Application.MainModule.UsuarioAppService.ValidateUser(String username, String password) en d:\Mijail\GitHub\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 59
+   en Presentation.Web.Controllers.AccountController.Login(LogInDto model, String returnUrl) en d:\Mijail\GitHub\SigcomtFramework\Source\Presentation.Web\Controllers\AccountController.cs:línea 51
+2015-06-10 13:15:03,236 [51] ERROR SigcomtFramework [(null)] - Mensaje: Agencia inactiva Trace:    en Application.MainModule.UsuarioAppService.ValidateUser(String username, String password) en d:\Mijail\GitHub\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 59
+   en Presentation.Web.Controllers.AccountController.Login(LogInDto model, String returnUrl) en d:\Mijail\GitHub\SigcomtFramework\Source\Presentation.Web\Controllers\AccountController.cs:línea 51
+2015-06-10 13:18:24,969 [6] ERROR SigcomtFramework [(null)] - Mensaje: Las credenciales especificadas son incorrectas Trace:    en Application.MainModule.UsuarioAppService.ValidateUser(String username, String password) en d:\Mijail\GitHub\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 52
+   en Presentation.Web.Controllers.AccountController.Login(LogInDto model, String returnUrl) en d:\Mijail\GitHub\SigcomtFramework\Source\Presentation.Web\Controllers\AccountController.cs:línea 51
+2015-06-10 13:27:58,559 [33] ERROR SigcomtFramework [(null)] - Mensaje: Usuario inactivo Trace:    en Application.MainModule.UsuarioAppService.ValidateUser(String username, String password) en d:\Mijail\GitHub\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 56
+   en Presentation.Web.Controllers.AccountController.Login(LogInDto model, String returnUrl) en d:\Mijail\GitHub\SigcomtFramework\Source\Presentation.Web\Controllers\AccountController.cs:línea 51
+2015-06-10 13:28:43,108 [32] ERROR SigcomtFramework [(null)] - Mensaje: Agencia inactiva Trace:    en Application.MainModule.UsuarioAppService.ValidateUser(String username, String password) en d:\Mijail\GitHub\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 59
+   en Presentation.Web.Controllers.AccountController.Login(LogInDto model, String returnUrl) en d:\Mijail\GitHub\SigcomtFramework\Source\Presentation.Web\Controllers\AccountController.cs:línea 51
+2015-06-11 14:42:07,191 [32] ERROR SigcomtFramework [(null)] - Mensaje: Schema specified is not valid. Errors: 
+(13,12) : error 2019: Member Mapping specified is not valid. The type 'Edm.DateTime[Nullable=False,DefaultValue=,Precision=]' of member 'HoraInicio' in type 'Infrastructure.Data.MainModule.Agencia' is not compatible with 'SqlServer.time[Nullable=False,DefaultValue=,Precision=7]' of member 'HoraInicio' in type 'CodeFirstDatabaseSchema.Agencia'.
+(14,12) : error 2019: Member Mapping specified is not valid. The type 'Edm.DateTime[Nullable=False,DefaultValue=,Precision=]' of member 'HoraFin' in type 'Infrastructure.Data.MainModule.Agencia' is not compatible with 'SqlServer.time[Nullable=False,DefaultValue=,Precision=7]' of member 'HoraFin' in type 'CodeFirstDatabaseSchema.Agencia'. Trace:    en System.Data.Entity.Core.Mapping.StorageMappingItemCollection.Init(EdmItemCollection edmCollection, StoreItemCollection storeCollection, IEnumerable`1 xmlReaders, IList`1 filePaths, Boolean throwOnError)
+   en System.Data.Entity.Core.Mapping.StorageMappingItemCollection..ctor(EdmItemCollection edmCollection, StoreItemCollection storeCollection, IEnumerable`1 xmlReaders)
+   en System.Data.Entity.ModelConfiguration.Edm.DbDatabaseMappingExtensions.ToStorageMappingItemCollection(DbDatabaseMapping databaseMapping, EdmItemCollection itemCollection, StoreItemCollection storeItemCollection)
+   en System.Data.Entity.ModelConfiguration.Edm.DbDatabaseMappingExtensions.ToMetadataWorkspace(DbDatabaseMapping databaseMapping)
+   en System.Data.Entity.Internal.CodeFirstCachedMetadataWorkspace..ctor(DbDatabaseMapping databaseMapping)
+   en System.Data.Entity.Infrastructure.DbCompiledModel..ctor(DbModel model)
+   en System.Data.Entity.Infrastructure.DbModel.Compile()
+   en System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   en System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   en System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   en System.Data.Entity.Internal.InternalContext.Initialize()
+   en System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   en System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   en System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   en System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   en System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   en Infrastructure.Data.Core.Repository.Repository`2.Find(Expression`1 predicate, Boolean readonly) en d:\Mijail\GitHub\SigcomtFramework\Source\Infrastructure.Data.Core\Repository\Repository.cs:línea 86
+   en Domain.Core.Services.Service`2.Find(Expression`1 predicate, Boolean readonly) en d:\Mijail\GitHub\SigcomtFramework\Source\Domain.Core\Services\Service.cs:línea 64
+   en Application.MainModule.UsuarioAppService.ValidateUser(String username, String password) en d:\Mijail\GitHub\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 49
+   en Presentation.Web.Controllers.AccountController.Login(LogInDto model, String returnUrl) en d:\Mijail\GitHub\SigcomtFramework\Source\Presentation.Web\Controllers\AccountController.cs:línea 51
+2015-06-11 16:05:44,173 [15] ERROR SigcomtFramework [(null)] - Controlador:Home  Action:Index  Mensaje:No se puede reconocer la cadena como valor DateTime válido.
+2015-06-16 10:06:28,713 [11] ERROR SigcomtFramework [(null)] - Mensaje: Las credenciales especificadas son incorrectas Trace:    en Application.MainModule.UsuarioAppService.ValidateUser(String username, String password) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 59
+   en Presentation.Web.Controllers.AccountController.Login(LogInDto model, String returnUrl) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Web\Controllers\AccountController.cs:línea 59
+2015-06-18 10:09:34,524 [9] ERROR SigcomtFramework [(null)] - Mensaje: La propiedad a ordenar no puede ser nula o vacía Trace:    en Application.Core.OrderByEntity`1.GetOrderExpression(String propertyName) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.Core\OrderByEntity.cs:línea 37
+   en Application.Core.DomainFilterFactory.GenerateDomainFilterParameters[TEntity,TEntityDto](FilterParametersDto`1 parametersDto, IOrderByEntity`1 orderByEntity) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.Core\DomainFilterFactory.cs:línea 13
+   en Application.MainModule.AgenciaAppService.FindAllPaging(FilterParametersDto`1 parameters, Boolean readonly) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\AgenciaAppService.cs:línea 75
+   en Presentation.Web.Areas.Administracion.Controllers.AgenciaController.<Pagination>z__OriginalMethod(DataManager dm) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Web\Areas\Administracion\Controllers\AgenciaController.cs:línea 34
+   en Presentation.Web.Areas.Administracion.Controllers.AgenciaController.<Pagination>c__Binding.Invoke(Object& instance, Arguments arguments, Object aspectArgs) en :línea 0
+   en PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.Proceed()
+   en Presentation.Aspects.PostActionMethod.Process(MethodInterceptionArgs args, ILogger log) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Aspects\PostActionMethod.cs:línea 22
+2015-06-18 10:10:52,477 [11] ERROR SigcomtFramework [(null)] - Mensaje: La propiedad a ordenar no puede ser nula o vacía Trace:    en Application.Core.OrderByEntity`1.GetOrderExpression(String propertyName) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.Core\OrderByEntity.cs:línea 37
+   en Application.Core.DomainFilterFactory.GenerateDomainFilterParameters[TEntity,TEntityDto](FilterParametersDto`1 parametersDto, IOrderByEntity`1 orderByEntity) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.Core\DomainFilterFactory.cs:línea 13
+   en Application.MainModule.AgenciaAppService.FindAllPaging(FilterParametersDto`1 parameters, Boolean readonly) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\AgenciaAppService.cs:línea 75
+   en Presentation.Web.Areas.Administracion.Controllers.AgenciaController.<Pagination>z__OriginalMethod(DataManager dm) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Web\Areas\Administracion\Controllers\AgenciaController.cs:línea 34
+   en Presentation.Web.Areas.Administracion.Controllers.AgenciaController.<Pagination>c__Binding.Invoke(Object& instance, Arguments arguments, Object aspectArgs) en :línea 0
+   en PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.Proceed()
+   en Presentation.Aspects.PostActionMethod.Process(MethodInterceptionArgs args, ILogger log) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Aspects\PostActionMethod.cs:línea 22
+2015-06-18 10:12:43,535 [6] ERROR SigcomtFramework [(null)] - Mensaje: La propiedad a ordenar no puede ser nula o vacía Trace:    en Application.Core.OrderByEntity`1.GetOrderExpression(String propertyName) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.Core\OrderByEntity.cs:línea 37
+   en Application.Core.DomainFilterFactory.GenerateDomainFilterParameters[TEntity,TEntityDto](FilterParametersDto`1 parametersDto, IOrderByEntity`1 orderByEntity) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.Core\DomainFilterFactory.cs:línea 13
+   en Application.MainModule.AgenciaAppService.FindAllPaging(FilterParametersDto`1 parameters, Boolean readonly) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\AgenciaAppService.cs:línea 75
+   en Presentation.Web.Areas.Administracion.Controllers.AgenciaController.<Pagination>z__OriginalMethod(DataManager dm) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Web\Areas\Administracion\Controllers\AgenciaController.cs:línea 34
+   en Presentation.Web.Areas.Administracion.Controllers.AgenciaController.<Pagination>c__Binding.Invoke(Object& instance, Arguments arguments, Object aspectArgs) en :línea 0
+   en PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.Proceed()
+   en Presentation.Aspects.PostActionMethod.Process(MethodInterceptionArgs args, ILogger log) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Aspects\PostActionMethod.cs:línea 22
+2015-06-18 10:12:59,863 [9] ERROR SigcomtFramework [(null)] - Mensaje: La propiedad a ordenar no puede ser nula o vacía Trace:    en Application.Core.OrderByEntity`1.GetOrderExpression(String propertyName) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.Core\OrderByEntity.cs:línea 37
+   en Application.Core.DomainFilterFactory.GenerateDomainFilterParameters[TEntity,TEntityDto](FilterParametersDto`1 parametersDto, IOrderByEntity`1 orderByEntity) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.Core\DomainFilterFactory.cs:línea 13
+   en Application.MainModule.AgenciaAppService.FindAllPaging(FilterParametersDto`1 parameters, Boolean readonly) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\AgenciaAppService.cs:línea 75
+   en Presentation.Web.Areas.Administracion.Controllers.AgenciaController.<Pagination>z__OriginalMethod(DataManager dm) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Web\Areas\Administracion\Controllers\AgenciaController.cs:línea 34
+   en Presentation.Web.Areas.Administracion.Controllers.AgenciaController.<Pagination>c__Binding.Invoke(Object& instance, Arguments arguments, Object aspectArgs) en :línea 0
+   en PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.Proceed()
+   en Presentation.Aspects.PostActionMethod.Process(MethodInterceptionArgs args, ILogger log) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Aspects\PostActionMethod.cs:línea 22
+2015-06-18 10:14:10,601 [12] ERROR SigcomtFramework [(null)] - Mensaje: La propiedad a ordenar no puede ser nula o vacía Trace:    en Application.Core.OrderByEntity`1.GetOrderExpression(String propertyName) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.Core\OrderByEntity.cs:línea 37
+   en Application.Core.DomainFilterFactory.GenerateDomainFilterParameters[TEntity,TEntityDto](FilterParametersDto`1 parametersDto, IOrderByEntity`1 orderByEntity) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.Core\DomainFilterFactory.cs:línea 13
+   en Application.MainModule.AgenciaAppService.FindAllPaging(FilterParametersDto`1 parameters, Boolean readonly) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\AgenciaAppService.cs:línea 75
+   en Presentation.Web.Areas.Administracion.Controllers.AgenciaController.<Pagination>z__OriginalMethod(DataManager dm) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Web\Areas\Administracion\Controllers\AgenciaController.cs:línea 34
+   en Presentation.Web.Areas.Administracion.Controllers.AgenciaController.<Pagination>c__Binding.Invoke(Object& instance, Arguments arguments, Object aspectArgs) en :línea 0
+   en PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.Proceed()
+   en Presentation.Aspects.PostActionMethod.Process(MethodInterceptionArgs args, ILogger log) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Aspects\PostActionMethod.cs:línea 22
+2015-08-28 11:36:40,856 [8] ERROR SigcomtFramework [(null)] - Mensaje: Las credenciales especificadas son incorrectas Trace:    en Application.MainModule.UsuarioAppService.ValidateUser(String username, String password) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 59
+   en Presentation.Web.Controllers.AccountController.Login(LogInDto model, String returnUrl) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Web\Controllers\AccountController.cs:línea 52
+2015-08-28 11:36:45,455 [11] ERROR SigcomtFramework [(null)] - Mensaje: Las credenciales especificadas son incorrectas Trace:    en Application.MainModule.UsuarioAppService.ValidateUser(String username, String password) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 59
+   en Presentation.Web.Controllers.AccountController.Login(LogInDto model, String returnUrl) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Web\Controllers\AccountController.cs:línea 52
+2015-08-28 11:38:52,460 [8] ERROR SigcomtFramework [(null)] - Mensaje: 
+
+Mapping types:
+Expression`1 -> Expression`1
+System.Linq.Expressions.Expression`1[[System.Func`2[[Application.MainModule.DTO.UsuarioDto, Application.MainModule.DTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] -> System.Linq.Expressions.Expression`1[[System.Func`2[[Domain.MainModule.Entities.Usuario, Domain.MainModule, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+
+Destination path:
+Expression`1
+
+Source value:
+p => (p.AgenciaId == value(Presentation.Web.Areas.Administracion.Controllers.UsuarioController+<>c__DisplayClass0).enteroId) Trace:    en AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 254
+   en AutoMapper.MappingEngine.MapCore(Object source, Type sourceType, Type destinationType, MappingOperationOptions options) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 131
+   en AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 122
+   en AutoMapper.MappingEngine.Map[TDestination](Object source, Action`1 opts) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 71
+   en AutoMapper.MappingEngine.Map[TDestination](Object source) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 60
+   en AutoMapper.Mapper.Map[TDestination](Object source) en c:\dev\AutoMapper\src\AutoMapper\Mapper.cs:línea 49
+   en Application.Core.Extensions.ExpressionHelper.CreateDtoToEntityExpression[TEntity,TDto](Expression`1 predicate) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.Core\Extensions\ExpressionHelper.cs:línea 17
+   en Application.MainModule.UsuarioAppService.Find(Expression`1 predicateDto, Boolean readonly) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 155
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>z__OriginalMethod(DataManager dm) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Web\Areas\Administracion\Controllers\UsuarioController.cs:línea 27
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>c__Binding.Invoke(Object& instance, Arguments arguments, Object aspectArgs) en :línea 0
+   en PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.Proceed()
+   en Presentation.Aspects.PostActionMethod.Process(MethodInterceptionArgs args, ILogger log) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Aspects\PostActionMethod.cs:línea 23
+2015-08-28 11:39:56,520 [7] ERROR SigcomtFramework [(null)] - Mensaje: 
+
+Mapping types:
+Expression`1 -> Expression`1
+System.Linq.Expressions.Expression`1[[System.Func`2[[Application.MainModule.DTO.UsuarioDto, Application.MainModule.DTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] -> System.Linq.Expressions.Expression`1[[System.Func`2[[Domain.MainModule.Entities.Usuario, Domain.MainModule, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+
+Destination path:
+Expression`1
+
+Source value:
+p => (p.AgenciaId == value(Presentation.Web.Areas.Administracion.Controllers.UsuarioController+<>c__DisplayClass0).enteroId) Trace:    en AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 254
+   en AutoMapper.MappingEngine.MapCore(Object source, Type sourceType, Type destinationType, MappingOperationOptions options) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 131
+   en AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 122
+   en AutoMapper.MappingEngine.Map[TDestination](Object source, Action`1 opts) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 71
+   en AutoMapper.MappingEngine.Map[TDestination](Object source) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 60
+   en AutoMapper.Mapper.Map[TDestination](Object source) en c:\dev\AutoMapper\src\AutoMapper\Mapper.cs:línea 49
+   en Application.Core.Extensions.ExpressionHelper.CreateDtoToEntityExpression[TEntity,TDto](Expression`1 predicate) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.Core\Extensions\ExpressionHelper.cs:línea 17
+   en Application.MainModule.UsuarioAppService.Find(Expression`1 predicateDto, Boolean readonly) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 155
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>z__OriginalMethod(DataManager dm) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Web\Areas\Administracion\Controllers\UsuarioController.cs:línea 27
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>c__Binding.Invoke(Object& instance, Arguments arguments, Object aspectArgs) en :línea 0
+   en PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.Proceed()
+   en Presentation.Aspects.PostActionMethod.Process(MethodInterceptionArgs args, ILogger log) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Aspects\PostActionMethod.cs:línea 23
+2015-08-28 11:40:01,078 [19] ERROR SigcomtFramework [(null)] - Mensaje: 
+
+Mapping types:
+Expression`1 -> Expression`1
+System.Linq.Expressions.Expression`1[[System.Func`2[[Application.MainModule.DTO.UsuarioDto, Application.MainModule.DTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] -> System.Linq.Expressions.Expression`1[[System.Func`2[[Domain.MainModule.Entities.Usuario, Domain.MainModule, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+
+Destination path:
+Expression`1
+
+Source value:
+p => (p.AgenciaId == value(Presentation.Web.Areas.Administracion.Controllers.UsuarioController+<>c__DisplayClass0).enteroId) Trace:    en AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 254
+   en AutoMapper.MappingEngine.MapCore(Object source, Type sourceType, Type destinationType, MappingOperationOptions options) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 131
+   en AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 122
+   en AutoMapper.MappingEngine.Map[TDestination](Object source, Action`1 opts) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 71
+   en AutoMapper.MappingEngine.Map[TDestination](Object source) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 60
+   en AutoMapper.Mapper.Map[TDestination](Object source) en c:\dev\AutoMapper\src\AutoMapper\Mapper.cs:línea 49
+   en Application.Core.Extensions.ExpressionHelper.CreateDtoToEntityExpression[TEntity,TDto](Expression`1 predicate) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.Core\Extensions\ExpressionHelper.cs:línea 17
+   en Application.MainModule.UsuarioAppService.Find(Expression`1 predicateDto, Boolean readonly) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 155
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>z__OriginalMethod(DataManager dm) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Web\Areas\Administracion\Controllers\UsuarioController.cs:línea 27
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>c__Binding.Invoke(Object& instance, Arguments arguments, Object aspectArgs) en :línea 0
+   en PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.Proceed()
+   en Presentation.Aspects.PostActionMethod.Process(MethodInterceptionArgs args, ILogger log) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Aspects\PostActionMethod.cs:línea 23
+2015-08-28 11:40:02,864 [15] ERROR SigcomtFramework [(null)] - Mensaje: 
+
+Mapping types:
+Expression`1 -> Expression`1
+System.Linq.Expressions.Expression`1[[System.Func`2[[Application.MainModule.DTO.UsuarioDto, Application.MainModule.DTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] -> System.Linq.Expressions.Expression`1[[System.Func`2[[Domain.MainModule.Entities.Usuario, Domain.MainModule, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+
+Destination path:
+Expression`1
+
+Source value:
+p => (p.AgenciaId == value(Presentation.Web.Areas.Administracion.Controllers.UsuarioController+<>c__DisplayClass0).enteroId) Trace:    en AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 254
+   en AutoMapper.MappingEngine.MapCore(Object source, Type sourceType, Type destinationType, MappingOperationOptions options) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 131
+   en AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 122
+   en AutoMapper.MappingEngine.Map[TDestination](Object source, Action`1 opts) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 71
+   en AutoMapper.MappingEngine.Map[TDestination](Object source) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 60
+   en AutoMapper.Mapper.Map[TDestination](Object source) en c:\dev\AutoMapper\src\AutoMapper\Mapper.cs:línea 49
+   en Application.Core.Extensions.ExpressionHelper.CreateDtoToEntityExpression[TEntity,TDto](Expression`1 predicate) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.Core\Extensions\ExpressionHelper.cs:línea 17
+   en Application.MainModule.UsuarioAppService.Find(Expression`1 predicateDto, Boolean readonly) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 155
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>z__OriginalMethod(DataManager dm) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Web\Areas\Administracion\Controllers\UsuarioController.cs:línea 27
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>c__Binding.Invoke(Object& instance, Arguments arguments, Object aspectArgs) en :línea 0
+   en PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.Proceed()
+   en Presentation.Aspects.PostActionMethod.Process(MethodInterceptionArgs args, ILogger log) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Aspects\PostActionMethod.cs:línea 23
+2015-08-28 11:40:06,960 [16] ERROR SigcomtFramework [(null)] - Mensaje: 
+
+Mapping types:
+Expression`1 -> Expression`1
+System.Linq.Expressions.Expression`1[[System.Func`2[[Application.MainModule.DTO.UsuarioDto, Application.MainModule.DTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] -> System.Linq.Expressions.Expression`1[[System.Func`2[[Domain.MainModule.Entities.Usuario, Domain.MainModule, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+
+Destination path:
+Expression`1
+
+Source value:
+p => (p.AgenciaId == value(Presentation.Web.Areas.Administracion.Controllers.UsuarioController+<>c__DisplayClass0).enteroId) Trace:    en AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 254
+   en AutoMapper.MappingEngine.MapCore(Object source, Type sourceType, Type destinationType, MappingOperationOptions options) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 131
+   en AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 122
+   en AutoMapper.MappingEngine.Map[TDestination](Object source, Action`1 opts) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 71
+   en AutoMapper.MappingEngine.Map[TDestination](Object source) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 60
+   en AutoMapper.Mapper.Map[TDestination](Object source) en c:\dev\AutoMapper\src\AutoMapper\Mapper.cs:línea 49
+   en Application.Core.Extensions.ExpressionHelper.CreateDtoToEntityExpression[TEntity,TDto](Expression`1 predicate) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.Core\Extensions\ExpressionHelper.cs:línea 17
+   en Application.MainModule.UsuarioAppService.Find(Expression`1 predicateDto, Boolean readonly) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 155
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>z__OriginalMethod(DataManager dm) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Web\Areas\Administracion\Controllers\UsuarioController.cs:línea 27
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>c__Binding.Invoke(Object& instance, Arguments arguments, Object aspectArgs) en :línea 0
+   en PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.Proceed()
+   en Presentation.Aspects.PostActionMethod.Process(MethodInterceptionArgs args, ILogger log) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Aspects\PostActionMethod.cs:línea 23
+2015-08-28 11:40:53,635 [15] ERROR SigcomtFramework [(null)] - Mensaje: 
+
+Mapping types:
+Expression`1 -> Expression`1
+System.Linq.Expressions.Expression`1[[System.Func`2[[Application.MainModule.DTO.UsuarioDto, Application.MainModule.DTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] -> System.Linq.Expressions.Expression`1[[System.Func`2[[Domain.MainModule.Entities.Usuario, Domain.MainModule, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+
+Destination path:
+Expression`1
+
+Source value:
+p => (p.AgenciaId == value(Presentation.Web.Areas.Administracion.Controllers.UsuarioController+<>c__DisplayClass0).enteroId) Trace:    en AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 254
+   en AutoMapper.MappingEngine.MapCore(Object source, Type sourceType, Type destinationType, MappingOperationOptions options) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 131
+   en AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 122
+   en AutoMapper.MappingEngine.Map[TDestination](Object source, Action`1 opts) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 71
+   en AutoMapper.MappingEngine.Map[TDestination](Object source) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 60
+   en AutoMapper.Mapper.Map[TDestination](Object source) en c:\dev\AutoMapper\src\AutoMapper\Mapper.cs:línea 49
+   en Application.Core.Extensions.ExpressionHelper.CreateDtoToEntityExpression[TEntity,TDto](Expression`1 predicate) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.Core\Extensions\ExpressionHelper.cs:línea 17
+   en Application.MainModule.UsuarioAppService.Find(Expression`1 predicateDto, Boolean readonly) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 155
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>z__OriginalMethod(DataManager dm) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Web\Areas\Administracion\Controllers\UsuarioController.cs:línea 27
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>c__Binding.Invoke(Object& instance, Arguments arguments, Object aspectArgs) en :línea 0
+   en PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.Proceed()
+   en Presentation.Aspects.PostActionMethod.Process(MethodInterceptionArgs args, ILogger log) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Aspects\PostActionMethod.cs:línea 23
+2015-08-28 11:51:41,214 [9] ERROR SigcomtFramework [(null)] - Mensaje: No se puede utilizar una ParameterExpression de tipo 'Domain.MainModule.Entities.Usuario' para el parámetro delegado de tipo 'Application.MainModule.DTO.UsuarioDto' Trace:    en System.Linq.Expressions.Expression.ValidateLambdaArgs(Type delegateType, Expression& body, ReadOnlyCollection`1 parameters)
+   en System.Linq.Expressions.Expression.Lambda[TDelegate](Expression body, String name, Boolean tailCall, IEnumerable`1 parameters)
+   en System.Linq.Expressions.Expression`1.Update(Expression body, IEnumerable`1 parameters)
+   en System.Linq.Expressions.ExpressionVisitor.VisitLambda[T](Expression`1 node)
+   en System.Linq.Expressions.Expression`1.Accept(ExpressionVisitor visitor)
+   en System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   en Application.Core.Extensions.ExpressionHelper.CreateDtoToEntityExpression[TEntity,TDto](Expression`1 predicate) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.Core\Extensions\ExpressionHelper.cs:línea 19
+   en Application.MainModule.UsuarioAppService.Find(Expression`1 predicateDto, Boolean readonly) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 155
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>z__OriginalMethod(DataManager dm) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Web\Areas\Administracion\Controllers\UsuarioController.cs:línea 27
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>c__Binding.Invoke(Object& instance, Arguments arguments, Object aspectArgs) en :línea 0
+   en PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.Proceed()
+   en Presentation.Aspects.PostActionMethod.Process(MethodInterceptionArgs args, ILogger log) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Aspects\PostActionMethod.cs:línea 23
+2015-08-28 12:02:42,595 [11] ERROR SigcomtFramework [(null)] - Mensaje: La propiedad 'Int32 AgenciaId' no está definida para el tipo 'Domain.MainModule.Entities.Usuario' Trace:    en System.Linq.Expressions.Expression.Property(Expression expression, PropertyInfo property)
+   en System.Linq.Expressions.Expression.MakeMemberAccess(Expression expression, MemberInfo member)
+   en System.Linq.Expressions.MemberExpression.Update(Expression expression)
+   en System.Linq.Expressions.ExpressionVisitor.VisitMember(MemberExpression node)
+   en System.Linq.Expressions.MemberExpression.Accept(ExpressionVisitor visitor)
+   en System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   en System.Linq.Expressions.ExpressionVisitor.VisitBinary(BinaryExpression node)
+   en System.Linq.Expressions.BinaryExpression.Accept(ExpressionVisitor visitor)
+   en System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   en Application.Core.Extensions.ExpressionTransformer`2.Tranform(Expression`1 expression) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.Core\Extensions\ExpressionHelper.cs:línea 117
+   en Application.Core.Extensions.ExpressionHelper.CreateDtoToEntityExpression[TEntity,TDto](Expression`1 predicate) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.Core\Extensions\ExpressionHelper.cs:línea 23
+   en Application.MainModule.UsuarioAppService.Find(Expression`1 predicateDto, Boolean readonly) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 155
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>z__OriginalMethod(DataManager dm) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Web\Areas\Administracion\Controllers\UsuarioController.cs:línea 27
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>c__Binding.Invoke(Object& instance, Arguments arguments, Object aspectArgs) en :línea 0
+   en PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.Proceed()
+   en Presentation.Aspects.PostActionMethod.Process(MethodInterceptionArgs args, ILogger log) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Aspects\PostActionMethod.cs:línea 23
+2015-08-28 12:03:15,013 [9] ERROR SigcomtFramework [(null)] - Mensaje: La propiedad 'Int32 AgenciaId' no está definida para el tipo 'Domain.MainModule.Entities.Usuario' Trace:    en System.Linq.Expressions.Expression.Property(Expression expression, PropertyInfo property)
+   en System.Linq.Expressions.Expression.MakeMemberAccess(Expression expression, MemberInfo member)
+   en System.Linq.Expressions.MemberExpression.Update(Expression expression)
+   en System.Linq.Expressions.ExpressionVisitor.VisitMember(MemberExpression node)
+   en System.Linq.Expressions.MemberExpression.Accept(ExpressionVisitor visitor)
+   en System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   en System.Linq.Expressions.ExpressionVisitor.VisitBinary(BinaryExpression node)
+   en System.Linq.Expressions.BinaryExpression.Accept(ExpressionVisitor visitor)
+   en System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   en Application.Core.Extensions.ExpressionTransformer`2.Tranform(Expression`1 expression) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.Core\Extensions\ExpressionHelper.cs:línea 117
+   en Application.Core.Extensions.ExpressionHelper.CreateDtoToEntityExpression[TEntity,TDto](Expression`1 predicate) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.Core\Extensions\ExpressionHelper.cs:línea 23
+   en Application.MainModule.UsuarioAppService.Find(Expression`1 predicateDto, Boolean readonly) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 155
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>z__OriginalMethod(DataManager dm) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Web\Areas\Administracion\Controllers\UsuarioController.cs:línea 27
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>c__Binding.Invoke(Object& instance, Arguments arguments, Object aspectArgs) en :línea 0
+   en PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.Proceed()
+   en Presentation.Aspects.PostActionMethod.Process(MethodInterceptionArgs args, ILogger log) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Aspects\PostActionMethod.cs:línea 23
+2015-08-28 12:13:22,535 [14] ERROR SigcomtFramework [(null)] - Mensaje: No se puede implementar el método o la operación. Trace:    en Application.Core.Extensions.Visitor`1.VisitMember(MemberExpression node) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.Core\Extensions\ExpressionHelper.cs:línea 130
+   en System.Linq.Expressions.MemberExpression.Accept(ExpressionVisitor visitor)
+   en System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   en System.Linq.Expressions.ExpressionVisitor.VisitBinary(BinaryExpression node)
+   en System.Linq.Expressions.BinaryExpression.Accept(ExpressionVisitor visitor)
+   en System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   en Application.Core.Extensions.ExpressionHelper.CreateDtoToEntityExpression[TEntity,TDto](Expression`1 predicate) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.Core\Extensions\ExpressionHelper.cs:línea 25
+   en Application.MainModule.UsuarioAppService.Find(Expression`1 predicateDto, Boolean readonly) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 155
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>z__OriginalMethod(DataManager dm) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Web\Areas\Administracion\Controllers\UsuarioController.cs:línea 27
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>c__Binding.Invoke(Object& instance, Arguments arguments, Object aspectArgs) en :línea 0
+   en PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.Proceed()
+   en Presentation.Aspects.PostActionMethod.Process(MethodInterceptionArgs args, ILogger log) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Aspects\PostActionMethod.cs:línea 23
+2015-08-28 14:11:59,414 [8] ERROR SigcomtFramework [(null)] - Mensaje: El valor no puede ser nulo.
+Nombre del parámetro: property Trace:    en System.Linq.Expressions.Expression.Property(Expression expression, PropertyInfo property)
+   en Application.Core.Extensions.Visitor`1.VisitMember(MemberExpression node) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.Core\Extensions\ExpressionHelper.cs:línea 139
+   en System.Linq.Expressions.MemberExpression.Accept(ExpressionVisitor visitor)
+   en System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   en System.Linq.Expressions.ExpressionVisitor.VisitBinary(BinaryExpression node)
+   en System.Linq.Expressions.BinaryExpression.Accept(ExpressionVisitor visitor)
+   en System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   en Application.Core.Extensions.ExpressionHelper.CreateDtoToEntityExpression[TEntity,TDto](Expression`1 predicate) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.Core\Extensions\ExpressionHelper.cs:línea 25
+   en Application.MainModule.UsuarioAppService.Find(Expression`1 predicateDto, Boolean readonly) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 155
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>z__OriginalMethod(DataManager dm) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Web\Areas\Administracion\Controllers\UsuarioController.cs:línea 27
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>c__Binding.Invoke(Object& instance, Arguments arguments, Object aspectArgs) en :línea 0
+   en PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.Proceed()
+   en Presentation.Aspects.PostActionMethod.Process(MethodInterceptionArgs args, ILogger log) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Aspects\PostActionMethod.cs:línea 23
+2015-08-28 17:03:09,068 [7] ERROR SigcomtFramework [(null)] - Mensaje: No se puede utilizar una ParameterExpression de tipo 'Domain.MainModule.Entities.Usuario' para el parámetro delegado de tipo 'Application.MainModule.DTO.UsuarioDto' Trace:    en System.Linq.Expressions.Expression.ValidateLambdaArgs(Type delegateType, Expression& body, ReadOnlyCollection`1 parameters)
+   en System.Linq.Expressions.Expression.Lambda[TDelegate](Expression body, String name, Boolean tailCall, IEnumerable`1 parameters)
+   en System.Linq.Expressions.Expression`1.Update(Expression body, IEnumerable`1 parameters)
+   en System.Linq.Expressions.ExpressionVisitor.VisitLambda[T](Expression`1 node)
+   en System.Linq.Expressions.Expression`1.Accept(ExpressionVisitor visitor)
+   en System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   en Application.Core.Extensions.ExpressionHelper.CreateDtoToEntityExpression[TEntity,TDto](Expression`1 predicate) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.Core\Extensions\ExpressionHelper.cs:línea 19
+   en Application.MainModule.UsuarioAppService.Find(Expression`1 predicateDto, Boolean readonly) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 155
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>z__OriginalMethod(DataManager dm) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Web\Areas\Administracion\Controllers\UsuarioController.cs:línea 27
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>c__Binding.Invoke(Object& instance, Arguments arguments, Object aspectArgs) en :línea 0
+   en PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.Proceed()
+   en Presentation.Aspects.PostActionMethod.Process(MethodInterceptionArgs args, ILogger log) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Aspects\PostActionMethod.cs:línea 23
+2015-08-28 17:04:12,611 [7] ERROR SigcomtFramework [(null)] - Mensaje: No se puede utilizar una ParameterExpression de tipo 'Domain.MainModule.Entities.Usuario' para el parámetro delegado de tipo 'Application.MainModule.DTO.UsuarioDto' Trace:    en System.Linq.Expressions.Expression.ValidateLambdaArgs(Type delegateType, Expression& body, ReadOnlyCollection`1 parameters)
+   en System.Linq.Expressions.Expression.Lambda[TDelegate](Expression body, String name, Boolean tailCall, IEnumerable`1 parameters)
+   en System.Linq.Expressions.Expression`1.Update(Expression body, IEnumerable`1 parameters)
+   en System.Linq.Expressions.ExpressionVisitor.VisitLambda[T](Expression`1 node)
+   en System.Linq.Expressions.Expression`1.Accept(ExpressionVisitor visitor)
+   en System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   en Application.Core.Extensions.ExpressionHelper.CreateDtoToEntityExpression[TEntity,TDto](Expression`1 predicate) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.Core\Extensions\ExpressionHelper.cs:línea 19
+   en Application.MainModule.UsuarioAppService.Find(Expression`1 predicateDto, Boolean readonly) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 155
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>z__OriginalMethod(DataManager dm) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Web\Areas\Administracion\Controllers\UsuarioController.cs:línea 27
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>c__Binding.Invoke(Object& instance, Arguments arguments, Object aspectArgs) en :línea 0
+   en PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.Proceed()
+   en Presentation.Aspects.PostActionMethod.Process(MethodInterceptionArgs args, ILogger log) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Aspects\PostActionMethod.cs:línea 23
+2015-08-28 17:04:51,816 [6] ERROR SigcomtFramework [(null)] - Mensaje: No se puede utilizar una ParameterExpression de tipo 'Domain.MainModule.Entities.Usuario' para el parámetro delegado de tipo 'Application.MainModule.DTO.UsuarioDto' Trace:    en System.Linq.Expressions.Expression.ValidateLambdaArgs(Type delegateType, Expression& body, ReadOnlyCollection`1 parameters)
+   en System.Linq.Expressions.Expression.Lambda[TDelegate](Expression body, String name, Boolean tailCall, IEnumerable`1 parameters)
+   en System.Linq.Expressions.Expression`1.Update(Expression body, IEnumerable`1 parameters)
+   en System.Linq.Expressions.ExpressionVisitor.VisitLambda[T](Expression`1 node)
+   en System.Linq.Expressions.Expression`1.Accept(ExpressionVisitor visitor)
+   en System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   en Application.Core.Extensions.ExpressionHelper.CreateDtoToEntityExpression[TEntity,TDto](Expression`1 predicate) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.Core\Extensions\ExpressionHelper.cs:línea 19
+   en Application.MainModule.UsuarioAppService.Find(Expression`1 predicateDto, Boolean readonly) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 155
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>z__OriginalMethod(DataManager dm) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Web\Areas\Administracion\Controllers\UsuarioController.cs:línea 27
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>c__Binding.Invoke(Object& instance, Arguments arguments, Object aspectArgs) en :línea 0
+   en PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.Proceed()
+   en Presentation.Aspects.PostActionMethod.Process(MethodInterceptionArgs args, ILogger log) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Aspects\PostActionMethod.cs:línea 23
+2015-08-31 10:04:08,441 [10] ERROR SigcomtFramework [(null)] - Mensaje: No se puede llamar al método 'Syncfusion.JavaScript.WhereFilter get_Item(Int32)' declarado para el tipo 'System.Collections.Generic.List`1[Syncfusion.JavaScript.WhereFilter]' con una instancia del tipo 'System.Object' Trace:    en System.Linq.Expressions.Expression.ValidateCallInstanceType(Type instanceType, MethodInfo method)
+   en System.Linq.Expressions.Expression.ValidateStaticOrInstanceMethod(Expression instance, MethodInfo method)
+   en System.Linq.Expressions.Expression.Call(Expression instance, MethodInfo method, IEnumerable`1 arguments)
+   en System.Linq.Expressions.InstanceMethodCallExpressionN.Rewrite(Expression instance, IList`1 args)
+   en System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(MethodCallExpression node)
+   en System.Linq.Expressions.MethodCallExpression.Accept(ExpressionVisitor visitor)
+   en System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   en System.Linq.Expressions.ExpressionVisitor.VisitBinary(BinaryExpression node)
+   en System.Linq.Expressions.BinaryExpression.Accept(ExpressionVisitor visitor)
+   en System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   en System.Linq.Expressions.ExpressionVisitor.VisitConditional(ConditionalExpression node)
+   en System.Linq.Expressions.ConditionalExpression.Accept(ExpressionVisitor visitor)
+   en System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   en System.Linq.Expressions.ExpressionVisitor.VisitBinary(BinaryExpression node)
+   en System.Linq.Expressions.BinaryExpression.Accept(ExpressionVisitor visitor)
+   en System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   en System.Linq.Expressions.ExpressionVisitor.VisitLambda[T](Expression`1 node)
+   en System.Linq.Expressions.Expression`1.Accept(ExpressionVisitor visitor)
+   en System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   en Application.Core.Extensions.ExpressionHelper.CreateDtoToEntityExpression[TEntity,TDto](Expression`1 predicate) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.Core\Extensions\ExpressionHelper.cs:línea 15
+   en Application.MainModule.UsuarioAppService.Find(Expression`1 predicateDto, Boolean readonly) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 155
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>z__OriginalMethod(DataManager dm) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Web\Areas\Administracion\Controllers\UsuarioController.cs:línea 26
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>c__Binding.Invoke(Object& instance, Arguments arguments, Object aspectArgs) en :línea 0
+   en PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.Proceed()
+   en Presentation.Aspects.PostActionMethod.Process(MethodInterceptionArgs args, ILogger log) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Aspects\PostActionMethod.cs:línea 23
+2015-08-31 10:05:04,126 [12] ERROR SigcomtFramework [(null)] - Mensaje: No se puede llamar al método 'Syncfusion.JavaScript.WhereFilter get_Item(Int32)' declarado para el tipo 'System.Collections.Generic.List`1[Syncfusion.JavaScript.WhereFilter]' con una instancia del tipo 'System.Object' Trace:    en System.Linq.Expressions.Expression.ValidateCallInstanceType(Type instanceType, MethodInfo method)
+   en System.Linq.Expressions.Expression.ValidateStaticOrInstanceMethod(Expression instance, MethodInfo method)
+   en System.Linq.Expressions.Expression.Call(Expression instance, MethodInfo method, IEnumerable`1 arguments)
+   en System.Linq.Expressions.InstanceMethodCallExpressionN.Rewrite(Expression instance, IList`1 args)
+   en System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(MethodCallExpression node)
+   en System.Linq.Expressions.MethodCallExpression.Accept(ExpressionVisitor visitor)
+   en System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   en System.Linq.Expressions.ExpressionVisitor.VisitBinary(BinaryExpression node)
+   en System.Linq.Expressions.BinaryExpression.Accept(ExpressionVisitor visitor)
+   en System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   en System.Linq.Expressions.ExpressionVisitor.VisitConditional(ConditionalExpression node)
+   en System.Linq.Expressions.ConditionalExpression.Accept(ExpressionVisitor visitor)
+   en System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   en System.Linq.Expressions.ExpressionVisitor.VisitBinary(BinaryExpression node)
+   en System.Linq.Expressions.BinaryExpression.Accept(ExpressionVisitor visitor)
+   en System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   en System.Linq.Expressions.ExpressionVisitor.VisitLambda[T](Expression`1 node)
+   en System.Linq.Expressions.Expression`1.Accept(ExpressionVisitor visitor)
+   en System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   en Application.Core.Extensions.ExpressionHelper.CreateDtoToEntityExpression[TEntity,TDto](Expression`1 predicate) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.Core\Extensions\ExpressionHelper.cs:línea 15
+   en Application.MainModule.UsuarioAppService.Find(Expression`1 predicateDto, Boolean readonly) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 155
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>z__OriginalMethod(DataManager dm) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Web\Areas\Administracion\Controllers\UsuarioController.cs:línea 26
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>c__Binding.Invoke(Object& instance, Arguments arguments, Object aspectArgs) en :línea 0
+   en PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.Proceed()
+   en Presentation.Aspects.PostActionMethod.Process(MethodInterceptionArgs args, ILogger log) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Aspects\PostActionMethod.cs:línea 23
+2015-09-01 12:09:00,299 [6] ERROR SigcomtFramework [(null)] - Mensaje: No se puede llamar al método 'Syncfusion.JavaScript.WhereFilter get_Item(Int32)' declarado para el tipo 'System.Collections.Generic.List`1[Syncfusion.JavaScript.WhereFilter]' con una instancia del tipo 'System.Object' Trace:    en System.Linq.Expressions.Expression.ValidateCallInstanceType(Type instanceType, MethodInfo method)
+   en System.Linq.Expressions.Expression.ValidateStaticOrInstanceMethod(Expression instance, MethodInfo method)
+   en System.Linq.Expressions.Expression.Call(Expression instance, MethodInfo method, IEnumerable`1 arguments)
+   en System.Linq.Expressions.InstanceMethodCallExpressionN.Rewrite(Expression instance, IList`1 args)
+   en System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(MethodCallExpression node)
+   en System.Linq.Expressions.MethodCallExpression.Accept(ExpressionVisitor visitor)
+   en System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   en System.Linq.Expressions.ExpressionVisitor.VisitBinary(BinaryExpression node)
+   en System.Linq.Expressions.BinaryExpression.Accept(ExpressionVisitor visitor)
+   en System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   en System.Linq.Expressions.ExpressionVisitor.VisitConditional(ConditionalExpression node)
+   en System.Linq.Expressions.ConditionalExpression.Accept(ExpressionVisitor visitor)
+   en System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   en System.Linq.Expressions.ExpressionVisitor.VisitBinary(BinaryExpression node)
+   en System.Linq.Expressions.BinaryExpression.Accept(ExpressionVisitor visitor)
+   en System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   en System.Linq.Expressions.ExpressionVisitor.VisitLambda[T](Expression`1 node)
+   en System.Linq.Expressions.Expression`1.Accept(ExpressionVisitor visitor)
+   en System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   en Application.Core.Extensions.ExpressionHelper.CreateDtoToEntityExpression[TEntity,TDto](Expression`1 predicate) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.Core\Extensions\ExpressionHelper.cs:línea 15
+   en Application.MainModule.UsuarioAppService.Find(Expression`1 predicateDto, Boolean readonly) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 155
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>z__OriginalMethod(DataManager dm) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Web\Areas\Administracion\Controllers\UsuarioController.cs:línea 26
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>c__Binding.Invoke(Object& instance, Arguments arguments, Object aspectArgs) en :línea 0
+   en PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.Proceed()
+   en Presentation.Aspects.PostActionMethod.Process(MethodInterceptionArgs args, ILogger log) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Aspects\PostActionMethod.cs:línea 23
+2015-09-01 12:10:45,117 [13] ERROR SigcomtFramework [(null)] - Mensaje: No se puede llamar al método 'Syncfusion.JavaScript.WhereFilter get_Item(Int32)' declarado para el tipo 'System.Collections.Generic.List`1[Syncfusion.JavaScript.WhereFilter]' con una instancia del tipo 'System.Object' Trace:    en System.Linq.Expressions.Expression.ValidateCallInstanceType(Type instanceType, MethodInfo method)
+   en System.Linq.Expressions.Expression.ValidateStaticOrInstanceMethod(Expression instance, MethodInfo method)
+   en System.Linq.Expressions.Expression.Call(Expression instance, MethodInfo method, IEnumerable`1 arguments)
+   en System.Linq.Expressions.InstanceMethodCallExpressionN.Rewrite(Expression instance, IList`1 args)
+   en System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(MethodCallExpression node)
+   en System.Linq.Expressions.MethodCallExpression.Accept(ExpressionVisitor visitor)
+   en System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   en System.Linq.Expressions.ExpressionVisitor.VisitBinary(BinaryExpression node)
+   en System.Linq.Expressions.BinaryExpression.Accept(ExpressionVisitor visitor)
+   en System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   en System.Linq.Expressions.ExpressionVisitor.VisitConditional(ConditionalExpression node)
+   en System.Linq.Expressions.ConditionalExpression.Accept(ExpressionVisitor visitor)
+   en System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   en System.Linq.Expressions.ExpressionVisitor.VisitBinary(BinaryExpression node)
+   en System.Linq.Expressions.BinaryExpression.Accept(ExpressionVisitor visitor)
+   en System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   en System.Linq.Expressions.ExpressionVisitor.VisitLambda[T](Expression`1 node)
+   en System.Linq.Expressions.Expression`1.Accept(ExpressionVisitor visitor)
+   en System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   en Application.Core.Extensions.ExpressionHelper.CreateDtoToEntityExpression[TEntity,TDto](Expression`1 predicate) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.Core\Extensions\ExpressionHelper.cs:línea 15
+   en Application.MainModule.UsuarioAppService.Find(Expression`1 predicateDto, Boolean readonly) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 155
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>z__OriginalMethod(DataManager dm) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Web\Areas\Administracion\Controllers\UsuarioController.cs:línea 26
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>c__Binding.Invoke(Object& instance, Arguments arguments, Object aspectArgs) en :línea 0
+   en PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.Proceed()
+   en Presentation.Aspects.PostActionMethod.Process(MethodInterceptionArgs args, ILogger log) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Aspects\PostActionMethod.cs:línea 23
+2015-09-01 12:24:48,815 [6] ERROR SigcomtFramework [(null)] - Mensaje: LINQ to Entities does not recognize the method 'Syncfusion.JavaScript.WhereFilter get_Item(Int32)' method, and this method cannot be translated into a store expression. Trace:    en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.DefaultTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.EqualsTranslator.CreateIsNullExpression(ExpressionConverter parent, Expression input)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.EqualsTranslator.TypedTranslate(ExpressionConverter parent, BinaryExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.NotTranslator.TypedTranslate(ExpressionConverter parent, UnaryExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.NotEqualsTranslator.TypedTranslate(ExpressionConverter parent, BinaryExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.ConditionalTranslator.TypedTranslate(ExpressionConverter parent, ConditionalExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.EqualsTranslator.TypedTranslate(ExpressionConverter parent, BinaryExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input, DbExpressionBinding& binding)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Convert()
+   en System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   en System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   en System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   en System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   en System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   en System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   en Application.MainModule.UsuarioAppService.Find(Expression`1 predicateDto, Boolean readonly) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 157
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>z__OriginalMethod(DataManager dm) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Web\Areas\Administracion\Controllers\UsuarioController.cs:línea 26
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Pagination>c__Binding.Invoke(Object& instance, Arguments arguments, Object aspectArgs) en :línea 0
+   en PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.Proceed()
+   en Presentation.Aspects.PostActionMethod.Process(MethodInterceptionArgs args, ILogger log) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Aspects\PostActionMethod.cs:línea 23
+2015-09-07 10:23:04,264 [15] ERROR SigcomtFramework [(null)] - Mensaje: Las credenciales especificadas son incorrectas Trace:    en Application.MainModule.UsuarioAppService.ValidateUser(String username, String password) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 48
+   en Presentation.Web.Controllers.AccountController.Login(LogInDto model, String returnUrl) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Web\Controllers\AccountController.cs:línea 54
+2015-09-07 10:23:24,965 [17] ERROR SigcomtFramework [(null)] - Mensaje: Las credenciales especificadas son incorrectas Trace:    en Application.MainModule.UsuarioAppService.ValidateUser(String username, String password) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 48
+   en Presentation.Web.Controllers.AccountController.Login(LogInDto model, String returnUrl) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Web\Controllers\AccountController.cs:línea 54
+2015-09-07 10:23:28,345 [13] ERROR SigcomtFramework [(null)] - Mensaje: Las credenciales especificadas son incorrectas Trace:    en Application.MainModule.UsuarioAppService.ValidateUser(String username, String password) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 48
+   en Presentation.Web.Controllers.AccountController.Login(LogInDto model, String returnUrl) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Web\Controllers\AccountController.cs:línea 54
+2015-09-07 10:37:29,806 [9] ERROR SigcomtFramework [(null)] - Mensaje: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+PermisoFormulario -> PermisoFormularioDto
+Domain.MainModule.Entities.PermisoFormulario -> Application.MainModule.DTO.PermisoFormularioDto
+
+Destination path:
+List`1[0].PermisoList.PermisoList.PermisoList0[0]
+
+Source value:
+System.Data.Entity.DynamicProxies.PermisoFormulario_C55CA019AFE90A1B0F1453D3DF052DFF5D6C7C6B1A45AC9A88CC08DF6CEEE2FF Trace:    en AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 250
+   en AutoMapper.Mappers.EnumerableMapperBase`1.Map(ResolutionContext context, IMappingEngineRunner mapper) en c:\dev\AutoMapper\src\AutoMapper\Mappers\EnumerableMapperBase.cs:línea 44
+   en AutoMapper.Mappers.CollectionMapper.Map(ResolutionContext context, IMappingEngineRunner mapper) en c:\dev\AutoMapper\src\AutoMapper\Mappers\CollectionMapper.cs:línea 20
+   en AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 250
+   en AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap) en c:\dev\AutoMapper\src\AutoMapper\Mappers\TypeMapObjectMapperRegistry.cs:línea 163
+   en AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.Map(ResolutionContext context, IMappingEngineRunner mapper) en c:\dev\AutoMapper\src\AutoMapper\Mappers\TypeMapObjectMapperRegistry.cs:línea 91
+   en AutoMapper.Mappers.TypeMapMapper.Map(ResolutionContext context, IMappingEngineRunner mapper) en c:\dev\AutoMapper\src\AutoMapper\Mappers\TypeMapMapper.cs:línea 22
+   en AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 250
+   en AutoMapper.Mappers.EnumerableMapperBase`1.Map(ResolutionContext context, IMappingEngineRunner mapper) en c:\dev\AutoMapper\src\AutoMapper\Mappers\EnumerableMapperBase.cs:línea 44
+   en AutoMapper.Mappers.CollectionMapper.Map(ResolutionContext context, IMappingEngineRunner mapper) en c:\dev\AutoMapper\src\AutoMapper\Mappers\CollectionMapper.cs:línea 20
+   en AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 250
+   en AutoMapper.MappingEngine.MapCore(Object source, Type sourceType, Type destinationType, MappingOperationOptions options) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 131
+   en AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 122
+   en AutoMapper.MappingEngine.Map[TSource,TDestination](TSource source) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 81
+   en AutoMapper.Mapper.Map[TSource,TDestination](TSource source) en c:\dev\AutoMapper\src\AutoMapper\Mapper.cs:línea 73
+   en Application.Core.MapperHelper.Map[TSource,TDest](TSource source) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.Core\MapperHelper.cs:línea 9
+   en Application.MainModule.FormularioAppService.GetByUsuario(Int32 idUsuario) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\FormularioAppService.cs:línea 71
+   en Presentation.Web.Controllers.AccountController.GenerarTickectAutenticacion(UsuarioLoginDto usuario) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Web\Controllers\AccountController.cs:línea 176
+   en Presentation.Web.Controllers.AccountController.Login(LogInDto model, String returnUrl) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Web\Controllers\AccountController.cs:línea 62
+2015-09-07 10:42:37,229 [7] ERROR SigcomtFramework [(null)] - Controlador:Home  Action:Index  Mensaje:Referencia a objeto no establecida como instancia de un objeto.
+2015-09-07 11:32:15,061 [7] ERROR SigcomtFramework [(null)] - Mensaje: Only parameterless constructors and initializers are supported in LINQ to Entities. Trace:    en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.NewTranslator.TypedTranslate(ExpressionConverter parent, NewExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input, DbExpressionBinding& binding)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SelectTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Convert()
+   en System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   en System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   en System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   en System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   en System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   en System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   en Application.MainModule.UsuarioAppService.ObtenerEstados() en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 214
+   en Application.MainModule.UsuarioAppService.GetUsuarioDtoEditar(Int32 usuarioId) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 84
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Editar>z__OriginalMethod(Int32 id) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Web\Areas\Administracion\Controllers\UsuarioController.cs:línea 65
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Editar>c__Binding.Invoke(Object& instance, Arguments arguments, Object aspectArgs) en :línea 0
+   en PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.Proceed()
+   en Presentation.Aspects.GetActionMethod.Process(MethodInterceptionArgs args, ILogger log) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Aspects\GetActionMethod.cs:línea 17
+2015-09-07 11:35:03,213 [11] ERROR SigcomtFramework [(null)] - Mensaje: Referencia a objeto no establecida como instancia de un objeto. Trace:    en Infrastructure.CrossCutting.Common.TimeZoneUtils.ChangeTimeZoneInObjectFields[T](T obj, String timeZoneId) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Infrastructure.CrossCutting\Common\TimeZoneUtils.cs:línea 32
+   en Presentation.Core.BaseController.Json(Object data) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Core\BaseController.cs:línea 105
+2015-09-07 11:35:12,070 [8] ERROR SigcomtFramework [(null)] - Mensaje: Referencia a objeto no establecida como instancia de un objeto. Trace:    en Infrastructure.CrossCutting.Common.TimeZoneUtils.ChangeTimeZoneInObjectFields[T](T obj, String timeZoneId) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Infrastructure.CrossCutting\Common\TimeZoneUtils.cs:línea 32
+   en Presentation.Core.BaseController.Json(Object data) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Core\BaseController.cs:línea 105
+2015-09-07 11:55:42,763 [10] ERROR SigcomtFramework [(null)] - Mensaje: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Rol -> RolDto
+Domain.MainModule.Entities.Rol -> Application.MainModule.DTO.RolDto
+
+Destination path:
+IEnumerable`1[0]
+
+Source value:
+System.Data.Entity.DynamicProxies.Rol_6EE6DC20A0CC290A972D50CEB59F328F6183D82E546D9E75D39C285D33286708 Trace:    en AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 250
+   en AutoMapper.Mappers.EnumerableMapperBase`1.Map(ResolutionContext context, IMappingEngineRunner mapper) en c:\dev\AutoMapper\src\AutoMapper\Mappers\EnumerableMapperBase.cs:línea 44
+   en AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 250
+   en AutoMapper.MappingEngine.MapCore(Object source, Type sourceType, Type destinationType, MappingOperationOptions options) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 131
+   en AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 122
+   en AutoMapper.MappingEngine.Map[TSource,TDestination](TSource source) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 81
+   en AutoMapper.Mapper.Map[TSource,TDestination](TSource source) en c:\dev\AutoMapper\src\AutoMapper\Mapper.cs:línea 73
+   en Application.Core.MapperHelper.Map[TSource,TDest](TSource source) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.Core\MapperHelper.cs:línea 9
+   en Application.MainModule.RolAppService.GetActivosOrdenadosPorNombre() en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\RolAppService.cs:línea 25
+   en Application.MainModule.UsuarioAppService.GetUsuarioDtoEditar(Int32 usuarioId) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Application.MainModule\UsuarioAppService.cs:línea 85
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Editar>z__OriginalMethod(Int32 id) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Web\Areas\Administracion\Controllers\UsuarioController.cs:línea 65
+   en Presentation.Web.Areas.Administracion.Controllers.UsuarioController.<Editar>c__Binding.Invoke(Object& instance, Arguments arguments, Object aspectArgs) en :línea 0
+   en PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.Proceed()
+   en Presentation.Aspects.GetActionMethod.Process(MethodInterceptionArgs args, ILogger log) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Aspects\GetActionMethod.cs:línea 17
+2015-09-07 11:57:56,066 [7] ERROR SigcomtFramework [(null)] - Mensaje: Referencia a objeto no establecida como instancia de un objeto. Trace:    en Infrastructure.CrossCutting.Common.TimeZoneUtils.ChangeTimeZoneInObjectFields[T](T obj, String timeZoneId) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Infrastructure.CrossCutting\Common\TimeZoneUtils.cs:línea 32
+   en Presentation.Core.BaseController.Json(Object data) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Core\BaseController.cs:línea 105
+2015-09-07 11:58:04,368 [11] ERROR SigcomtFramework [(null)] - Mensaje: Referencia a objeto no establecida como instancia de un objeto. Trace:    en Infrastructure.CrossCutting.Common.TimeZoneUtils.ChangeTimeZoneInObjectFields[T](T obj, String timeZoneId) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Infrastructure.CrossCutting\Common\TimeZoneUtils.cs:línea 32
+   en Presentation.Core.BaseController.Json(Object data) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Core\BaseController.cs:línea 105
+2015-09-07 11:58:13,938 [11] ERROR SigcomtFramework [(null)] - Mensaje: Referencia a objeto no establecida como instancia de un objeto. Trace:    en Infrastructure.CrossCutting.Common.TimeZoneUtils.ChangeTimeZoneInObjectFields[T](T obj, String timeZoneId) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Infrastructure.CrossCutting\Common\TimeZoneUtils.cs:línea 32
+   en Presentation.Core.BaseController.Json(Object data) en d:\Miguel\SIGCOMT\Arquitectura\SigcomtFramework\Source\Presentation.Core\BaseController.cs:línea 105

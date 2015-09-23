@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <resource culture="es-PE" name="TablaListadoDto_TablaId" value="Tabla" />
+  <resource culture="es-PE" name="TablaListadoDto_TablaIdRequerido" value="Tabla requerida" />
+</resources>

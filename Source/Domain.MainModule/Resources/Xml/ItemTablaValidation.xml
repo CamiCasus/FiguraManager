@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <resource culture ="es-PE" name="ItemTabla_ValorMustBeUnique" value="Ya existe este valor, por favor ingrese otro."/>
+</resources>

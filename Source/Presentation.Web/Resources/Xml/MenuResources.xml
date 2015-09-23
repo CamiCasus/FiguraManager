@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <resource culture="es-PE" name="Menu_Opciones" value="OPCIONES DEL SISTEMA" />
+  <resource culture="es-PE" name="Menu_SeguridadModulo" value="Módulo de Seguridad" />
+  <resource culture="es-PE" name="Menu_UsuarioOperation" value="Usuarios" />
+  <resource culture="es-PE" name="Menu_FormularioOperation" value="Permisos" />
+  <resource culture="es-PE" name="Menu_AdministracionModulo" value="Módulo de Administración" />
+  <resource culture="es-PE" name="Menu_DatoGeneralOperation" value="Datos Generales" />
+  <resource culture="es-PE" name="Menu_TablaOperation" value="Tablas" />
+  <resource culture="es-PE" name="Menu_AgenciaOperation" value="Agencias" />
+  <resource culture="es-PE" name="Menu_SerieDocumentoOperation" value="Series de Documento" />
+  <resource culture="es-PE" name="Menu_TipoCambioOperation" value="Tipo de Cambio" />
+  <resource culture="es-PE" name="Menu_ClienteOperation" value="Clientes" />
+  <resource culture="es-PE" name="Menu_OperacionModulo" value="Módulo de Operaciones" />
+  <resource culture="es-PE" name="Menu_EmisionRemesaOperation" value="Emisión de Remesa" />
+  <resource culture="es-PE" name="Menu_PagoRemesaOperation" value="Pago de Remesa" />
+  <resource culture="es-PE" name="Menu_DevolucionRemesaOperation" value="Devolución de Remesa" />
+  <resource culture="es-PE" name="Menu_MovimientoOperation" value="Movimiento Dinero" />
+  <resource culture="es-PE" name="Menu_CierreSaldosOperation" value="Cierre de Saldos" />
+  <resource culture="es-PE" name="Menu_ReporteModulo" value="Módulo de Reportes" />
+  <resource culture="es-PE" name="Menu_SeguimientoOperation" value="Reporte de Seguimiento" />
+  <resource culture="es-PE" name="Menu_SaldosOperation" value="Reporte de Cierre de Saldos" />
+  <resource culture="es-PE" name="Menu_GananciaOperation" value="Reporte de Ganancias" />
+  <resource culture="es-PE" name="Menu_SaldoActualOperation" value="Reporte de Saldo Actual" />
+</resources>

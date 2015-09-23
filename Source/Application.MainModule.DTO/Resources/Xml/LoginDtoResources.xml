@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <resource culture="es-PE" name="LoginDto_Username" value="Nombre de usuario" />
+  <resource culture="es-PE" name="LoginDto_UsernameRequerido" value="Nombre de usuario requerido." />
+  <resource culture="es-PE" name="LoginDto_Password" value="Contraseña" />
+  <resource culture="es-PE" name="LoginDto_PasswordRequerido" value="Contraseña requerida." />
+</resources>

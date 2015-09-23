@@ -1,0 +1,55 @@
+﻿@{
+    var modulos = WebSession.Formularios;
+}
+<nav id="primary-nav">
+    <ul style="padding-top: 0;">
+        @foreach (var modulo in modulos)
+        {
+            var formularios = modulo.FormulariosHijosList;
+
+            if (formularios == null || !formularios.Any())
+            {
+                <li class="active">
+                    <a href="@Url.Content(modulo.Direccion)"><i class="@modulo.Icono"></i>@MenuResources.Traduccion(modulo.ResourceKey)</a>
+                </li>
+            }
+            else if (WebSession.FormularioActual.Id == modulo.Id || (formularios.Any(p => p.Id == WebSession.FormularioActual.Id)))
+            {
+                <li class="active">
+                    <a href="javascript:void(0);"><i class="@modulo.Icono"></i>@MenuResources.Traduccion(modulo.ResourceKey)</a>
+                    <ul>
+                        @foreach (var formulario in formularios)
+                        {
+                            if (formulario.Id == WebSession.FormularioActual.Id)
+                            {
+                                <li>
+                                    <a href="@Url.Content(formulario.Direccion)" class="active"><i class="@formulario.Icono"></i>@MenuResources.Traduccion(formulario.ResourceKey)</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <a href="@Url.Content(formulario.Direccion)"><i class="@formulario.Icono"></i>@MenuResources.Traduccion(formulario.ResourceKey)</a>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </li>
+            }
+            else
+            {
+                <li>
+                    <a href="javascript:void(0);"><i class="@modulo.Icono"></i>@MenuResources.Traduccion(modulo.ResourceKey)</a>
+                    <ul>
+                        @foreach (var formulario in formularios)
+                        {
+                            <li>
+                                <a href="@Url.Content(formulario.Direccion)"><i class="@formulario.Icono"></i>@MenuResources.Traduccion(formulario.ResourceKey)</a>
+                            </li>
+                        }
+                    </ul>
+                </li>
+            }
+        }
+    </ul>
+</nav>

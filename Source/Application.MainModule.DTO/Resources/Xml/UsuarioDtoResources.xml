@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <resource culture="es-PE" name="UsuarioDto_UserNameRequired" value="El usuario es requerido." />
+  <resource culture="es-PE" name="UsuarioDto_UserNameStringLength" value="El usuario debe tener entre 4 y 20 caracteres." />
+  <resource culture="es-PE" name="UsuarioDto_UserNameDisplay" value="Usuario" />
+  <resource culture="es-PE" name="UsuarioDto_EmailRequired" value="El email es requerido" />
+  <resource culture="es-PE" name="UsuarioDto_EmailStringLength" value="El email debe tener entre 4 y 100 caracteres." />
+  <resource culture="es-PE" name="UsuarioDto_EmailDisplay" value="Email" />
+  <resource culture="es-PE" name="UsuarioDto_OperadorTelefonicoDisplay" value="Operadora" />
+  <resource culture="es-PE" name="UsuarioDto_OperadorTelefonicoRequired" value="La operadora de telefonía es requerido" />
+  <resource culture="es-PE" name="UsuarioDto_TelefonoRequired" value="El teléfono es requerido" />
+  <resource culture="es-PE" name="UsuarioDto_TelefonoStringLength" value="El teléfono debe tener entre 4 y 16 caracteres." />
+  <resource culture="es-PE" name="UsuarioDto_TelefonoDisplay" value="Teléfono" />
+  <resource culture="es-PE" name="UsuarioDto_RolIdRange" value="Debe seleccionar un rol" />
+  <resource culture="es-PE" name="UsuarioDto_RolIdDisplay" value="Rol" />
+  <resource culture="es-PE" name="UsuarioDto_AgenciaIdRange" value="Debe seleccionar una agencia." />
+  <resource culture="es-PE" name="UsuarioDto_AgenciaIdDisplay" value="Agencia" />
+  <resource culture="es-PE" name="UsuarioDto_NombresRequired" value="El nombre es requerido" />
+  <resource culture="es-PE" name="UsuarioDto_NombresStringLength" value="El nombre debe tener entre 4 y 100 caracteres." />
+  <resource culture="es-PE" name="UsuarioDto_NombresDisplay" value="Nombres" />
+  <resource culture="es-PE" name="UsuarioDto_ApellidosRequired" value="El apellido es requerido." />
+  <resource culture="es-PE" name="UsuarioDto_ApellidosStringLength" value="El apellido debe tener entre 4 y 100 caracteres." />
+  <resource culture="es-PE" name="UsuarioDto_ApellidosDisplay" value="Apellidos" />
+  <resource culture="es-PE" name="UsuarioDto_TipoDocumentoRange" value="Debe seleccionar un tipo de documento." />
+  <resource culture="es-PE" name="UsuarioDto_TipoDocumentoDisplay" value="Tipo de Documento" />
+  <resource culture="es-PE" name="UsuarioDto_NumeroDocumentoRequired" value="El número de documento es requerido" />
+  <resource culture="es-PE" name="UsuarioDto_NumeroDocumentoStringLength" value="El número de documento debe tener entre 8 y 16 caracteres." />
+  <resource culture="es-PE" name="UsuarioDto_NumeroDocumentoDisplay" value="Número de Documento" />
+  <resource culture="es-PE" name="UsuarioDto_DireccionStringLength" value="La dirección debe tener menos de 200 caracteres." />
+  <resource culture="es-PE" name="UsuarioDto_DireccionDisplay" value="Dirección" />
+  <resource culture="es-PE" name="UsuarioDto_EstadoDisplay" value="Estado" />
+  <resource culture="es-PE" name="UsuarioDto_CredencialesIncorrectas" value ="Las credenciales especificadas son incorrectas"/>
+  <resource culture="es-PE" name="UsuarioDto_UsuarioInactivo" value ="Usuario inactivo"/>
+</resources>

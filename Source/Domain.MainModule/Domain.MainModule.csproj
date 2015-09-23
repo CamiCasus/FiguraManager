@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{687A567E-8B67-49C3-9245-5ACCD025DA60}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Domain.MainModule</RootNamespace>
+    <AssemblyName>Domain.MainModule</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\Figura.cs" />
+    <Compile Include="Entities\Formulario.cs" />
+    <Compile Include="Entities\ItemTabla.cs" />
+    <Compile Include="Entities\PermisoFormulario.cs" />
+    <Compile Include="Entities\PermisoFormularioRol.cs" />
+    <Compile Include="Entities\PermisoFormularioUsuario.cs" />
+    <Compile Include="Entities\Rol.cs" />
+    <Compile Include="Entities\RolUsuario.cs" />
+    <Compile Include="Entities\Tabla.cs" />
+    <Compile Include="Interfaces\RepositoryContracts\IFormularioRepository.cs" />
+    <Compile Include="Interfaces\RepositoryContracts\IItemTablaRepository.cs" />
+    <Compile Include="Interfaces\RepositoryContracts\IPermisoFormularioRepository.cs" />
+    <Compile Include="Interfaces\RepositoryContracts\IPermisoFormularioRolRepository.cs" />
+    <Compile Include="Interfaces\RepositoryContracts\ITablaRepository.cs" />
+    <Compile Include="Interfaces\Services\IFormularioService.cs" />
+    <Compile Include="Interfaces\Services\IItemTablaService.cs" />
+    <Compile Include="Interfaces\Services\IPermisoFormularioRolService.cs" />
+    <Compile Include="Interfaces\Services\IPermisoFormularioService.cs" />
+    <Compile Include="Interfaces\Services\IReporteService.cs" />
+    <Compile Include="Interfaces\Services\IRolService.cs" />
+    <Compile Include="Interfaces\Services\IUsuarioService.cs" />
+    <Compile Include="OrdersBy\UsuarioPaginationDtoOrderBy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Entities\Usuario.cs" />
+    <Compile Include="Interfaces\RepositoryContracts\IRolRepository.cs" />
+    <Compile Include="Interfaces\RepositoryContracts\IUsuarioRepository.cs" />
+    <Compile Include="Resources\UsuarioValidationResources.cs" />
+    <Compile Include="Services\ItemTablaService.cs" />
+    <Compile Include="Services\PermisoFormularioRolService.cs" />
+    <Compile Include="Services\PermisoFormularioService.cs" />
+    <Compile Include="Services\ReporteService.cs" />
+    <Compile Include="Services\RolService.cs" />
+    <Compile Include="Services\FormularioService.cs" />
+    <Compile Include="Services\UsuarioService.cs" />
+    <Compile Include="Specifications\UsuarioSpecs\EmailIsRequiredSpec.cs" />
+    <Compile Include="Specifications\UsuarioSpecs\EmailLengthMustBeLowerEqualThan100Spec.cs" />
+    <Compile Include="Specifications\UsuarioSpecs\EmailMustBeUniqueSpec.cs" />
+    <Compile Include="Specifications\UsuarioSpecs\PasswordIsRequiredSpec.cs" />
+    <Compile Include="Specifications\UsuarioSpecs\PasswordLenghtMustBeLowerEqualThan100Spec.cs" />
+    <Compile Include="Specifications\UsuarioSpecs\UserNameIsRequiredSpec.cs" />
+    <Compile Include="Specifications\UsuarioSpecs\UserNameLengthMustBeLowerEqualThan100Spec.cs" />
+    <Compile Include="Specifications\UsuarioSpecs\UserNameMustBeUniqueSpec.cs" />
+    <Compile Include="Validations\UsuarioIsValidValidation.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain.Core\Domain.Core.csproj">
+      <Project>{a3a4e2f2-5156-4a8b-aaa9-48c3c97f6396}</Project>
+      <Name>Domain.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure.CrossCutting.Resources\Infrastructure.CrossCutting.Resources.csproj">
+      <Project>{84e64773-3336-4bfc-bb90-fdd61258064d}</Project>
+      <Name>Infrastructure.CrossCutting.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure.CrossCutting\Infrastructure.CrossCutting.csproj">
+      <Project>{ca47a45c-a3a7-4df5-9985-adaeeb13450a}</Project>
+      <Name>Infrastructure.CrossCutting</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\Xml\ItemTablaValidation.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Xml\UsuarioValidation.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

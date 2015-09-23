@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <resource culture="es-PE" name="Presentation_DatosIncorrectos" value="Los datos ingresados son incorrectos." />
+  <resource culture="es-PE" name="Presentation_RegistroSatisfactorio" value="Se registró satisfactoriamente." />
+  <resource culture="es-PE" name="Presentation_CaracteresInvalidos" value="Se encontraron carácteres inválidos en el campo {0}." />
+  <resource culture="es-PE" name="Presentation_NoSePuedeProcesar" value="No se puede realizar esta acción debido sus relaciones con otras operaciones" />
+</resources>

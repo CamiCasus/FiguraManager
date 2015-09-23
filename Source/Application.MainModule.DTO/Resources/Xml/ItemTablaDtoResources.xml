@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <resource culture="es-PE" name="ItemTablaDto_TituloCrear" value="Crear Item Tabla" />
+  <resource culture="es-PE" name="ItemTablaDto_TituloEditar" value="Editar Item Tabla" />
+
+  <resource culture="es-PE" name="ItemTablaDto_ValorRequired" value="El Valor es requerido" />
+  <resource culture="es-PE" name="ItemTablaDto_ValorStringLength" value="El Valor debe tener entre 1 y 9 caracteres." />
+  <resource culture="es-PE" name="ItemTablaDto_ValorDisplay" value="Valor" />
+  <resource culture="es-PE" name="ItemTablaDto_ValorRegularExpression" value="Debe ingresar sólo dígitos" />  
+
+  <resource culture="es-PE" name="ItemTablaDto_NombreRequired" value="El Nombre es requerido" />
+  <resource culture="es-PE" name="ItemTablaDto_NombreStringLength" value="El Nombre debe tener entre 3 y 200 caracteres." />
+  <resource culture="es-PE" name="ItemTablaDto_NombreDisplay" value="Nombre" />
+
+  <resource culture="es-PE" name="ItemTablaDto_DescripcionStringLength" value="La Descripción debe tener máximo 500 caracteres." />
+  <resource culture="es-PE" name="ItemTablaDto_DescripcionDisplay" value="Descripción" />
+
+  <resource culture="es-PE" name="ItemTablaDto_EstadoDisplay" value="Estado" />
+
+  <resource culture="es-PE" name="ItemTablaDto_TablaIdRequired" value="La Tabla es requerido" />
+  <resource culture="es-PE" name="ItemTablaDto_TablaIdRange" value="El valor de Tabla debe ser mayor a 0" />
+  <resource culture="es-PE" name="ItemTablaDto_TablaIdDisplay" value="Tabla" />
+  
+</resources>

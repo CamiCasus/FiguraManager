@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <resource culture ="es-PE" name="Usuario_UserNameMustBeUnique" value="Ya existe un usuario con este nombre de usuario. Ingrese otro."/>
+  <resource culture ="es-PE" name="Usuario_EmailMustBeUniqueSpec" value="Ya existe un usuario registrado con este email. Ingrese otro."/>  
+</resources>

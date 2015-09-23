@@ -1,0 +1,17 @@
+﻿using System.Data.Entity.ModelConfiguration;
+using Domain.MainModule.Entities;
+
+namespace Infrastructure.Data.MainModule.Mapping
+{
+    public class FiguraMap : EntityTypeConfiguration<Figura>
+    {
+        public FiguraMap()
+        {
+            Property(p => p.Nombre).IsRequired().HasMaxLength(100);
+            Property(p => p.Tienda).IsRequired().HasMaxLength(50);
+            Property(p => p.Escultor).IsRequired().HasMaxLength(50);
+            Property(p => p.FechaPedido).IsRequired();
+            Property(p => p.Precio).IsRequired();
+        }
+    }
+}

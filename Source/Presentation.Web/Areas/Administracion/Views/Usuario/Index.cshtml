@@ -1,0 +1,58 @@
+﻿@using Presentation.Core.Syncfusion
+@section scripts
+{
+    <script src="@Url.Content(string.Format("~/Content/js/languages/grid/globalize.ej.grid.{0}.js", WebSession.Idioma.Codigo))"></script>
+    <script src="@Url.Script("~/Content/ViewsJs/UsuarioIndex.js")"></script>
+    <script type="text/javascript">
+        $(function () {
+            UsuarioIndex.init({
+                urlExportar: '@Url.Action("Exportar")',
+                mensajeSeleccionarRegistro: "@WebResources.SeleccioneUnRegistro",
+                gridName: "#gridUsuarios",
+                toolbarActions: {
+                    add: { name: "@WebResources.BtnNuevo", url: '@Url.Action("Crear", "Usuario", new { area = "Administracion"})' },
+                    edit: { name: "@WebResources.BtnEditar", url: '@Url.Action("Editar", "Usuario", new { area = "Administracion"})' },
+                    delete: { name: "@WebResources.BtnEliminar", url: '@Url.Action("Eliminar", "Usuario", new { area = "Administracion"})' }
+                }
+            });
+        });
+    </script>
+}
+<h3 class="page-header page-header-top">@UsuarioResources.TituloListar </h3>
+
+<div class="clearfix"></div>
+
+<div>
+    @(Html.EJ().Grid<UsuarioPaginationDto>("gridUsuarios")
+      .Datasource(ds => ds.URL(Url.Action("Pagination", "Usuario", new { area = "Administracion" })).Adaptor(AdaptorType.UrlAdaptor))
+      .AllowSorting()
+      .AllowPaging()
+      .AllowResizing()
+      .AllowFiltering()
+      .ToolbarSettings(toolbar =>
+      {
+          toolbar.ShowToolbar().ToolbarItems(SyncFusionToolbarItemsHelper.GetValidItems(1));
+      })
+      .Locale(WebSession.Idioma.Codigo)
+      .FilterSettings(filter =>
+      {
+          filter.FilterType(FilterType.FilterBar);
+          filter.FilterBarMode(FilterBarMode.Immediate);
+          filter.ShowFilterBarStatus(false);
+      })
+      .PageSettings(page => { page.PageSize(10); })
+      .ClientSideEvents(eve =>
+      {
+          eve.ToolbarClick("UsuarioIndex.toolbarClick");
+          eve.ActionBegin("UsuarioIndex.actionFilterbegin");
+          eve.ActionComplete("webApp.actionComplete");
+      })
+      .Columns(col =>
+      {
+          col.Field("Id").IsPrimaryKey(true).Visible(false).Add();
+          col.Field("UserName").HeaderText(UsuarioDtoResources.UserNameDisplay).Width(15).Add();
+          col.Field("Email").HeaderText(UsuarioDtoResources.EmailDisplay).Width(20).Add();
+          col.Field("RolNombre").HeaderText(UsuarioDtoResources.RolIdDisplay).Width(15).Add();
+      }))
+</div>
+
