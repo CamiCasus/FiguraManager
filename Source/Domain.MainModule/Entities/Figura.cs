@@ -9,6 +9,7 @@ namespace Domain.MainModule.Entities
         public string Tienda { get; set; }
         public string Escultor { get; set; }
         public DateTime FechaPedido { get; set; }
+        public DateTime FechaRelease { get; set; }
         public decimal Precio { get; set; }
     }
 }
