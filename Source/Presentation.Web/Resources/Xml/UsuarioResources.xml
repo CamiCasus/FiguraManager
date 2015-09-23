@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-
-<resources>
-  <resource culture="es-PE" name="Usuario_TituloListar" value="Listado de Usuarios" />
-  <resource culture="es-PE" name="Usuario_TituloCrear" value="Crear Usuario" />
-  <resource culture="es-PE" name="Usuario_TituloEditar" value="Modificar Usuario" />
-  <resource culture="es-PE" name="Usuario_NoSePuedeEliminar" value="No se puede eliminar al usuario, debido a que ya ha realizado operaciones" />
-  
-</resources>

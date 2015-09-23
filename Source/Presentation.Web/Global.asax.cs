@@ -1,74 +1,18 @@
-﻿using Application.MainModule.DTO.AutoMapper;
-using Infrastructure.CrossCutting.Common;
-using Infrastructure.CrossCutting.Logging;
-using Infrastructure.CrossCutting.Resources.Conventions;
-using Infrastructure.Data.Core;
-using Presentation.Core;
-using Presentation.Web.Resources;
-using System;
-using System.Globalization;
-using System.Threading;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web;
-using System.Web.Http;
 using System.Web.Mvc;
-using System.Web.Optimization;
 using System.Web.Routing;
 
 namespace Presentation.Web
 {
-    public class MvcApplication : HttpApplication
+    public class MvcApplication : System.Web.HttpApplication
     {
         protected void Application_Start()
         {
-            ViewEngines.Engines.Clear();
-            ViewEngines.Engines.Add(new RazorViewEngine());
-
             AreaRegistration.RegisterAllAreas();
-            GlobalConfiguration.Configure(WebApiConfig.Register);
-            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
-
-            PersistenceConfigurator.Configure("SIGCOMT");
-
-            Log4NetConfigurator.Configure();
-
-            AutoMapperConfiguration.Configure();
-
-            ModelMetadataProviders.Current = new ConventionalModelMetadataProvider(true, typeof(WebResources));
-
-            ModelBinders.Binders.DefaultBinder = new DefaultModelBinderWithHtmlValidation();
-        }
-
-        protected void Session_Start(object sender, EventArgs e)
-        {
-            Session.Timeout = ConfigurationAppSettings.TimeOutSession();
-        }
-
-        protected void Application_AcquireRequestState(object sender, EventArgs e)
-        {
-            HttpContext context = HttpContext.Current;
-
-            if (context != null && context.Session != null)
-            {
-                var codigoIdioma = ConfigurationAppSettings.CultureNameDefault();
-
-                if (WebSession.Idioma != null) codigoIdioma = WebSession.Idioma.Codigo;
-
-                Thread.CurrentThread.CurrentCulture = new CultureInfo(codigoIdioma);
-                Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
-            }
-        }
-
-        protected void Application_BeginRequest(Object sender, EventArgs e)
-        {
-            if (!WebUtils.IsDebug())
-            {
-                if (HttpContext.Current.Request.IsSecureConnection.Equals(false) && HttpContext.Current.Request.IsLocal.Equals(false))
-                {
-                    Response.Redirect("https://" + Request.ServerVariables["HTTP_HOST"] + HttpContext.Current.Request.RawUrl);
-                }
-            }
         }
     }
 }
