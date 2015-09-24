@@ -82,6 +82,7 @@
   <ItemGroup>
     <Content Include="Content\css\animate.css" />
     <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\custom.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\img\baner.jpg" />
     <Content Include="Content\img\contact-icons1.png" />
@@ -112,6 +113,7 @@
     <Content Include="Content\img\top-social-icons.png" />
     <Content Include="Content\js\easing.js" />
     <Content Include="Content\js\jquery.min.js" />
+    <Content Include="Content\js\moment.js" />
     <Content Include="Content\js\move-top.js" />
     <Content Include="Content\js\wow.min.js" />
     <Content Include="Global.asax" />

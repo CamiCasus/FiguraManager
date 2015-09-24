@@ -8,7 +8,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 <head>
     <title>dreams Website Template | Home :: w3layouts</title>
-    <link href="@Url.Content("~/Content/css/bootstrap.css")" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="@Url.Content("~/Content/js/jquery.min.js")"></script>
     <!-- Custom Theme files -->
@@ -18,6 +20,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <script>
         new WOW().init();
     </script>
+    
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
     <!---- animated-css ---->
     <!---- start-smoth-scrolling---->
     <script type="text/javascript" src="@Url.Content("~/Content/js/move-top.js")"></script>
@@ -42,23 +47,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!---//webfonts--->
     <!----start-top-nav-script---->
     <script>
-			$(function() {
-				var pull 		= $('#pull');
-					menu 		= $('nav ul');
-					menuHeight	= menu.height();
-				$(pull).on('click', function(e) {
-					e.preventDefault();
-					menu.slideToggle();
-				});
-				$(window).resize(function(){
-	        		var w = $(window).width();
-	        		if(w > 320 && menu.is(':hidden')) {
-	        			menu.removeAttr('style');
-	        		}
-	    		});
-			});
+        $(function() {
+            var pull 		= $('#pull');
+            menu 		= $('nav ul');
+            menuHeight	= menu.height();
+            $(pull).on('click', function(e) {
+                e.preventDefault();
+                menu.slideToggle();
+            });
+            $(window).resize(function(){
+                var w = $(window).width();
+                if(w > 320 && menu.is(':hidden')) {
+                    menu.removeAttr('style');
+                }
+            });
+        });
     </script>
     <!----//End-top-nav-script---->
+    
+    @RenderSection("ScriptContent", false)
 </head>
 <body>
     <div class="bg">
@@ -66,17 +73,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div id="home" class="header wow bounceInDown" data-wow-delay="0.4s">
             <div class="top-header">
                 <div class="container">
-                    <div class="logo">
-                        <a href="#"><img src="@Url.Content("~/Content/img/logo.png")" title="dreams" /></a>
-                    </div>
                     <!----start-top-nav---->
                     <nav class="top-nav">
                         <ul class="top-nav">
                             <li class="active"><a href="#home" class="scroll">Home</a></li>
-                            <li><a href="#services" class="scroll">Services</a></li>
-                            <li><a href="#port" class="scroll">Portfolio</a></li>
-                            <li><a href="#about" class="scroll">About us</a></li>
-                            <li><a href="#team" class="scroll">Team</a></li>
+                            <li><a href="#services" class="scroll">Registro Mes</a></li>
                         </ul>
                         <a href="#" id="pull"><img src="@Url.Content("~/Content/img/menu-icon.png")" title="menu" /></a>
                     </nav>
@@ -89,52 +90,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="banner wow fadeIn" data-wow-delay="0.5s">
             <div class="container">
                 <div class="banner-info text-center">
-                    <h1>Build the website of your dreams</h1><br />
+                    <h1>CamiCasus</h1><br />
                     <span> </span>
-                    <p>We are a digital agency that believes in building things that are  meaningful!</p>
+                    <p></p>
                 </div>
             </div>
         </div>
     </div>
     <!---- banner ---->
-    <!--- services --->
-    <div id="services" class="services">
-        <div class="container">
-            <div class="service-head text-center">
-                <h2>Core Services</h2>
-                <span> </span>
-            </div>
-            <!--- services-grids --->
-            <div class="services-grids text-center">
-                <div class="col-md-4">
-                    <div class="service-grid wow bounceIn" data-wow-delay="0.4s">
-                        <span class="service-icon1"> </span>
-                        <h3><a href="#">Beautiful Designs</a></h3>
-                        <p>Proin iaculis purus consequat sem digni ssim. Donec porttitora entum aenean rhoncus posuere odio in.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-grid wow bounceIn" data-wow-delay="0.4s">
-                        <span class="service-icon2"> </span>
-                        <h3><a href="#">web development</a></h3>
-                        <p>Proin iaculis purus consequat sem digni ssim. Donec porttitora entum aenean rhoncus posuere odio in.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-grid wow bounceIn" data-wow-delay="0.4s">
-                        <span class="service-icon3"> </span>
-                        <h3><a href="#">24/7 Support</a></h3>
-                        <p>Proin iaculis purus consequat sem digni ssim. Donec porttitora entum aenean rhoncus posuere odio in.</p>
-                    </div>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-            <!--- services-grids --->
-        </div>
-    </div>
-    <!--- services --->
-    <div class="clearfix"> </div>
-    <!--- Other Expertise ---->
+    
+    @RenderBody()
+
+
+    @*<!--- Other Expertise ---->
     <div id="port" class="expertise">
         <div class="expertice-grids">
             <div class="col-md-8 expertice-left-grid wow fadeInLeft" data-wow-delay="0.4s">
@@ -398,9 +366,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <p class="team-info">Proin iaculis purus consequat sem cure  digni ssim donec porttitora entum suscipit aenean rhoncus posuere odio in tincidunt proin iaculis.</p>
         </div>
     </div>
-    <!---- team --->
+    <!---- team --->*@
     
 
-    @RenderBody()
+    
 </body>
 </html>

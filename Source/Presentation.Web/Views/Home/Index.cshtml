@@ -1,6 +1,73 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
+@section ScriptContent
+{
+    <script type="text/javascript" src="@Url.Content("~/Content/js/moment.js")"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/fullcalendar.min.js"></script>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/fullcalendar.min.css" rel='stylesheet' type='text/css' />
+    <link href="@Url.Content("~/Content/css/custom.css")" rel='stylesheet' type='text/css' />
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#calendar').fullCalendar();
+
+            $("#btnAgregarFigura").bind("click", function (evt) {
+                evt.preventDefault();
+
+                $("#myModal").modal('show');
+            });
+        });
+    </script>
+}
+
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Agregar Pedido</h4>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm" method="post" class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Username</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="username" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Password</label>
+                        <div class="col-sm-5">
+                            <input type="password" class="form-control" name="password" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="services" class="services">
+    <div class="container">
+        <div class="service-head text-center">
+            <h2>Mes actual <a href="#" id="btnAgregarFigura">+</a></h2>
+            <span></span>
+        </div>
+
+        <!--- services-grids --->
+        <div class="services-grids text-center">
+            <div id='calendar' class="calendar"></div>
+            <div class="clearfix"> </div>
+        </div>
+        <!--- services-grids --->
+    </div>
+</div>
+<div class="clearfix"> </div>
