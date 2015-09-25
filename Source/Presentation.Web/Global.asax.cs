@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Application.MainModule.DTO.AutoMapper;
+using Application.MainModule.DTO.Resources;
 using Infrastructure.CrossCutting.Common;
 using Infrastructure.CrossCutting.Logging;
 using Infrastructure.CrossCutting.Resources.Conventions;
@@ -30,7 +31,7 @@ namespace Presentation.Web
 
             AutoMapperConfiguration.Configure();
 
-            //ModelMetadataProviders.Current = new ConventionalModelMetadataProvider(true, typeof(WebResources));
+            ModelMetadataProviders.Current = new ConventionalModelMetadataProvider(true, typeof(UsuarioDtoResources));
 
             ModelBinders.Binders.DefaultBinder = new DefaultModelBinderWithHtmlValidation();
         }

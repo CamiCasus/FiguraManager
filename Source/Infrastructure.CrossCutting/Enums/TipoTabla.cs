@@ -6,12 +6,7 @@
         TipoEstado = 2,
         TipoPermiso = 3,
         Moneda = 4,
-        Empresa = 5,
-        TipoDocumentoPersona = 6,
-        TipoDocumentoSerie = 7,
-        TipoRemesa = 8,
-        EntidadFinanciera = 9,
-        EstadoDocumento = 10,
-        OperadorTelefonico = 11
+        Tienda = 5,
+        Escultor = 6
     }
 }

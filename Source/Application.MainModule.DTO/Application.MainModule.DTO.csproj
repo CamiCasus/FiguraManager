@@ -91,12 +91,14 @@
     <Compile Include="AutoMapper\Resolvers\ItemTablaNombreByValorResolver.cs" />
     <Compile Include="ChangePasswordDto.cs" />
     <Compile Include="FiguraDto.cs" />
+    <Compile Include="FiguraIndexDto.cs" />
     <Compile Include="ForgotPasswordDto.cs" />
     <Compile Include="FormularioDto.cs" />
     <Compile Include="IdiomaDto.cs" />
     <Compile Include="PermisoDto.cs" />
     <Compile Include="PermisoFormularioDto.cs" />
     <Compile Include="PermisoRolDto.cs" />
+    <Compile Include="Resources\FiguraDtoResources.cs" />
     <Compile Include="Resources\UsuarioDtoResources.cs" />
     <Compile Include="LogInDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -156,6 +158,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Xml\TablaListadoDtoResources.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Xml\FiguraDtoResources.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Xml\UsuarioDtoResources.xml">

@@ -30,7 +30,8 @@ namespace Application.MainModule.DTO.AutoMapper
             Mapper.CreateMap<RolDto, Rol>();
             Mapper.CreateMap<FiguraDto, Figura>()
                 .ForMember(p => p.FechaPedido, x => x.MapFrom(p => DateTime.Parse(p.FechaPedido)))
-                .ForMember(p => p.FechaLlegada, x => x.MapFrom(p => DateTime.Parse(p.FechaLlegada)))
+                .ForMember(p => p.FechaLlegada,
+                    x => x.MapFrom(p => p.FechaLlegada != null ? DateTime.Parse(p.FechaLlegada) : default(DateTime?)))
                 .ForMember(p => p.FechaRelease, x => x.MapFrom(p => DateTime.Parse(p.FechaRelease)));
         }
     }

@@ -9,6 +9,7 @@ using Application.MainModule.DTO;
 using Application.MainModule.Interfaces;
 using Domain.MainModule.Entities;
 using Domain.MainModule.Interfaces.Services;
+using Infrastructure.CrossCutting.Enums;
 using Infrastructure.CrossCutting.Exceptions;
 using Infrastructure.Data.Core.UoW;
 
@@ -16,21 +17,14 @@ namespace Application.MainModule
 {
     public class FiguraAppService : AppService, IFiguraAppService
     {
+        private readonly IItemTablaService _itemTablaService;
         private readonly IFiguraService _figuraService;
 
-        public FiguraAppService(IFiguraService figuraService, IUnitOfWork unitOfWork) : base(unitOfWork)
+        public FiguraAppService(IFiguraService figuraService, IItemTablaService itemTablaService, IUnitOfWork unitOfWork)
+            : base(unitOfWork)
         {
             _figuraService = figuraService;
-        }
-
-        public FiguraDto GetFiguraDtoCrear()
-        {
-            throw new NotImplementedException();
-        }
-
-        public FiguraDto GetFiguraDtoEditar(int figuraId)
-        {
-            throw new NotImplementedException();
+            _itemTablaService = itemTablaService;
         }
 
         public FiguraDto Get(int id)
@@ -51,10 +45,24 @@ namespace Application.MainModule
             return entityDtoList;
         }
 
+        public IEnumerable<FiguraDto> GetPedidosRangoFechas(string fechaInicio, string fechaFin)
+        {
+            var fechaInicioDate = DateTime.Parse(fechaInicio);
+            var fechaFinDate = DateTime.Parse(fechaFin);
+
+            var entityList =
+                _figuraService.Find(p => p.FechaRelease >= fechaInicioDate && p.FechaRelease <= fechaFinDate).ToList();
+
+            var entityDtoList = MapperHelper.Map<IEnumerable<Figura>, IEnumerable<FiguraDto>>(entityList);
+
+            return entityDtoList;
+        }
+
         [CommitsOperationAspect]
         public ValidationResultDto Create(FiguraDto entityDto)
         {
             var entity = MapperHelper.Map<FiguraDto, Figura>(entityDto);
+            entity.Estado = (int) TipoEstado.Activo;
 
             var validateResult = _figuraService.Add(entity);
 
@@ -86,6 +94,27 @@ namespace Application.MainModule
                 throw new DefaultException(validateResult.ErrorMessage);
 
             return ValidationResultDto(validateResult);
+        }
+
+        public FiguraIndexDto GetFiguraIndexDto()
+        {
+            var listaEscultores =
+                _itemTablaService.Find(p => p.TablaId == (int) TipoTabla.Escultor && p.Estado == (int) TipoEstado.Activo);
+
+            var listaTiendas =
+                _itemTablaService.Find(p => p.TablaId == (int)TipoTabla.Tienda && p.Estado == (int)TipoEstado.Activo);
+
+            var figuraIndexDto = new FiguraIndexDto
+            {
+                Escultores =
+                    listaEscultores.AsEnumerable()
+                        .Select(p => new KeyValuePair<int, string>(int.Parse(p.Valor), p.Nombre)),
+                Tiendas =
+                    listaTiendas.AsEnumerable().Select(p => new KeyValuePair<int, string>(int.Parse(p.Valor), p.Nombre)),
+                Figura = new FiguraDto()
+            };
+
+            return figuraIndexDto;
         }
     }
 }

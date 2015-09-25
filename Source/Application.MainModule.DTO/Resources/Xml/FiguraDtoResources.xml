@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <resource culture="es-PE" name="FiguraDto_NombreRequired" value="El nombre es requerido." />
+  <resource culture="es-PE" name="FiguraDto_NombreDisplay" value="Nombre" />
+  <resource culture="es-PE" name="FiguraDto_TiendaIdRequired" value="La tienda es requerida." />
+  <resource culture="es-PE" name="FiguraDto_TiendaIdDisplay" value="Tienda" />
+  <resource culture="es-PE" name="FiguraDto_EscultorIdRequired" value="El escultor es requerido." />
+  <resource culture="es-PE" name="FiguraDto_EscultorIdDisplay" value="Escultor" />
+  <resource culture="es-PE" name="FiguraDto_FechaPedidoRequired" value="La fecha del pedido es requerida." />
+  <resource culture="es-PE" name="FiguraDto_FechaPedidoDisplay" value="Fecha del Pedido" />
+  <resource culture="es-PE" name="FiguraDto_FechaReleaseRequired" value="La fecha del release es requerida." />
+  <resource culture="es-PE" name="FiguraDto_FechaReleaseDisplay" value="Fecha del release" />
+  <resource culture="es-PE" name="FiguraDto_FechaLlegadaDisplay" value="Fecha de llegada" />
+  <resource culture="es-PE" name="FiguraDto_PrecioRequired" value="El precio es requerido." />
+  <resource culture="es-PE" name="FiguraDto_PrecioDisplay" value="Precio" />
+</resources>

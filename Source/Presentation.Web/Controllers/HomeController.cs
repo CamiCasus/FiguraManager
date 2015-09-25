@@ -18,18 +18,33 @@ namespace Presentation.Web.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            var figuraIndexDto = _figuraAppService.GetFiguraIndexDto();
+            return View(figuraIndexDto);
         }
 
         [ActionController(ActionType.Post)]
         [HttpPostAction(TipoPermiso.Ninguno)]
         public JsonResult Crear(FiguraDto figuraDto)
         {
-            var jsonResponse = new JsonResponse {Success = false};
+            var jsonResponse = new JsonResponse();
             var respuesta = _figuraAppService.Create(figuraDto);
 
             jsonResponse.Success = respuesta.IsValid;
             jsonResponse.Message = respuesta.ErrorMessage();
+
+            return Json(jsonResponse, JsonRequestBehavior.AllowGet);
+        }
+
+        [ActionController(ActionType.Post)]
+        [HttpPostAction(TipoPermiso.Ninguno)]
+        public JsonResult ObtenerPedidosMes(string fechaInicio, string fechaFin)
+        {
+            var jsonResponse = new JsonResponse { Success = true };
+
+            var coincidencias = _figuraAppService.GetPedidosRangoFechas(fechaInicio, fechaFin);
+
+            jsonResponse.Success = true;
+            jsonResponse.Data = coincidencias;
 
             return Json(jsonResponse, JsonRequestBehavior.AllowGet);
         }

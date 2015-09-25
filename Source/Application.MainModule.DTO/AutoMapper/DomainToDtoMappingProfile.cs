@@ -28,9 +28,12 @@ namespace Application.MainModule.DTO.AutoMapper
             Mapper.CreateMap<PermisoFormulario, PermisoFormularioDto>();
             Mapper.CreateMap<Rol, RolDto>();
             Mapper.CreateMap<Figura, FiguraDto>()
-                .ForMember(p => p.FechaPedido, x => x.MapFrom(p => p.FechaPedido.ToString("dd-MM-YYYY")))
-                .ForMember(p => p.FechaLlegada, x => x.MapFrom(p => p.FechaLlegada.ToString("dd-MM-YYYY")))
-                .ForMember(p => p.FechaRelease, x => x.MapFrom(p => p.FechaRelease.ToString("dd-MM-YYYY")));
+                .ForMember(p => p.FechaPedido, x => x.MapFrom(p => p.FechaPedido.ToString("yyyy-MM-dd")))
+                .ForMember(p => p.FechaLlegada,
+                    x =>
+                        x.MapFrom(
+                            p => p.FechaLlegada != null ? p.FechaLlegada.Value.ToString("yyyy-MM-dd") : string.Empty))
+                .ForMember(p => p.FechaRelease, x => x.MapFrom(p => p.FechaRelease.ToString("yyyy-MM-dd")));
         }
     }
 }

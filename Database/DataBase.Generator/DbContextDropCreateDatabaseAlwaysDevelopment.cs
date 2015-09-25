@@ -149,352 +149,68 @@ namespace DataBase.Generator
                     }
                 },
                 #endregion
-                #region TipoTabla.Empresa
+                #region TipoTabla.Tienda
                 new Tabla
                 {
-                    Id = (int)TipoTabla.Empresa,
-                    Nombre = "Empresa",
-                    Descripcion = string.Empty,
-                    Estado = inactivo,
-                    ItemTabla = new List<ItemTabla>
-                    {
-                        new ItemTabla
-                        {
-                            Nombre = "1",
-                            Descripcion = "S/.",
-                            Estado = activo,
-                            Valor = ((int)AtributoEmpresa.MonedaId).ToString()
-                        },
-                        new ItemTabla
-                        {
-                            Nombre = "7700",
-                            Descripcion = string.Empty,
-                            Estado = activo,
-                            Valor = ((int)AtributoEmpresa.UITMax).ToString()
-                        },
-                        new ItemTabla
-                        {
-                            Nombre = "0.01",
-                            Descripcion = string.Empty,
-                            Estado = activo,
-                            Valor = ((int)AtributoEmpresa.ITF).ToString()
-                        }
-                    }
-                },
-                #endregion
-                #region TipoTabla.TipoDocumentoPersona
-                new Tabla
-                {
-                    Id = (int)TipoTabla.TipoDocumentoPersona,
-                    Nombre = "Tipo de Documento",
+                    Id = (int)TipoTabla.Tienda,
+                    Nombre = "Tienda",
                     Descripcion = string.Empty,
                     Estado = activo,
                     ItemTabla = new List<ItemTabla>
                     {
                         new ItemTabla
                         {
-                            Nombre = "DNI",
-                            Descripcion = string.Empty,
+                            Nombre = "AMIAMI",
+                            Descripcion = "",
                             Estado = activo,
                             Valor = "1"
                         },
                         new ItemTabla
                         {
-                            Nombre = "RUC",
-                            Descripcion = string.Empty,
-                            Estado = activo,
-                            Valor = "2"
-                        },
-                    }
-                },
-                #endregion
-                #region TipoTabla.TipoDocumentoSerie
-                new Tabla
-                {
-                    Id = (int)TipoTabla.TipoDocumentoSerie,
-                    Nombre = "Tipo Documento de Serie",
-                    Descripcion = string.Empty,
-                    Estado = activo,
-                    ItemTabla = new List<ItemTabla>
-                    {
-                        new ItemTabla
-                        {
-                            Nombre = "FACTURA",
-                            Descripcion = "FAC",
-                            Estado = activo,
-                            Valor = ((int)TipoDocumentoSerie.Factura).ToString()
-                        },
-                        new ItemTabla
-                        {
-                            Nombre = "BOLETA",
-                            Descripcion = "BOL",
-                            Estado = activo,
-                            Valor = ((int)TipoDocumentoSerie.Boleta).ToString()
-                        },
-                        new ItemTabla
-                        {
-                            Nombre = "PAGO REMESA",
-                            Descripcion = "PAG",
-                            Estado = activo,
-                            Valor = ((int)TipoDocumentoSerie.PagoRemesa).ToString()
-                        },
-                        new ItemTabla
-                        {
-                            Nombre = "INGRESO",
-                            Descripcion = "ING",
-                            Estado = activo,
-                            Valor = ((int)TipoDocumentoSerie.Ingreso).ToString()
-                        },
-                        new ItemTabla
-                        {
-                            Nombre = "EGRESO",
-                            Descripcion = "SAL",
-                            Estado = activo,
-                            Valor = ((int)TipoDocumentoSerie.Egreso).ToString()
-                        },
-                        new ItemTabla
-                        {
-                            Nombre = "DEVOLUCIÓN",
-                            Descripcion = "DEV",
-                            Estado = activo,
-                            Valor = ((int)TipoDocumentoSerie.DevolucionRemesa).ToString()
-                        }
-                    }
-                },
-                #endregion
-                #region TipoTabla.TipoRemesa
-                new Tabla
-                {
-                    Id = (int)TipoTabla.TipoRemesa,
-                    Nombre = "Tipo de Remesa",
-                    Descripcion = string.Empty,
-                    Estado = inactivo,
-                    ItemTabla = new List<ItemTabla>
-                    {
-                        new ItemTabla
-                        {
-                            Nombre = "GIRO",
-                            Descripcion = string.Empty,
-                            Estado = activo,
-                            Valor = "1"
-                        },
-                        new ItemTabla
-                        {
-                            Nombre = "TRANSFERENCIA",
-                            Descripcion = string.Empty,
-                            Estado = activo,
-                            Valor = "2"
-                        }
-                    }
-                },
-                #endregion
-                #region TipoTabla.EntidadFinanciera
-                new Tabla
-                {
-                    Id = (int)TipoTabla.EntidadFinanciera,
-                    Nombre = "Entidad Financiera",
-                    Descripcion = string.Empty,
-                    Estado = activo,
-                    ItemTabla = new List<ItemTabla>
-                    {
-                        new ItemTabla
-                        {
-                            Nombre = "BANCO AZTECA",
-                            Descripcion = string.Empty,
-                            Estado = activo,
-                            Valor = "01"
-                        },
-                        new ItemTabla
-                        {
-                            Nombre = "BANCO CITIBANK DEL PERU",
-                            Descripcion = string.Empty,
-                            Estado = activo,
-                            Valor = "02"
-                        },
-                        new ItemTabla
-                        {
-                            Nombre = "BANCO CONTINENTAL",
-                            Descripcion = string.Empty,
-                            Estado = activo,
-                            Valor = "03"
-                        },
-                        new ItemTabla
-                        {
-                            Nombre = "BANCO DE CREDITO DEL PERU",
-                            Descripcion = string.Empty,
-                            Estado = activo,
-                            Valor = "04"
-                        },
-                        new ItemTabla
-                        {
-                            Nombre = "BANCO DE LA NACION",
-                            Descripcion = string.Empty,
-                            Estado = activo,
-                            Valor = "05"
-                        },
-                        new ItemTabla
-                        {
-                            Nombre = "BANCO DEL TRABAJO",
-                            Descripcion = string.Empty,
-                            Estado = activo,
-                            Valor = "06"
-                        },
-                        new ItemTabla
-                        {
-                            Nombre = "BANCO FALABELLA SA",
-                            Descripcion = string.Empty,
-                            Estado = activo,
-                            Valor = "07"
-                        },
-                        new ItemTabla
-                        {
-                            Nombre = "BANCO FINANCIERO DEL PERU",
-                            Descripcion = string.Empty,
-                            Estado = activo,
-                            Valor = "08"
-                        },
-                        new ItemTabla
-                        {
-                            Nombre = "BANCO INTERBANK",
-                            Descripcion = "(BANCO INTERNACIONAL DEL PERU)",
-                            Estado = activo,
-                            Valor = "09"
-                        },
-                        new ItemTabla
-                        {
-                            Nombre = "BANCO RIPLEY",
-                            Descripcion = string.Empty,
-                            Estado = activo,
-                            Valor = "10"
-                        },
-                        new ItemTabla
-                        {
-                            Nombre = "BANCO SCOTIABANK PERU SA",
-                            Descripcion = string.Empty,
-                            Estado = activo,
-                            Valor = "11"
-                        },
-                        new ItemTabla
-                        {
-                            Nombre = "MI BANCO",
-                            Descripcion = string.Empty,
-                            Estado = activo,
-                            Valor = "12"
-                        },
-                        new ItemTabla
-                        {
-                            Nombre = "FINANCIERA CREDISCOTIA",
-                            Descripcion = string.Empty,
-                            Estado = activo,
-                            Valor = "13"
-                        },
-                        new ItemTabla
-                        {
-                            Nombre = "CAJA TRUJILLO",
-                            Descripcion = string.Empty,
-                            Estado = activo,
-                            Valor = "14"
-                        },
-                        new ItemTabla
-                        {
-                            Nombre = "CAJA NUESTRA GENTE",
-                            Descripcion = string.Empty,
-                            Estado = activo,
-                            Valor = "15"
-                        },
-                        new ItemTabla
-                        {
-                            Nombre = "CAJA SULLANA",
-                            Descripcion = string.Empty,
-                            Estado = activo,
-                            Valor = "16"
-                        },
-                        new ItemTabla
-                        {
-                            Nombre = "COOP LEON XIII",
-                            Descripcion = string.Empty,
-                            Estado = activo,
-                            Valor = "17"
-                        },
-                        new ItemTabla
-                        {
-                            Nombre = "COOP NUESTRA SEÑORA DEL ROSARIO",
-                            Descripcion = string.Empty,
-                            Estado = activo,
-                            Valor = "18"
-                        },
-                    }
-                },
-                #endregion
-                #region TipoTabla.EstadoDocumento
-                new Tabla
-                {
-                    Id = (int)TipoTabla.EstadoDocumento,
-                    Nombre = "Estado de Documento",
-                    Descripcion = string.Empty,
-                    Estado = activo,
-                    ItemTabla = new List<ItemTabla>
-                    {
-                        new ItemTabla
-                        {
-                            Nombre = "EMITIDO",
-                            Descripcion = string.Empty,
-                            Estado = activo,
-                            Valor = "1"
-                        },
-                        new ItemTabla
-                        {
-                            Nombre = "PAGADO",
-                            Descripcion = string.Empty,
+                            Nombre = "SOLARIS JAPAN",
+                            Descripcion = "",
                             Estado = activo,
                             Valor = "2"
                         },
                         new ItemTabla
                         {
-                            Nombre = "DEVUELTO",
-                            Descripcion = string.Empty,
+                            Nombre = "MANDARAKE",
+                            Descripcion = "",
                             Estado = activo,
                             Valor = "3"
                         },
                         new ItemTabla
                         {
-                            Nombre = "ANULADO",
-                            Descripcion = string.Empty,
+                            Nombre = "NIPON YASSAN",
+                            Descripcion = "",
                             Estado = activo,
                             Valor = "4"
                         }
                     }
                 },
                 #endregion
-                #region TipoTabla.OperadorTelefonico
+                #region TipoTabla.Escultor
                 new Tabla
                 {
-                    Id = (int)TipoTabla.OperadorTelefonico,
-                    Nombre = "Operador Telefónico",
+                    Id = (int)TipoTabla.Escultor,
+                    Nombre = "Escultor",
                     Descripcion = string.Empty,
                     Estado = activo,
                     ItemTabla = new List<ItemTabla>
                     {
                         new ItemTabla
                         {
-                            Nombre = "MOVISTAR",
-                            Descripcion = "‎",
+                            Nombre = "Good Smile",
+                            Descripcion = "",
                             Estado = activo,
                             Valor = "1"
                         },
                         new ItemTabla
                         {
-                            Nombre = "CLARO",
-                            Descripcion = "‎",
+                            Nombre = "Alter",
+                            Descripcion = "",
                             Estado = activo,
                             Valor = "2"
-                        },
-                        new ItemTabla
-                        {
-                            Nombre = "ENTEL",
-                            Descripcion = "‎",
-                            Estado = activo,
-                            Valor = "3"
                         }
                     }
                 },

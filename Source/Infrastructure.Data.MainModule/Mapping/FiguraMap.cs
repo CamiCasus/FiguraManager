@@ -8,8 +8,8 @@ namespace Infrastructure.Data.MainModule.Mapping
         public FiguraMap()
         {
             Property(p => p.Nombre).IsRequired().HasMaxLength(100);
-            Property(p => p.Tienda).IsRequired().HasMaxLength(50);
-            Property(p => p.Escultor).IsRequired().HasMaxLength(50);
+            Property(p => p.TiendaId).IsRequired();
+            Property(p => p.EscultorId).IsRequired();
             Property(p => p.FechaPedido).IsRequired();
             Property(p => p.FechaRelease).IsRequired();
             Property(p => p.Precio).IsRequired().HasPrecision(8, 2);
