@@ -2,9 +2,7 @@
 using System.Globalization;
 using System.Threading;
 using System.Web;
-//using System.Web.Http;
 using System.Web.Mvc;
-//using System.Web.Optimization;
 using System.Web.Routing;
 using Application.MainModule.DTO.AutoMapper;
 using Infrastructure.CrossCutting.Common;
@@ -15,7 +13,7 @@ using Presentation.Core;
 
 namespace Presentation.Web
 {
-    public class MvcApplication : System.Web.HttpApplication
+    public class MvcApplication : HttpApplication
     {
         protected void Application_Start()
         {
@@ -23,7 +21,7 @@ namespace Presentation.Web
             ViewEngines.Engines.Add(new RazorViewEngine());
 
             AreaRegistration.RegisterAllAreas();
-            //FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
             PersistenceConfigurator.Configure("SIGCOMT");
@@ -39,22 +37,22 @@ namespace Presentation.Web
 
         protected void Session_Start(object sender, EventArgs e)
         {
-            Session.Timeout = ConfigurationAppSettings.TimeOutSession();
+            //Session.Timeout = ConfigurationAppSettings.TimeOutSession();
         }
 
         protected void Application_AcquireRequestState(object sender, EventArgs e)
         {
-            HttpContext context = HttpContext.Current;
+            //HttpContext context = HttpContext.Current;
 
-            if (context != null && context.Session != null)
-            {
-                var codigoIdioma = ConfigurationAppSettings.CultureNameDefault();
+            //if (context != null && context.Session != null)
+            //{
+            //    var codigoIdioma = ConfigurationAppSettings.CultureNameDefault();
 
-                if (WebSession.Idioma != null) codigoIdioma = WebSession.Idioma.Codigo;
+            //    if (WebSession.Idioma != null) codigoIdioma = WebSession.Idioma.Codigo;
 
-                Thread.CurrentThread.CurrentCulture = new CultureInfo(codigoIdioma);
-                Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
-            }
+            //    Thread.CurrentThread.CurrentCulture = new CultureInfo(codigoIdioma);
+            //    Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
+            //}
         }
     }
 }

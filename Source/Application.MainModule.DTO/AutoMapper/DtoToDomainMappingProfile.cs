@@ -28,6 +28,10 @@ namespace Application.MainModule.DTO.AutoMapper
                 .ForMember(p => p.UsuarioId, x => x.MapFrom(p => p.Id));
 
             Mapper.CreateMap<RolDto, Rol>();
+            Mapper.CreateMap<FiguraDto, Figura>()
+                .ForMember(p => p.FechaPedido, x => x.MapFrom(p => DateTime.Parse(p.FechaPedido)))
+                .ForMember(p => p.FechaLlegada, x => x.MapFrom(p => DateTime.Parse(p.FechaLlegada)))
+                .ForMember(p => p.FechaRelease, x => x.MapFrom(p => DateTime.Parse(p.FechaRelease)));
         }
     }
 }

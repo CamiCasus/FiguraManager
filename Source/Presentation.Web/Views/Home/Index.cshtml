@@ -16,7 +16,6 @@
 
             $("#btnAgregarFigura").bind("click", function (evt) {
                 evt.preventDefault();
-
                 $("#divAgregarPedido").modal('show');
             });
 
@@ -32,13 +31,27 @@
 
                 $.ajax({
                     method: "POST",
+                    dataType: 'json',
+                    contentType: 'application/json; charset=utf-8',
                     url: "@Url.Action("Crear", "Home")",
                     data: JSON.stringify(figuraDto)
                 }).done(function(response) {
-                    alert("Data Saved: ");
+                    if (response.Success) {
+                        LimpiarFormulario();
+                        $("#divAgregarPedido").modal('close');
+                    }
                 });
             });
         });
+
+        function LimpiarFormulario() {
+            $("#txtNombre").val("");
+            $("#txtTienda").val("");
+            $("#txtEscultor").val("");
+            $("#txtFechaPedido").val("");
+            $("#txtFechaRelease").val("");
+            $("#txtPrecio").val("");
+        }
     </script>
 }
 
