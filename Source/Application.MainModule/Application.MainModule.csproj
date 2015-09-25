@@ -47,9 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FiguraAppService.cs" />
     <Compile Include="FormularioAppService.cs" />
     <Compile Include="Interfaces\IFormularioAppService.cs" />
     <Compile Include="Interfaces\IRolAppService.cs" />
+    <Compile Include="Interfaces\IFiguraAppService.cs" />
     <Compile Include="Interfaces\IUsuarioAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RolAppService.cs" />

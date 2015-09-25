@@ -49,6 +49,7 @@
     <Compile Include="Entities\Rol.cs" />
     <Compile Include="Entities\RolUsuario.cs" />
     <Compile Include="Entities\Tabla.cs" />
+    <Compile Include="Interfaces\RepositoryContracts\IFiguraRepository.cs" />
     <Compile Include="Interfaces\RepositoryContracts\IFormularioRepository.cs" />
     <Compile Include="Interfaces\RepositoryContracts\IItemTablaRepository.cs" />
     <Compile Include="Interfaces\RepositoryContracts\IPermisoFormularioRepository.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="Interfaces\Services\IPermisoFormularioService.cs" />
     <Compile Include="Interfaces\Services\IReporteService.cs" />
     <Compile Include="Interfaces\Services\IRolService.cs" />
+    <Compile Include="Interfaces\Services\IFiguraService.cs" />
     <Compile Include="Interfaces\Services\IUsuarioService.cs" />
     <Compile Include="OrdersBy\UsuarioPaginationDtoOrderBy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,6 +75,7 @@
     <Compile Include="Services\ReporteService.cs" />
     <Compile Include="Services\RolService.cs" />
     <Compile Include="Services\FormularioService.cs" />
+    <Compile Include="Services\FiguraService.cs" />
     <Compile Include="Services\UsuarioService.cs" />
     <Compile Include="Specifications\UsuarioSpecs\EmailIsRequiredSpec.cs" />
     <Compile Include="Specifications\UsuarioSpecs\EmailLengthMustBeLowerEqualThan100Spec.cs" />

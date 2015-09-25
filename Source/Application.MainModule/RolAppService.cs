@@ -3,7 +3,6 @@ using Application.MainModule.DTO;
 using Application.MainModule.Interfaces;
 using Domain.MainModule.Entities;
 using Domain.MainModule.Interfaces.Services;
-using Infrastructure.CrossCutting.Enums;
 using Infrastructure.Data.Core.UoW;
 using System.Collections.Generic;
 

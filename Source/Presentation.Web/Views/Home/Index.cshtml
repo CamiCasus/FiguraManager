@@ -17,13 +17,32 @@
             $("#btnAgregarFigura").bind("click", function (evt) {
                 evt.preventDefault();
 
-                $("#myModal").modal('show');
+                $("#divAgregarPedido").modal('show');
+            });
+
+            $("#btnGrabar").bind("click", function(evt) {
+                var figuraDto = {
+                    Nombre: $("#txtNombre").val(),
+                    Tienda: $("#txtTienda").val(),
+                    Escultor: $("#txtEscultor").val(),
+                    FechaPedido: $("#txtFechaPedido").val(),
+                    FechaRelease: $("#txtFechaRelease").val(),
+                    Precio: $("#txtPrecio").val()
+                };
+
+                $.ajax({
+                    method: "POST",
+                    url: "@Url.Action("Crear", "Home")",
+                    data: JSON.stringify(figuraDto)
+                }).done(function(response) {
+                    alert("Data Saved: ");
+                });
             });
         });
     </script>
 }
 
-<div id="myModal" class="modal fade">
+<div id="divAgregarPedido" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -33,23 +52,46 @@
             <div class="modal-body">
                 <form id="loginForm" method="post" class="form-horizontal">
                     <div class="form-group">
-                        <label class="col-sm-3 control-label">Username</label>
-                        <div class="col-sm-5">
-                            <input type="text" class="form-control" name="username" />
+                        <label class="col-sm-4 control-label">Nombre</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="txtNombre" name="nombre" />
                         </div>
                     </div>
-
                     <div class="form-group">
-                        <label class="col-sm-3 control-label">Password</label>
-                        <div class="col-sm-5">
-                            <input type="password" class="form-control" name="password" />
+                        <label class="col-sm-4 control-label">Tienda</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="tienda" id="txtTienda" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Escultor</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="escultor" id="txtEscultor" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Fecha del Pedido</label>
+                        <div class="col-sm-6">
+                            <input type="date" class="form-control" name="fechaPedido" id="txtFechaPedido" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Fecha de Release</label>
+                        <div class="col-sm-6">
+                            <input type="date" class="form-control" name="fechaRelease" id="txtFechaRelease" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Precio</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="precio" id="txtPrecio" />
                         </div>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="btnGrabar">Grabar</button>
             </div>
         </div>
     </div>

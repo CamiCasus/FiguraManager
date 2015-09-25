@@ -5,9 +5,9 @@ using Infrastructure.Data.Core.Repository.EntityFramework;
 
 namespace Infrastructure.Data.MainModule
 {
-    public class FormularioRepository : Repository<Formulario, int>, IFormularioRepository
+    public class FiguraRepository : Repository<Figura, int>, IFiguraRepository
     {
-        public FormularioRepository(IDbContext dbContext)
+        public FiguraRepository(IDbContext dbContext)
             : base(dbContext)
         {
         }

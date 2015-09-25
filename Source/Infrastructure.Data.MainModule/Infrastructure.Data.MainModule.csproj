@@ -76,6 +76,7 @@
     <Compile Include="MainModuleContext.cs" />
     <Compile Include="RolRepository.cs" />
     <Compile Include="TablaRepository.cs" />
+    <Compile Include="FiguraRepository.cs" />
     <Compile Include="UsuarioRepository.cs" />
   </ItemGroup>
   <ItemGroup>

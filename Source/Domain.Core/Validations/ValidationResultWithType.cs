@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace Domain.Core.Validations
+﻿namespace Domain.Core.Validations
 {
     public class ValidationResultWithType<TEntity> : ValidationResult
     {
