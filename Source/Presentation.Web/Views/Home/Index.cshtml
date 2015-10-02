@@ -10,14 +10,14 @@
 {
     <script type="text/javascript" src="@Url.Content("~/Content/js/moment.js")"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/fullcalendar.min.js"></script>
-    <link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/fullcalendar.min.css" rel='stylesheet' type='text/css' />
-    <link href="@Url.Content("~/Content/css/custom.css")" rel='stylesheet' type='text/css' />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/fullcalendar.min.css" rel='stylesheet' type='text/css'/>
+    <link href="@Url.Content("~/Content/css/custom.css")" rel='stylesheet' type='text/css'/>
 
     <script type="text/javascript">
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('#calendar').fullCalendar({
                 editable: true,
-                events: function (start, end, timezone, callback) {
+                events: function(start, end, timezone, callback) {
                     var parametros = {
                         fechaInicio: start.format("DD/MM/YYYY"),
                         fechaFin: end.format("DD/MM/YYYY")
@@ -29,18 +29,20 @@
                         dataType: 'json',
                         contentType: 'application/json; charset=utf-8',
                         data: JSON.stringify(parametros),
-                        success: function (response) {
+                        success: function(response) {
                             var events = [];
-                            $.each(response.Data, function (index, pedido) {
+                            $.each(response.Data, function(index, pedido) {
                                 var evento = {
                                     title: pedido.Nombre,
                                     start: moment(pedido.FechaPedido, "YYYY-MM-DD"),
-                                    end: moment(pedido.FechaPedido, "YYYY-MM-DD")
+                                    end: moment(pedido.FechaPedido, "YYYY-MM-DD"),
+                                    data: pedido
                                 };
 
-                                if (pedido.EstadoPedidoId == '@((int)TipoPedido.PreOrden)') {
+                                if (pedido.EstadoPedidoId == '@((int) TipoPedido.PreOrden)') {
                                     evento.start = moment(pedido.FechaRelease, "YYYY-MM-DD");
                                     evento.end = moment(pedido.FechaRelease, "YYYY-MM-DD");
+                                    evento.color = "#FF9933";
                                 }
 
                                 events.push(evento);
@@ -50,11 +52,25 @@
                     });
                 },
                 eventClick: function (calEvent, jsEvent, view) {
-                    alert('Event: ' + calEvent.title);
+                    var pedido = calEvent.data;
+
+                    $("#txtId").val(pedido.Id);
+                    $("#txtNombre").val(pedido.Nombre);
+                    $("#ddlTienda").val(pedido.TiendaId);
+                    $("#ddlEscultor").val(pedido.EscultorId);
+                    $("#ddlEstadoFigura").val(pedido.EstadoFiguraId);
+                    $("#ddlEstadoPedido").val(pedido.EstadoPedidoId);
+                    $("#txtFechaPedido").val(pedido.FechaPedido);
+                    $("#txtFechaRelease").val(pedido.FechaRelease);
+                    $("#txtFechaLlegada").val(pedido.FechaLlegada);
+                    $("#txtPrecio").val(pedido.Precio);
+                    $("#txtShipping").val(pedido.Shipping);
+
+                    $("#divAgregarPedido").modal('show');
                 }
             });
 
-            $("#btnAgregarFigura").bind("click", function (evt) {
+            $("#btnAgregarFigura").bind("click", function(evt) {
                 evt.preventDefault();
                 LimpiarFormulario();
 
@@ -63,6 +79,7 @@
 
             $("#btnGrabar").bind("click", function(evt) {
                 var figuraDto = {
+                    Id: $("#txtId").val(),
                     Nombre: $("#txtNombre").val(),
                     TiendaId: $("#ddlTienda").val(),
                     EscultorId: $("#ddlEscultor").val(),
@@ -79,12 +96,12 @@
                     method: "POST",
                     dataType: 'json',
                     contentType: 'application/json; charset=utf-8',
-                    url: "@Url.Action("Crear", "Home")",
+                    url: "@Url.Action("Registrar", "Home")",
                     data: JSON.stringify(figuraDto)
                 }).done(function(response) {
                     if (response.Success) {
                         LimpiarFormulario();
-                        
+
                         $('#calendar').fullCalendar('refetchEvents');
                         $("#divAgregarPedido").modal('hide');
                     }
@@ -103,6 +120,7 @@
             $("#txtFechaLlegada").val("");
             $("#txtPrecio").val("");
             $("#txtShipping").val("");
+            $("#txtId").val("");
         }
     </script>
 }
@@ -116,10 +134,11 @@
             </div>
             <div class="modal-body">
                 <form id="loginForm" method="post" class="form-horizontal">
+                    @Html.HiddenFor(p => p.Figura.Id, new { @class = "form-control", @id = "txtId" })
                     <div class="form-group">
-                        @Html.LabelFor(p => p.Figura.Nombre, new { @class = "col-sm-4 control-label" })
+                        @Html.LabelFor(p => p.Figura.Nombre, new {@class = "col-sm-4 control-label"})
                         <div class="col-sm-6">
-                            @Html.TextBoxFor(p => p.Figura.Nombre, new { @class = "form-control", @id = "txtNombre" })
+                            @Html.TextBoxFor(p => p.Figura.Nombre, new {@class = "form-control", @id = "txtNombre"})
                             @Html.ValidationMessageFor(p => p.Figura.Nombre)
                         </div>
                     </div>
@@ -145,9 +164,9 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        @Html.LabelFor(p => p.Figura.EstadoPedidoId, new { @class = "col-sm-4 control-label" })
+                        @Html.LabelFor(p => p.Figura.EstadoPedidoId, new {@class = "col-sm-4 control-label"})
                         <div class="col-sm-6">
-                            @Html.DropDownListFor(p => p.Figura.EstadoPedidoId, new SelectList(Model.EstadosPedido, "Key", "Value"), new { @class = "form-control input-sm select-select2", @id = "ddlEstadoPedido" })
+                            @Html.DropDownListFor(p => p.Figura.EstadoPedidoId, new SelectList(Model.EstadosPedido, "Key", "Value"), new {@class = "form-control input-sm select-select2", @id = "ddlEstadoPedido"})
                             @Html.ValidationMessageFor(p => p.Figura.EstadoPedidoId)
                         </div>
                     </div>
@@ -161,14 +180,14 @@
                     <div class="form-group">
                         @Html.LabelFor(p => p.Figura.FechaRelease, new {@class = "col-sm-4 control-label"})
                         <div class="col-sm-6">
-                            @Html.TextBoxFor(p => p.Figura.FechaRelease, new { @class = "form-control", @id = "txtFechaRelease", @type = "date" })
+                            @Html.TextBoxFor(p => p.Figura.FechaRelease, new {@class = "form-control", @id = "txtFechaRelease", @type = "date"})
                             @Html.ValidationMessageFor(p => p.Figura.FechaRelease)
                         </div>
                     </div>
                     <div class="form-group">
-                        @Html.LabelFor(p => p.Figura.FechaLlegada, new { @class = "col-sm-4 control-label" })
+                        @Html.LabelFor(p => p.Figura.FechaLlegada, new {@class = "col-sm-4 control-label"})
                         <div class="col-sm-6">
-                            @Html.TextBoxFor(p => p.Figura.FechaLlegada, new { @class = "form-control", @id = "txtFechaLlegada", @type = "date" })
+                            @Html.TextBoxFor(p => p.Figura.FechaLlegada, new {@class = "form-control", @id = "txtFechaLlegada", @type = "date"})
                             @Html.ValidationMessageFor(p => p.Figura.FechaLlegada)
                         </div>
                     </div>
@@ -179,9 +198,9 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        @Html.LabelFor(p => p.Figura.Shipping, new { @class = "col-sm-4 control-label" })
+                        @Html.LabelFor(p => p.Figura.Shipping, new {@class = "col-sm-4 control-label"})
                         <div class="col-sm-6">
-                            @Html.TextBoxFor(p => p.Figura.Shipping, new { @class = "form-control", @id = "txtShipping" })
+                            @Html.TextBoxFor(p => p.Figura.Shipping, new {@class = "form-control", @id = "txtShipping"})
                         </div>
                     </div>
                 </form>

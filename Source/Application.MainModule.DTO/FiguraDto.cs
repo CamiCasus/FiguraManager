@@ -9,6 +9,8 @@ namespace Application.MainModule.DTO
     [MetadataConventions(ResourceType = typeof(FiguraDtoResources))]
     public class FiguraDto
     {
+        public int? Id { get; set; }
+
         [Required]
         [Display]
         public string Nombre { get; set; }

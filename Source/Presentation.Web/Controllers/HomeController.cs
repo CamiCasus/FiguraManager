@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using Application.Core;
 using Application.MainModule.DTO;
 using Application.MainModule.Interfaces;
 using Infrastructure.CrossCutting.Enums;
@@ -24,10 +25,13 @@ namespace Presentation.Web.Controllers
 
         [ActionController(ActionType.Post)]
         [HttpPostAction(TipoPermiso.Ninguno)]
-        public JsonResult Crear(FiguraDto figuraDto)
+        public JsonResult Registrar(FiguraDto figuraDto)
         {
             var jsonResponse = new JsonResponse();
-            var respuesta = _figuraAppService.Create(figuraDto);
+
+            var respuesta = figuraDto.Id == null
+                ? _figuraAppService.Create(figuraDto)
+                : _figuraAppService.Update(figuraDto);
 
             jsonResponse.Success = respuesta.IsValid;
             jsonResponse.Message = respuesta.ErrorMessage();
