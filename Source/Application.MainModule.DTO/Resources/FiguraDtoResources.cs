@@ -116,5 +116,45 @@ namespace Application.MainModule.DTO.Resources
                 return ResourceProvider.GetResource(Prefix, "PrecioDisplay", CultureInfo.CurrentUICulture.Name);
             }
         }
+
+        public static string ShippingDisplay
+        {
+            get
+            {
+                return ResourceProvider.GetResource(Prefix, "ShippingDisplay", CultureInfo.CurrentUICulture.Name);
+            }
+        }
+
+        public static string EstadoFiguraIdDisplay
+        {
+            get
+            {
+                return ResourceProvider.GetResource(Prefix, "EstadoFiguraIdDisplay", CultureInfo.CurrentUICulture.Name);
+            }
+        }
+
+        public static string EstadoFiguraIdRequired
+        {
+            get
+            {
+                return ResourceProvider.GetResource(Prefix, "EstadoFiguraIdRequired", CultureInfo.CurrentUICulture.Name);
+            }
+        }
+
+        public static string EstadoPedidoIdDisplay
+        {
+            get
+            {
+                return ResourceProvider.GetResource(Prefix, "EstadoPedidoIdDisplay", CultureInfo.CurrentUICulture.Name);
+            }
+        }
+
+        public static string EstadoPedidoIdRequired
+        {
+            get
+            {
+                return ResourceProvider.GetResource(Prefix, "EstadoPedidoIdRequired", CultureInfo.CurrentUICulture.Name);
+            }
+        }
     }
 }

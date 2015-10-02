@@ -49,9 +49,13 @@ namespace Application.MainModule
         {
             var fechaInicioDate = DateTime.Parse(fechaInicio);
             var fechaFinDate = DateTime.Parse(fechaFin);
-
+            
             var entityList =
-                _figuraService.Find(p => p.FechaRelease >= fechaInicioDate && p.FechaRelease <= fechaFinDate).ToList();
+                _figuraService.Find(
+                    p =>
+                        p.EstadoPedidoId == (int) TipoPedido.InStock
+                            ? (p.FechaPedido >= fechaInicioDate && p.FechaPedido <= fechaFinDate)
+                            : (p.FechaRelease >= fechaInicioDate && p.FechaRelease <= fechaFinDate)).ToList();
 
             var entityDtoList = MapperHelper.Map<IEnumerable<Figura>, IEnumerable<FiguraDto>>(entityList);
 
@@ -104,8 +108,19 @@ namespace Application.MainModule
             var listaTiendas =
                 _itemTablaService.Find(p => p.TablaId == (int)TipoTabla.Tienda && p.Estado == (int)TipoEstado.Activo);
 
+            var listaEstadosFigura =
+                _itemTablaService.Find(p => p.TablaId == (int) TipoTabla.EstadoFigura && p.Estado == (int) TipoEstado.Activo);
+
+            var listaEstadosPedido =
+                _itemTablaService.Find(
+                    p => p.TablaId == (int) TipoTabla.EstadoPedido && p.Estado == (int) TipoEstado.Activo);
+
             var figuraIndexDto = new FiguraIndexDto
             {
+                EstadosPedido = listaEstadosPedido.AsEnumerable()
+                    .Select(p => new KeyValuePair<int, string>(int.Parse(p.Valor), p.Nombre)),
+                EstadosFigura = listaEstadosFigura.AsEnumerable()
+                    .Select(p => new KeyValuePair<int, string>(int.Parse(p.Valor), p.Nombre)),
                 Escultores =
                     listaEscultores.AsEnumerable()
                         .Select(p => new KeyValuePair<int, string>(int.Parse(p.Valor), p.Nombre)),

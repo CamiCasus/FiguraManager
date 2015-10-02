@@ -23,6 +23,14 @@ namespace Application.MainModule.DTO
 
         [Required]
         [Display]
+        public int EstadoFiguraId { get; set; }
+
+        [Required]
+        [Display]
+        public int EstadoPedidoId { get; set; }
+
+        [Required]
+        [Display]
         public string FechaPedido { get; set; }
 
         [Required]
@@ -34,6 +42,9 @@ namespace Application.MainModule.DTO
 
         [Required]
         [Display]
-        public decimal Precio { get; set; } 
+        public decimal Precio { get; set; }
+
+        [Display]
+        public decimal? Shipping { get; set; }
     }
 }

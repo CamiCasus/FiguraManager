@@ -215,6 +215,58 @@ namespace DataBase.Generator
                     }
                 },
                 #endregion
+                #region TipoTabla.EstadoFigura
+                new Tabla
+                {
+                    Id = (int)TipoTabla.EstadoFigura,
+                    Nombre = "EstadoFigura",
+                    Descripcion = string.Empty,
+                    Estado = activo,
+                    ItemTabla = new List<ItemTabla>
+                    {
+                        new ItemTabla
+                        {
+                            Nombre = "Nuevo",
+                            Descripcion = "",
+                            Estado = activo,
+                            Valor = "1"
+                        },
+                        new ItemTabla
+                        {
+                            Nombre = "Pre-Owned",
+                            Descripcion = "",
+                            Estado = activo,
+                            Valor = "2"
+                        }
+                    }
+                },
+                #endregion
+                #region TipoTabla.EstadoPedido
+                new Tabla
+                {
+                    Id = (int)TipoTabla.EstadoPedido,
+                    Nombre = "EstadoPedido",
+                    Descripcion = string.Empty,
+                    Estado = activo,
+                    ItemTabla = new List<ItemTabla>
+                    {
+                        new ItemTabla
+                        {
+                            Nombre = "In-Stock",
+                            Descripcion = "",
+                            Estado = activo,
+                            Valor = ((int)TipoPedido.InStock).ToString()
+                        },
+                        new ItemTabla
+                        {
+                            Nombre = "Pre-Orden",
+                            Descripcion = "",
+                            Estado = activo,
+                            Valor = ((int)TipoPedido.PreOrden).ToString()
+                        }
+                    }
+                },
+                #endregion
             };
 
             context.Set<Tabla>().AddRange(listaTablas);

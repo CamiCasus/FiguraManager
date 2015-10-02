@@ -12,6 +12,8 @@ namespace Infrastructure.Data.MainModule.Mapping
             Property(p => p.EscultorId).IsRequired();
             Property(p => p.FechaPedido).IsRequired();
             Property(p => p.FechaRelease).IsRequired();
+            Property(p => p.EstadoFiguraId).IsRequired();
+            Property(p => p.EstadoPedidoId).IsRequired();
             Property(p => p.Precio).IsRequired().HasPrecision(8, 2);
         }
     }

@@ -53,15 +53,12 @@
     <Compile Include="Common\TimeZoneUtils.cs" />
     <Compile Include="Common\CommonUtils.cs" />
     <Compile Include="Common\RegularExpression.cs" />
-    <Compile Include="Enums\TipoDocumentoSerie.cs" />
     <Compile Include="Enums\TipoEstado.cs" />
-    <Compile Include="Enums\TipoEstadoDocumento.cs" />
     <Compile Include="Enums\TipoMoneda.cs" />
     <Compile Include="Enums\TipoOrdenamiento.cs" />
+    <Compile Include="Enums\TipoPedido.cs" />
     <Compile Include="Enums\TipoPermiso.cs" />
-    <Compile Include="Enums\TipoRemesa.cs" />
     <Compile Include="Enums\TipoRol.cs" />
-    <Compile Include="Enums\AtributoEmpresa.cs" />
     <Compile Include="Enums\TipoTabla.cs" />
     <Compile Include="Enums\TipoTimeZone.cs" />
     <Compile Include="Exceptions\DefaultException.cs" />

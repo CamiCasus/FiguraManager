@@ -57,38 +57,13 @@ namespace Infrastructure.CrossCutting.Common
         }
 
         /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        public static string EmailPattern()
-        {
-            var emailPattern = ConfigurationManager.AppSettings.Get("EmailPattern");
-            return emailPattern;
-        }
-
-        /// <summary>
         /// Obtiene el valor del IGV en Perú 
         /// </summary>
         /// <returns>Valor entero</returns>
-        public static int ValorIgv()
+        public static decimal ValorTasaConversionYenes()
         {
-            var valor = ConfigurationManager.AppSettings.Get("ValorIgv");
-            return string.IsNullOrEmpty(valor) ? 0 : Convert.ToInt32(valor);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        public static string ObligarClaveDesembolso()
-        {
-            var obligarClaveDesembolso = ConfigurationManager.AppSettings.Get("ObligarClaveDesembolso");
-
-            if (string.IsNullOrEmpty(obligarClaveDesembolso))
-            {
-                return "0";
-            }
-            return obligarClaveDesembolso;
+            var valor = ConfigurationManager.AppSettings.Get("TasaConversionYenes");
+            return string.IsNullOrEmpty(valor) ? 0m : Convert.ToDecimal(valor);
         }
     }
 }

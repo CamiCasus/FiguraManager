@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Globalization;
 using System.Threading;
 using System.Web;
@@ -38,22 +39,22 @@ namespace Presentation.Web
 
         protected void Session_Start(object sender, EventArgs e)
         {
-            //Session.Timeout = ConfigurationAppSettings.TimeOutSession();
+            Session.Timeout = ConfigurationAppSettings.TimeOutSession();
         }
 
         protected void Application_AcquireRequestState(object sender, EventArgs e)
         {
-            //HttpContext context = HttpContext.Current;
+            HttpContext context = HttpContext.Current;
 
-            //if (context != null && context.Session != null)
-            //{
-            //    var codigoIdioma = ConfigurationAppSettings.CultureNameDefault();
+            if (context != null && context.Session != null)
+            {
+                var codigoIdioma = ConfigurationAppSettings.CultureNameDefault();
 
-            //    if (WebSession.Idioma != null) codigoIdioma = WebSession.Idioma.Codigo;
+                if (WebSession.Idioma != null) codigoIdioma = WebSession.Idioma.Codigo;
 
-            //    Thread.CurrentThread.CurrentCulture = new CultureInfo(codigoIdioma);
-            //    Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
-            //}
+                Thread.CurrentThread.CurrentCulture = new CultureInfo(codigoIdioma);
+                Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
+            }
         }
     }
 }

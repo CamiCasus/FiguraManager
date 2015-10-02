@@ -11,6 +11,8 @@ namespace Application.MainModule.DTO
     {
         public IEnumerable<KeyValuePair<int, string>> Tiendas { get; set; }
         public IEnumerable<KeyValuePair<int, string>> Escultores { get; set; }
+        public IEnumerable<KeyValuePair<int, string>> EstadosFigura { get; set; }
+        public IEnumerable<KeyValuePair<int, string>> EstadosPedido { get; set; }
         public FiguraDto Figura { get; set; }
     }
 }

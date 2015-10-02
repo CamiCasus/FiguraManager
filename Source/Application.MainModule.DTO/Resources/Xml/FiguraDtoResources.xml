@@ -13,4 +13,9 @@
   <resource culture="es-PE" name="FiguraDto_FechaLlegadaDisplay" value="Fecha de llegada" />
   <resource culture="es-PE" name="FiguraDto_PrecioRequired" value="El precio es requerido." />
   <resource culture="es-PE" name="FiguraDto_PrecioDisplay" value="Precio" />
+  <resource culture="es-PE" name="FiguraDto_ShippingDisplay" value="Shipping" />
+  <resource culture="es-PE" name="FiguraDto_EstadoFiguraIdDisplay" value="Estado" />
+  <resource culture="es-PE" name="FiguraDto_EstadoFiguraIdRequired" value="El estado es requerido." />
+  <resource culture="es-PE" name="FiguraDto_EstadoPedidoIdDisplay" value="Pedido" />
+  <resource culture="es-PE" name="FiguraDto_EstadoPedidoIdRequired" value="El estado del pedido es requerido." />
 </resources>
