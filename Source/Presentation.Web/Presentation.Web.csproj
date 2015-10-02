@@ -169,6 +169,8 @@
     <Content Include="Content\img\top-social-icons.png" />
     <Content Include="Content\js\easing.js" />
     <Content Include="Content\js\jquery.min.js" />
+    <Content Include="Content\js\jquery.validate.min.js" />
+    <Content Include="Content\js\jquery.validate.unobtrusive.min.js" />
     <Content Include="Content\js\moment.js" />
     <Content Include="Content\js\move-top.js" />
     <Content Include="Content\js\wow.min.js" />

@@ -77,7 +77,12 @@
                 $("#divAgregarPedido").modal('show');
             });
 
-            $("#btnGrabar").bind("click", function(evt) {
+            $("#btnGrabar").bind("click", function (evt) {
+                //if (!$("#pedidoForm").valid()) {
+                //    evt.preventDefault();
+                //    return;
+                //}
+
                 var figuraDto = {
                     Id: $("#txtId").val(),
                     Nombre: $("#txtNombre").val(),
@@ -133,7 +138,7 @@
                 <h4 class="modal-title">Agregar Pedido</h4>
             </div>
             <div class="modal-body">
-                <form id="loginForm" method="post" class="form-horizontal">
+                <form id="pedidoForm" method="post" class="form-horizontal">
                     @Html.HiddenFor(p => p.Figura.Id, new { @class = "form-control", @id = "txtId" })
                     <div class="form-group">
                         @Html.LabelFor(p => p.Figura.Nombre, new {@class = "col-sm-4 control-label"})
