@@ -168,6 +168,7 @@
     <Content Include="Content\img\to-top1.png" />
     <Content Include="Content\img\top-social-icons.png" />
     <Content Include="Content\js\easing.js" />
+    <Content Include="Content\js\jquery.blockUI.js" />
     <Content Include="Content\js\jquery.min.js" />
     <Content Include="Content\js\jquery.validate.min.js" />
     <Content Include="Content\js\jquery.validate.unobtrusive.min.js" />
@@ -191,6 +192,7 @@
     <Content Include="packages.config" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <None Include="Properties\PublishProfiles\FigureManager.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
