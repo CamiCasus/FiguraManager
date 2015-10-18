@@ -156,5 +156,21 @@ namespace Application.MainModule.DTO.Resources
                 return ResourceProvider.GetResource(Prefix, "EstadoPedidoIdRequired", CultureInfo.CurrentUICulture.Name);
             }
         }
+
+        public static string PrecioTotalDisplay
+        {
+            get
+            {
+                return ResourceProvider.GetResource(Prefix, "PrecioTotalDisplay", CultureInfo.CurrentUICulture.Name);
+            }
+        }
+
+        public static string PrecioTotalSolesDisplay
+        {
+            get
+            {
+                return ResourceProvider.GetResource(Prefix, "PrecioTotalSolesDisplay", CultureInfo.CurrentUICulture.Name);
+            }
+        }
     }
 }

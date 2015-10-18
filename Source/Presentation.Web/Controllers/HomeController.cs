@@ -23,6 +23,12 @@ namespace Presentation.Web.Controllers
             return View(figuraIndexDto);
         }
 
+        public ActionResult ControlGastos()
+        {
+            var figuraIndexDto = _figuraAppService.GetFiguraIndexDto();
+            return View(figuraIndexDto);
+        }
+
         [ActionController(ActionType.Post)]
         [HttpPostAction(TipoPermiso.Ninguno)]
         public JsonResult Registrar(FiguraDto figuraDto)

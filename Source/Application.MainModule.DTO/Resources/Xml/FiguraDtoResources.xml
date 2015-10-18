@@ -18,4 +18,6 @@
   <resource culture="es-PE" name="FiguraDto_EstadoFiguraIdRequired" value="El estado es requerido." />
   <resource culture="es-PE" name="FiguraDto_EstadoPedidoIdDisplay" value="Pedido" />
   <resource culture="es-PE" name="FiguraDto_EstadoPedidoIdRequired" value="El estado del pedido es requerido." />
+  <resource culture="es-PE" name="FiguraDto_PrecioTotalDisplay" value="Total" />
+  <resource culture="es-PE" name="FiguraDto_PrecioTotalSolesDisplay" value="Total en Soles" />
 </resources>

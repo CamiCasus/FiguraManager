@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Application.MainModule.DTO.Resources;
 using Infrastructure.CrossCutting.Resources.Conventions;
+using Infrastructure.CrossCutting.Common;
 
 namespace Application.MainModule.DTO
 {
@@ -48,5 +49,22 @@ namespace Application.MainModule.DTO
 
         [Display]
         public decimal? Shipping { get; set; }
+
+        [Display]
+        public decimal PrecioTotal
+        {
+            get
+            {
+                return Precio +( Shipping ?? 0);
+            }
+        }
+
+        [Display]
+        public string PrecioTotalSoles {
+            get
+            {
+                return string.Format("S/. {0:0.00}", (Precio + (Shipping ?? 0)) * ConfigurationAppSettings.ValorTasaConversionYenes()) ;
+            }
+        }
     }
 }

@@ -74,8 +74,11 @@
                     $("#txtFechaLlegada").val(pedido.FechaLlegada);
                     $("#txtPrecio").val(pedido.Precio);
                     $("#txtShipping").val(pedido.Shipping);
+                    $("#txtPrecioTotal").val(pedido.PrecioTotal);
+                    $("#txtPrecioTotalSoles").val(pedido.PrecioTotalSoles);
 
                     $("#divAgregarPedido").modal('show');
+                   
                 }
             });
 
@@ -135,6 +138,8 @@
             $("#txtPrecio").val("");
             $("#txtShipping").val("");
             $("#txtId").val("");
+            $("#txtPrecioTotal").val("");
+            $("#txtPrecioTotalSoles").val("");
         }
     </script>
 }
@@ -215,6 +220,18 @@
                         @Html.LabelFor(p => p.Figura.Shipping, new {@class = "col-sm-4 control-label"})
                         <div class="col-sm-6">
                             @Html.TextBoxFor(p => p.Figura.Shipping, new {@class = "form-control", @id = "txtShipping"})
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(p => p.Figura.PrecioTotal, new { @class = "col-sm-4 control-label" })
+                        <div class="col-sm-6">
+                            @Html.TextBoxFor(p => p.Figura.PrecioTotal, new { @class = "form-control", @id = "txtPrecioTotal", @disabled = "disabled"})
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(p => p.Figura.PrecioTotalSoles, new { @class = "col-sm-4 control-label" })                      
+                        <div class="col-sm-6">
+                           @Html.TextBoxFor(p => p.Figura.PrecioTotalSoles, new { @class = "form-control", @id = "txtPrecioTotalSoles", @disabled = "disabled" })
                         </div>
                     </div>
                 </form>
