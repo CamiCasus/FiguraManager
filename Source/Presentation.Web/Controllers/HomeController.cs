@@ -1,4 +1,7 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.IO;
+using System.Web;
+using System.Web.Mvc;
 using Application.Core;
 using Application.MainModule.DTO;
 using Application.MainModule.Interfaces;
@@ -55,6 +58,43 @@ namespace Presentation.Web.Controllers
 
             jsonResponse.Success = true;
             jsonResponse.Data = coincidencias;
+
+            return Json(jsonResponse, JsonRequestBehavior.AllowGet);
+        }
+
+        [ActionController(ActionType.Post)]
+        [HttpPostAction(TipoPermiso.Ninguno)]
+        public JsonResult GuardarArchivosSubidos()
+        {
+            var jsonResponse = new JsonResponse{ Success = false};
+            string fName = "";
+
+            foreach (string fileName in Request.Files)
+            {
+                HttpPostedFileBase file = Request.Files[fileName];
+                //Save file content goes here
+                fName = file.FileName;
+
+                if (file != null && file.ContentLength > 0)
+                {
+                    var originalDirectory = new DirectoryInfo(string.Format("{0}Images\\WallImages", Server.MapPath(@"\")));
+
+                    string pathString = Path.Combine(originalDirectory.ToString(), "imagepath");
+
+                    var fileName1 = Path.GetFileName(file.FileName);
+
+                    bool isExists = Directory.Exists(pathString);
+
+                    if (!isExists)
+                        Directory.CreateDirectory(pathString);
+
+                    var path = string.Format("{0}\\{1}", pathString, file.FileName);
+                    file.SaveAs(path);
+
+                    jsonResponse.Success = true;
+                }
+
+            }
 
             return Json(jsonResponse, JsonRequestBehavior.AllowGet);
         }
