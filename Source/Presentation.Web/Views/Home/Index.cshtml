@@ -10,125 +10,169 @@
 {
     <script type="text/javascript" src="@Url.Content("~/Content/js/moment.js")"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/fullcalendar.min.js"></script>
-    <link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/fullcalendar.min.css" rel='stylesheet' type='text/css'/>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/fullcalendar.min.css" rel='stylesheet' type='text/css' />
     <script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
     <link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
     <link href="@Url.Content("~/Content/css/custom.css")" rel='stylesheet' type='text/css' />
 
     <script type="text/javascript">
-    $(document).ajaxStop($.unblockUI);
+        $(document).ajaxStop($.unblockUI);
 
-    $(document).ready(function () {
-        $("#divImagen").dropzone({ url: "@Url.Action("GuardarArchivosSubidos", "Home")" });
+        $(document).ready(function () {
+            $("#divImagen").dropzone({
+                //url: "@Url.Action("GuardarArchivosSubidos", "Home")",
+                url: "@Url.Action("Registrar", "Home")",
+                uploadMultiple: false,
+                parallelUploads: 1,
+                maxFiles: 1,
+                addRemoveLinks: false,
+                autoProcessQueue: false,
+                previewTemplate: $("#templateImage").html(),
+                init: function () {
+                    var myDropzone = this;
 
-        $('#calendar').fullCalendar({
-            editable: true,
-            displayEventTime: false,
-            events: function (start, end, timezone, callback) {
-                var parametros = {
-                    fechaInicio: start.format("DD/MM/YYYY"),
-                    fechaFin: end.format("DD/MM/YYYY")
+                    // First change the button to actually tell Dropzone to process the queue.
+                    $("#btnGrabar").bind("click", function (e) {
+                        // Make sure that the form isn't actually being sent.
+                        e.preventDefault();
+                        e.stopPropagation();
+                        myDropzone.processQueue();
+                    });
+
+                    // Listen to the sendingmultiple event. In this case, it's the sendingmultiple event instead
+                    // of the sending event because uploadMultiple is set to true.
+                    this.on("sendingmultiple", function () {
+                        // Gets triggered when the form is actually being sent.
+                        // Hide the success button or the complete form.
+                    });
+                    this.on("successmultiple", function (files, response) {
+                        // Gets triggered when the files have successfully been sent.
+                        // Redirect user or notify of success.
+                    });
+                    this.on("errormultiple", function (files, response) {
+                        // Gets triggered when there was an error sending the files.
+                        // Maybe show form again, and notify user of error
+                    });
+
+                    this.on("addedfile", function (file) {
+
+
+
+                        file.previewElement.addEventListener("click", function() {
+                            myDropzone.removeFile(file);
+                        });
+                    });
+                }
+            });
+
+            $('#calendar').fullCalendar({
+                editable: true,
+                displayEventTime: false,
+                events: function (start, end, timezone, callback) {
+                    var parametros = {
+                        fechaInicio: start.format("DD/MM/YYYY"),
+                        fechaFin: end.format("DD/MM/YYYY")
+                    };
+
+                    $.blockUI({
+                        css: {
+                            border: 'none'
+                        },
+                        message: $("#ajaxloader")
+                    });
+
+                    $.ajax({
+                        url: '@Url.Action("ObtenerPedidosMes", "Home")',
+                        method: "POST",
+                        dataType: 'json',
+                        contentType: 'application/json; charset=utf-8',
+                        data: JSON.stringify(parametros),
+                        success: function (response) {
+                            var events = [];
+                            $.each(response.Data, function (index, pedido) {
+                                var evento = {
+                                    title: pedido.Nombre,
+                                    start: moment(pedido.FechaPedido, "YYYY-MM-DD"),
+                                    end: moment(pedido.FechaPedido, "YYYY-MM-DD"),
+                                    data: pedido,
+                                    editable: false
+                                };
+
+                                if (pedido.EstadoPedidoId == '@((int) TipoPedido.PreOrden)') {
+                                    evento.start = moment(pedido.FechaRelease, "YYYY-MM-DD");
+                                    evento.end = moment(pedido.FechaRelease, "YYYY-MM-DD");
+                                    evento.color = "#FF9933";
+                                }
+
+                                events.push(evento);
+                            });
+                            callback(events);
+                        }
+                    });
+                },
+                eventClick: function (calEvent, jsEvent, view) {
+                    var pedido = calEvent.data;
+
+                    $("#txtId").val(pedido.Id);
+                    $("#txtNombre").val(pedido.Nombre);
+                    $("#ddlTienda").val(pedido.TiendaId);
+                    $("#ddlEscultor").val(pedido.EscultorId);
+                    $("#ddlEstadoFigura").val(pedido.EstadoFiguraId);
+                    $("#ddlEstadoPedido").val(pedido.EstadoPedidoId);
+                    $("#txtFechaPedido").val(pedido.FechaPedido);
+                    $("#txtFechaRelease").val(pedido.FechaRelease);
+                    $("#txtFechaLlegada").val(pedido.FechaLlegada);
+                    $("#txtPrecio").val(pedido.Precio);
+                    $("#txtShipping").val(pedido.Shipping);
+                    $("#txtPrecioTotal").val(pedido.PrecioTotal);
+                    $("#txtPrecioTotalSoles").val(pedido.PrecioTotalSoles);
+
+                    $("#divAgregarPedido").modal('show');
+                }
+            });
+
+            $("#btnAgregarFigura").bind("click", function (evt) {
+                evt.preventDefault();
+                LimpiarFormulario();
+
+                $("#divAgregarPedido").modal('show');
+            });
+
+            $("#btnGrabar").bind("click", function (evt) {
+                //if (!$("#pedidoForm").valid()) {
+                //    evt.preventDefault();
+                //    return;
+                //}
+
+                var figuraDto = {
+                    Id: $("#txtId").val(),
+                    Nombre: $("#txtNombre").val(),
+                    TiendaId: $("#ddlTienda").val(),
+                    EscultorId: $("#ddlEscultor").val(),
+                    EstadoFiguraId: $("#ddlEstadoFigura").val(),
+                    EstadoPedidoId: $("#ddlEstadoPedido").val(),
+                    FechaPedido: $("#txtFechaPedido").val(),
+                    FechaRelease: $("#txtFechaRelease").val(),
+                    FechaLlegada: $("#txtFechaLlegada").val(),
+                    Precio: $("#txtPrecio").val(),
+                    Shipping: $("#txtShipping").val()
                 };
 
-                $.blockUI({
-                    css: {
-                        border: 'none'
-                    },
-                    message: $("#ajaxloader")
-                });
-
                 $.ajax({
-                    url: '@Url.Action("ObtenerPedidosMes", "Home")',
                     method: "POST",
                     dataType: 'json',
                     contentType: 'application/json; charset=utf-8',
-                    data: JSON.stringify(parametros),
-                    success: function (response) {
-                        var events = [];
-                        $.each(response.Data, function (index, pedido) {
-                            var evento = {
-                                title: pedido.Nombre,
-                                start: moment(pedido.FechaPedido, "YYYY-MM-DD"),
-                                end: moment(pedido.FechaPedido, "YYYY-MM-DD"),
-                                data: pedido,
-                                editable: false
-                            };
+                    url: "@Url.Action("Registrar", "Home")",
+                    data: JSON.stringify(figuraDto)
+                }).done(function (response) {
+                    if (response.Success) {
+                        LimpiarFormulario();
 
-                            if (pedido.EstadoPedidoId == '@((int) TipoPedido.PreOrden)') {
-                                evento.start = moment(pedido.FechaRelease, "YYYY-MM-DD");
-                                evento.end = moment(pedido.FechaRelease, "YYYY-MM-DD");
-                                evento.color = "#FF9933";
-                            }
-
-                            events.push(evento);
-                        });
-                        callback(events);
+                        $('#calendar').fullCalendar('refetchEvents');
+                        $("#divAgregarPedido").modal('hide');
                     }
                 });
-            },
-            eventClick: function (calEvent, jsEvent, view) {
-                var pedido = calEvent.data;
-
-                $("#txtId").val(pedido.Id);
-                $("#txtNombre").val(pedido.Nombre);
-                $("#ddlTienda").val(pedido.TiendaId);
-                $("#ddlEscultor").val(pedido.EscultorId);
-                $("#ddlEstadoFigura").val(pedido.EstadoFiguraId);
-                $("#ddlEstadoPedido").val(pedido.EstadoPedidoId);
-                $("#txtFechaPedido").val(pedido.FechaPedido);
-                $("#txtFechaRelease").val(pedido.FechaRelease);
-                $("#txtFechaLlegada").val(pedido.FechaLlegada);
-                $("#txtPrecio").val(pedido.Precio);
-                $("#txtShipping").val(pedido.Shipping);
-                $("#txtPrecioTotal").val(pedido.PrecioTotal);
-                $("#txtPrecioTotalSoles").val(pedido.PrecioTotalSoles);
-
-                $("#divAgregarPedido").modal('show');
-            }
-        });
-
-        $("#btnAgregarFigura").bind("click", function (evt) {
-            evt.preventDefault();
-            LimpiarFormulario();
-
-            $("#divAgregarPedido").modal('show');
-        });
-
-        $("#btnGrabar").bind("click", function (evt) {
-            //if (!$("#pedidoForm").valid()) {
-            //    evt.preventDefault();
-            //    return;
-            //}
-
-            var figuraDto = {
-                Id: $("#txtId").val(),
-                Nombre: $("#txtNombre").val(),
-                TiendaId: $("#ddlTienda").val(),
-                EscultorId: $("#ddlEscultor").val(),
-                EstadoFiguraId: $("#ddlEstadoFigura").val(),
-                EstadoPedidoId: $("#ddlEstadoPedido").val(),
-                FechaPedido: $("#txtFechaPedido").val(),
-                FechaRelease: $("#txtFechaRelease").val(),
-                FechaLlegada: $("#txtFechaLlegada").val(),
-                Precio: $("#txtPrecio").val(),
-                Shipping: $("#txtShipping").val()
-            };
-
-            $.ajax({
-                method: "POST",
-                dataType: 'json',
-                contentType: 'application/json; charset=utf-8',
-                url: "@Url.Action("Registrar", "Home")",
-                data: JSON.stringify(figuraDto)
-            }).done(function (response) {
-                if (response.Success) {
-                    LimpiarFormulario();
-
-                    $('#calendar').fullCalendar('refetchEvents');
-                    $("#divAgregarPedido").modal('hide');
-                }
             });
-        });
         });
 
         function LimpiarFormulario() {
@@ -149,6 +193,18 @@
     </script>
 }
 
+<div class="dz-preview dz-file-preview" id="templateImage">
+    <div class="dz-details">
+        <div class="dz-filename"><span data-dz-name></span></div>
+        <div class="dz-size" data-dz-size></div>
+        <img data-dz-thumbnail />
+    </div>
+    <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress></span></div>
+    @*<div class="dz-success-mark"><span>✔</span></div>*@
+    @*<div class="dz-error-mark"><span>✘</span></div>*@
+    <div class="dz-error-message"><span data-dz-errormessage></span></div>
+</div>
+
 <div id="divAgregarPedido" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -164,21 +220,21 @@
                             <div class="form-group">
                                 <div class="col-sm-2"></div>
                                 <div class="col-sm-10">
-                                    @Html.TextAreaFor(p => p.Figura.Nombre, new {@class = "form-control", @id = "txtNombre", @rows = "3"})
+                                    @Html.TextAreaFor(p => p.Figura.Nombre, new { @class = "form-control", @id = "txtNombre", @rows = "3" })
                                     @Html.ValidationMessageFor(p => p.Figura.Nombre)
                                 </div>
                             </div>
                             <div class="form-group">
-                                @Html.LabelFor(p => p.Figura.FechaRelease, new {@class = "col-sm-6 control-label"})
+                                @Html.LabelFor(p => p.Figura.FechaRelease, new { @class = "col-sm-6 control-label" })
                                 <div class="col-sm-6">
-                                    @Html.TextBoxFor(p => p.Figura.FechaRelease, new {@class = "form-control", @id = "txtFechaRelease", @type = "date"})
+                                    @Html.TextBoxFor(p => p.Figura.FechaRelease, new { @class = "form-control", @id = "txtFechaRelease", @type = "date" })
                                     @Html.ValidationMessageFor(p => p.Figura.FechaRelease)
                                 </div>
                             </div>
                             <div class="form-group">
-                                @Html.LabelFor(p => p.Figura.PrecioTotalSoles, new {@class = "col-sm-6 control-label"})
+                                @Html.LabelFor(p => p.Figura.PrecioTotalSoles, new { @class = "col-sm-6 control-label" })
                                 <div class="col-sm-6">
-                                    @Html.TextBoxFor(p => p.Figura.PrecioTotalSoles, new {@class = "form-control text-right", @id = "txtPrecioTotalSoles", @disabled = "disabled"})
+                                    @Html.TextBoxFor(p => p.Figura.PrecioTotalSoles, new { @class = "form-control text-right", @id = "txtPrecioTotalSoles", @disabled = "disabled" })
                                 </div>
                             </div>
                         </div>
@@ -202,23 +258,23 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            @Html.LabelFor(p => p.Figura.EstadoFiguraId, new {@class = "col-sm-2 control-label"})
+                                            @Html.LabelFor(p => p.Figura.EstadoFiguraId, new { @class = "col-sm-2 control-label" })
                                             <div class="col-sm-6">
-                                                @Html.DropDownListFor(p => p.Figura.EstadoFiguraId, new SelectList(Model.EstadosFigura, "Key", "Value"), new {@class = "form-control input-sm select-select2", @id = "ddlEstadoFigura"})
+                                                @Html.DropDownListFor(p => p.Figura.EstadoFiguraId, new SelectList(Model.EstadosFigura, "Key", "Value"), new { @class = "form-control input-sm select-select2", @id = "ddlEstadoFigura" })
                                                 @Html.ValidationMessageFor(p => p.Figura.EstadoFiguraId)
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            @Html.LabelFor(p => p.Figura.EstadoPedidoId, new {@class = "col-sm-2 control-label"})
+                                            @Html.LabelFor(p => p.Figura.EstadoPedidoId, new { @class = "col-sm-2 control-label" })
                                             <div class="col-sm-6">
-                                                @Html.DropDownListFor(p => p.Figura.EstadoPedidoId, new SelectList(Model.EstadosPedido, "Key", "Value"), new {@class = "form-control input-sm select-select2", @id = "ddlEstadoPedido"})
+                                                @Html.DropDownListFor(p => p.Figura.EstadoPedidoId, new SelectList(Model.EstadosPedido, "Key", "Value"), new { @class = "form-control input-sm select-select2", @id = "ddlEstadoPedido" })
                                                 @Html.ValidationMessageFor(p => p.Figura.EstadoPedidoId)
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            @Html.LabelFor(p => p.Figura.Precio, new {@class = "col-sm-2 control-label"})
+                                            @Html.LabelFor(p => p.Figura.Precio, new { @class = "col-sm-2 control-label" })
                                             <div class="col-sm-6">
-                                                @Html.TextBoxFor(p => p.Figura.Precio, new {@class = "form-control", @id = "txtPrecio"})
+                                                @Html.TextBoxFor(p => p.Figura.Precio, new { @class = "form-control", @id = "txtPrecio" })
                                             </div>
                                         </div>
                                     </div>
@@ -226,16 +282,16 @@
                                 <div class="tab-pane" id="tab2">
                                     <div class="formTabContent">
                                         <div class="form-group">
-                                            @Html.LabelFor(p => p.Figura.FechaPedido, new {@class = "col-sm-4 control-label"})
+                                            @Html.LabelFor(p => p.Figura.FechaPedido, new { @class = "col-sm-4 control-label" })
                                             <div class="col-sm-6">
-                                                @Html.TextBoxFor(p => p.Figura.FechaPedido, new {@class = "form-control", @id = "txtFechaPedido", @type = "date"})
+                                                @Html.TextBoxFor(p => p.Figura.FechaPedido, new { @class = "form-control", @id = "txtFechaPedido", @type = "date" })
                                                 @Html.ValidationMessageFor(p => p.Figura.FechaPedido)
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            @Html.LabelFor(p => p.Figura.FechaLlegada, new {@class = "col-sm-4 control-label"})
+                                            @Html.LabelFor(p => p.Figura.FechaLlegada, new { @class = "col-sm-4 control-label" })
                                             <div class="col-sm-6">
-                                                @Html.TextBoxFor(p => p.Figura.FechaLlegada, new {@class = "form-control", @id = "txtFechaLlegada", @type = "date"})
+                                                @Html.TextBoxFor(p => p.Figura.FechaLlegada, new { @class = "form-control", @id = "txtFechaLlegada", @type = "date" })
                                                 @Html.ValidationMessageFor(p => p.Figura.FechaLlegada)
                                             </div>
                                         </div>

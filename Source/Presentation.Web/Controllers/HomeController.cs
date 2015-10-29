@@ -36,6 +36,8 @@ namespace Presentation.Web.Controllers
         [HttpPostAction(TipoPermiso.Ninguno)]
         public JsonResult Registrar(FiguraDto figuraDto)
         {
+            var aaaaa = Request.Files;
+
             var jsonResponse = new JsonResponse();
 
             var respuesta = figuraDto.Id == null
@@ -67,21 +69,16 @@ namespace Presentation.Web.Controllers
         public JsonResult GuardarArchivosSubidos()
         {
             var jsonResponse = new JsonResponse{ Success = false};
-            string fName = "";
 
             foreach (string fileName in Request.Files)
             {
                 HttpPostedFileBase file = Request.Files[fileName];
                 //Save file content goes here
-                fName = file.FileName;
 
-                if (file != null && file.ContentLength > 0)
+                if (file.ContentLength > 0)
                 {
-                    var originalDirectory = new DirectoryInfo(string.Format("{0}Images\\WallImages", Server.MapPath(@"\")));
-
-                    string pathString = Path.Combine(originalDirectory.ToString(), "imagepath");
-
-                    var fileName1 = Path.GetFileName(file.FileName);
+                    var originalDirectory = new DirectoryInfo(string.Format("{0}FigureImages", Server.MapPath(@"\")));
+                    string pathString = originalDirectory.ToString();
 
                     bool isExists = Directory.Exists(pathString);
 
