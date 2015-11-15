@@ -43,6 +43,9 @@ namespace Application.MainModule.DTO
         [Display]
         public string FechaLlegada { get; set; }
 
+        [Display]
+        public string FechaEnvio { get; set; }
+
         [Required]
         [Display]
         public decimal Precio { get; set; }

@@ -13,7 +13,8 @@ namespace Domain.MainModule.Entities
         public DateTime FechaPedido { get; set; }
         public DateTime FechaRelease { get; set; }
         public DateTime? FechaLlegada { get; set; }
+        public DateTime? FechaEnvio { get; set; }
         public decimal Precio { get; set; }
-        public decimal? Shipping { get; set; }
+        public decimal? Shipping { get; set; }        
     }
 }

@@ -9,7 +9,7 @@ namespace Application.MainModule.DTO
     [MetadataConventions(ResourceType = typeof(FiguraDtoResources))]
     public class FiguraIndexDto
     {
-        public IEnumerable<KeyValuePair<int, string>> Tiendas { get; set; }
+        public IEnumerable<DdSlickItem> Tiendas { get; set; }
         public IEnumerable<KeyValuePair<int, string>> Escultores { get; set; }
         public IEnumerable<KeyValuePair<int, string>> EstadosFigura { get; set; }
         public IEnumerable<KeyValuePair<int, string>> EstadosPedido { get; set; }

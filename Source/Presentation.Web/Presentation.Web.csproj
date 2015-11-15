@@ -23,6 +23,7 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <DontImportPostSharp>True</DontImportPostSharp>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -175,6 +176,10 @@
     <Content Include="Content\js\moment.js" />
     <Content Include="Content\js\move-top.js" />
     <Content Include="Content\js\wow.min.js" />
+    <Content Include="Content\tiendas\amiami_logo.png" />
+    <Content Include="Content\tiendas\mandarake_logo.png" />
+    <Content Include="Content\tiendas\nipponyassan_logo.png" />
+    <Content Include="Content\tiendas\solarisjapan_logo.png" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -185,6 +190,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\FormHelpers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

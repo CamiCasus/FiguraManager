@@ -125,7 +125,13 @@ namespace Application.MainModule
                     listaEscultores.AsEnumerable()
                         .Select(p => new KeyValuePair<int, string>(int.Parse(p.Valor), p.Nombre)),
                 Tiendas =
-                    listaTiendas.AsEnumerable().Select(p => new KeyValuePair<int, string>(int.Parse(p.Valor), p.Nombre)),
+                    listaTiendas.AsEnumerable().Select(p => 
+                        new DdSlickItem
+                        {
+                            Text = p.Nombre,
+                            Value = p.Valor,
+                            ImageSrc = p.Descripcion
+                        }),
                 Figura = new FiguraDto()
             };
 

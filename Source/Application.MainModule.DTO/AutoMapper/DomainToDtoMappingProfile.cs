@@ -33,6 +33,10 @@ namespace Application.MainModule.DTO.AutoMapper
                     x =>
                         x.MapFrom(
                             p => p.FechaLlegada != null ? p.FechaLlegada.Value.ToString("yyyy-MM-dd") : string.Empty))
+                .ForMember(p => p.FechaEnvio,
+                    x =>
+                        x.MapFrom(
+                            p => p.FechaEnvio != null ? p.FechaEnvio.Value.ToString("yyyy-MM-dd") : string.Empty))
                 .ForMember(p => p.FechaRelease, x => x.MapFrom(p => p.FechaRelease.ToString("yyyy-MM-dd")));
         }
     }

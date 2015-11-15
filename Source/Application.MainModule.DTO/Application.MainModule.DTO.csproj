@@ -90,6 +90,7 @@
     <Compile Include="AutoMapper\Resolvers\ItemTablaDescripcionByValorResolver.cs" />
     <Compile Include="AutoMapper\Resolvers\ItemTablaNombreByValorResolver.cs" />
     <Compile Include="ChangePasswordDto.cs" />
+    <Compile Include="DdSlickItem.cs" />
     <Compile Include="FiguraDto.cs" />
     <Compile Include="FiguraIndexDto.cs" />
     <Compile Include="ForgotPasswordDto.cs" />

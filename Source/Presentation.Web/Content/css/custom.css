@@ -141,3 +141,8 @@
     text-align: center;
     color: white;
 }
+
+
+.dd-option-image, .dd-selected-image{
+    max-width: initial !important;
+}
