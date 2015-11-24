@@ -11,6 +11,7 @@ namespace Infrastructure.Data.MainModule.Mapping
             Property(p => p.TiendaId).IsRequired();
             Property(p => p.EscultorId).IsRequired();
             Property(p => p.FechaPedido).IsRequired();
+            Property(p => p.Imagen).HasMaxLength(int.MaxValue);
             Property(p => p.FechaRelease).IsRequired();
             Property(p => p.EstadoFiguraId).IsRequired();
             Property(p => p.EstadoPedidoId).IsRequired();

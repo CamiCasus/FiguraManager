@@ -39,6 +39,7 @@ namespace Presentation.Web.Controllers
             var aaaaa = Request.Files;
 
             var jsonResponse = new JsonResponse();
+            figuraDto.RutaFisicaImagen = Server.MapPath("~/Figuras/");
 
             var respuesta = figuraDto.Id == null
                 ? _figuraAppService.Create(figuraDto)
@@ -64,36 +65,11 @@ namespace Presentation.Web.Controllers
             return Json(jsonResponse, JsonRequestBehavior.AllowGet);
         }
 
-        [ActionController(ActionType.Post)]
-        [HttpPostAction(TipoPermiso.Ninguno)]
-        public JsonResult GuardarArchivosSubidos()
-        {
-            var jsonResponse = new JsonResponse{ Success = false};
-
-            foreach (string fileName in Request.Files)
-            {
-                HttpPostedFileBase file = Request.Files[fileName];
-                //Save file content goes here
-
-                if (file.ContentLength > 0)
-                {
-                    var originalDirectory = new DirectoryInfo(string.Format("{0}FigureImages", Server.MapPath(@"\")));
-                    string pathString = originalDirectory.ToString();
-
-                    bool isExists = Directory.Exists(pathString);
-
-                    if (!isExists)
-                        Directory.CreateDirectory(pathString);
-
-                    var path = string.Format("{0}\\{1}", pathString, file.FileName);
-                    file.SaveAs(path);
-
-                    jsonResponse.Success = true;
-                }
-
-            }
-
-            return Json(jsonResponse, JsonRequestBehavior.AllowGet);
-        }
+        //[ActionController(ActionType.Post)]
+        //[HttpPostAction(TipoPermiso.Ninguno)]
+        //public JsonResult TestSubirArchivo()
+        //{
+            
+        //}
     }
 }

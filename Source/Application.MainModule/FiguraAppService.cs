@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
 using Application.Aspects;
@@ -65,8 +66,11 @@ namespace Application.MainModule
         [CommitsOperationAspect]
         public ValidationResultDto Create(FiguraDto entityDto)
         {
+            var fileNameArchivo = GenerarArchivo(entityDto);
+
             var entity = MapperHelper.Map<FiguraDto, Figura>(entityDto);
             entity.Estado = (int) TipoEstado.Activo;
+            entity.Imagen = string.Format("~/Figuras/{0}", fileNameArchivo);
 
             var validateResult = _figuraService.Add(entity);
 
@@ -79,7 +83,11 @@ namespace Application.MainModule
         [CommitsOperationAspect]
         public ValidationResultDto Update(FiguraDto entityDto)
         {
+            var fileNameArchivo = GenerarArchivo(entityDto);
+
             var entity = MapperHelper.Map<FiguraDto, Figura>(entityDto);
+            entity.Imagen = string.Format("/Figuras/{0}", fileNameArchivo);
+
             var validateResult = _figuraService.Update(entity);
 
             if (!validateResult.IsValid)
@@ -136,6 +144,22 @@ namespace Application.MainModule
             };
 
             return figuraIndexDto;
+        }
+
+        private string GenerarArchivo(FiguraDto entityDto)
+        {
+            if (!Directory.Exists(entityDto.RutaFisicaImagen))
+                Directory.CreateDirectory(entityDto.RutaFisicaImagen);
+
+            var fileName = string.Format("{0}{1}", entityDto.Id, Path.GetExtension(entityDto.Imagen.FileName));
+            var rutaCompletaArchivoImagen = Path.Combine(entityDto.RutaFisicaImagen, fileName);
+
+            if (File.Exists(rutaCompletaArchivoImagen))
+                File.Delete(rutaCompletaArchivoImagen);
+
+            entityDto.Imagen.SaveAs(rutaCompletaArchivoImagen);
+
+            return fileName;
         }
     }
 }

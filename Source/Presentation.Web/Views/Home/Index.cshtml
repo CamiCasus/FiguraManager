@@ -12,73 +12,18 @@
     <script type="text/javascript" src="@Url.Content("~/Content/js/moment.js")"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/fullcalendar.min.js"></script>
     <link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/fullcalendar.min.css" rel='stylesheet' type='text/css' />
-    <script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
-    <link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
     <link href="@Url.Content("~/Content/css/custom.css")" rel='stylesheet' type='text/css' />
-    <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.1-rc.1/css/select2.min.css" rel="stylesheet" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.1-rc.1/js/select2.min.js"></script>
 
     <script type="text/javascript">
         $(document).ajaxStop($.unblockUI);
-
+        
         $(document).ready(function () {
+            $("#imgImagen").click(function() {
+                $("#txtImagen").trigger("click");
+            });
 
-            //$("#ddlTienda").select2({
-            //    templateResult: function (state) {
-            //        if (!state.id) { return state.text; }
-            //        var imgeUrl = $(state.element).attr("data-imagesrc");
-
-            //        var $state = $(
-            //          '<span><img src="' + imgeUrl + '"/> </span>'
-            //        );
-            //        return $state;
-            //    }
-            //});
-
-            $("#divImagen").dropzone({
-                //url: "@Url.Action("GuardarArchivosSubidos", "Home")",
-                url: "@Url.Action("Registrar", "Home")",
-                uploadMultiple: false,
-                parallelUploads: 1,
-                maxFiles: 1,
-                addRemoveLinks: false,
-                autoProcessQueue: false,
-                previewTemplate: $("#templateImage").html(),
-                init: function () {
-                    var myDropzone = this;
-
-                    // First change the button to actually tell Dropzone to process the queue.
-                    $("#btnGrabar").bind("click", function (e) {
-                        // Make sure that the form isn't actually being sent.
-                        e.preventDefault();
-                        e.stopPropagation();
-                        myDropzone.processQueue();
-                    });
-
-                    // Listen to the sendingmultiple event. In this case, it's the sendingmultiple event instead
-                    // of the sending event because uploadMultiple is set to true.
-                    this.on("sendingmultiple", function () {
-                        // Gets triggered when the form is actually being sent.
-                        // Hide the success button or the complete form.
-                    });
-                    this.on("successmultiple", function (files, response) {
-                        // Gets triggered when the files have successfully been sent.
-                        // Redirect user or notify of success.
-                    });
-                    this.on("errormultiple", function (files, response) {
-                        // Gets triggered when there was an error sending the files.
-                        // Maybe show form again, and notify user of error
-                    });
-
-                    this.on("addedfile", function (file) {
-
-
-
-                        file.previewElement.addEventListener("click", function() {
-                            myDropzone.removeFile(file);
-                        });
-                    });
-                }
+            $("#txtImagen").change(function () {
+                readURL(this);
             });
 
             $('#calendar').fullCalendar({
@@ -90,12 +35,7 @@
                         fechaFin: end.format("DD/MM/YYYY")
                     };
 
-                    $.blockUI({
-                        css: {
-                            border: 'none'
-                        },
-                        message: $("#ajaxloader")
-                    });
+                    $.blockUI({ css: { border: 'none' }, message: $("#ajaxloader") });
 
                     $.ajax({
                         url: '@Url.Action("ObtenerPedidosMes", "Home")',
@@ -105,6 +45,8 @@
                         data: JSON.stringify(parametros),
                         success: function (response) {
                             var events = [];
+                            if (!response.Data) return;
+
                             $.each(response.Data, function (index, pedido) {
                                 var evento = {
                                     title: pedido.Nombre,
@@ -150,6 +92,12 @@
                     $("#txtPrecioTotal").val(pedido.PrecioTotal);
                     $("#txtPrecioTotalSoles").val(pedido.PrecioTotalSoles);
 
+                    if (pedido.RutaImagen)
+                        $("#imgImagen").attr("src", pedido.RutaImagen);
+                    else {
+                        $("#imgImagen").attr("src", "");
+                    }
+
                     $("#divAgregarPedido").modal('show');
                 }
             });
@@ -162,10 +110,7 @@
             });
 
             $("#btnGrabar").bind("click", function (evt) {
-                //if (!$("#pedidoForm").valid()) {
-                //    evt.preventDefault();
-                //    return;
-                //}
+                var formData = new FormData($("form")[0]);
 
                 var figuraDto = {
                     Id: $("#txtId").val(),
@@ -179,15 +124,20 @@
                     FechaLlegada: $("#txtFechaLlegada").val(),
                     FechaEnvio: $("#txtFechaEnvio").val(),
                     Precio: $("#txtPrecio").val(),
-                    Shipping: $("#txtShipping").val()
+                    Shipping: $("#txtShipping").val(),
+                    Imagen: $("#txtImagen")[0].files[0]
                 };
+
+                
+
+                $.blockUI({ css: { border: 'none' }, message: $("#ajaxloader") });
 
                 $.ajax({
                     method: "POST",
-                    dataType: 'json',
-                    contentType: 'application/json; charset=utf-8',
+                    contentType: false,
+                    processData: false,
                     url: "@Url.Action("Registrar", "Home")",
-                    data: JSON.stringify(figuraDto)
+                    data: formData
                 }).done(function (response) {
                     if (response.Success) {
                         LimpiarFormulario();
@@ -214,6 +164,20 @@
             $("#txtId").val("");
             $("#txtPrecioTotal").val("");
             $("#txtPrecioTotalSoles").val("");
+            $("#imgImagen").attr("src", "");
+        }
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#imgImagen').attr('src', e.target.result);
+                    //display($('#preview_img'));
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
         }
     </script>
 }
@@ -225,8 +189,6 @@
         <img data-dz-thumbnail />
     </div>
     <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress></span></div>
-    @*<div class="dz-success-mark"><span>✔</span></div>*@
-    @*<div class="dz-error-mark"><span>✘</span></div>*@
     <div class="dz-error-message"><span data-dz-errormessage></span></div>
 </div>
 
@@ -239,22 +201,22 @@
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <form id="pedidoForm" method="post" class="form-horizontal">
-                        @Html.HiddenFor(p => p.Figura.Id, new { @class = "form-control", @id = "txtId" })
+                    <form id="pedidoForm" method="post" class="form-horizontal" enctype="multipart/form-data">
+                        @Html.HiddenFor(p => p.Figura.Id, new { @class = "form-control", @id = "txtId", @Name = "Id" })
                         <div class="col-md-8">
                             <div class="form-group">
                                 <div class="col-sm-4">
-                                    @Html.DropDownListFor(p => p.Figura.EscultorId, new SelectList(Model.Escultores, "Key", "Value"), new { @class = "form-control input-sm select-select2", @id = "ddlEscultor" })
+                                    @Html.DropDownListFor(p => p.Figura.EscultorId, new SelectList(Model.Escultores, "Key", "Value"), new { @class = "form-control input-sm select-select2", @id = "ddlEscultor", @Name = "EscultorId"})
                                 </div>
                                 <div class="col-sm-8">
-                                    @Html.TextAreaFor(p => p.Figura.Nombre, new { @class = "form-control", @id = "txtNombre", @rows = "3" })
+                                    @Html.TextAreaFor(p => p.Figura.Nombre, new { @class = "form-control", @id = "txtNombre", @rows = "3", @Name = "Nombre" })
                                     @Html.ValidationMessageFor(p => p.Figura.Nombre)
                                 </div>
                             </div>
                             <div class="form-group">
                                 @Html.LabelFor(p => p.Figura.FechaRelease, new { @class = "col-sm-6 control-label" })
                                 <div class="col-sm-6">
-                                    @Html.TextBoxFor(p => p.Figura.FechaRelease, new { @class = "form-control", @id = "txtFechaRelease", @type = "date" })
+                                    @Html.TextBoxFor(p => p.Figura.FechaRelease, new { @class = "form-control", @id = "txtFechaRelease", @type = "date", @Name = "FechaRelease" })
                                     @Html.ValidationMessageFor(p => p.Figura.FechaRelease)
                                 </div>
                             </div>
@@ -266,7 +228,10 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div id="divImagen"></div>
+                            <div>
+                                <img id="imgImagen" />
+                            </div>
+                            <input type="file" id="txtImagen" name ="Imagen" title="" style="display: none" />
                         </div>
                         <div class="col-md-12">
                             <!-- Only required for left/right tabs -->
@@ -280,28 +245,28 @@
                                         <div class="form-group">
                                             @Html.LabelFor(p => p.Figura.TiendaId, new { @class = "col-sm-2 control-label" })
                                             <div class="col-sm-6">
-                                               @Html.DropDownListFor(p => p.Figura.TiendaId, new SelectList(Model.Tiendas, "Value", "Text"), new { @class = "form-control input-sm select-select2", @id = "ddlTienda" })
-                                               @Html.ValidationMessageFor(p => p.Figura.TiendaId)
+                                                @Html.DropDownListFor(p => p.Figura.TiendaId, new SelectList(Model.Tiendas, "Value", "Text"), new { @class = "form-control input-sm select-select2", @id = "ddlTienda", @Name = "TiendaId" })
+                                                @Html.ValidationMessageFor(p => p.Figura.TiendaId)
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             @Html.LabelFor(p => p.Figura.EstadoFiguraId, new { @class = "col-sm-2 control-label" })
                                             <div class="col-sm-6">
-                                                @Html.DropDownListFor(p => p.Figura.EstadoFiguraId, new SelectList(Model.EstadosFigura, "Key", "Value"), new { @class = "form-control input-sm select-select2", @id = "ddlEstadoFigura" })
+                                                @Html.DropDownListFor(p => p.Figura.EstadoFiguraId, new SelectList(Model.EstadosFigura, "Key", "Value"), new { @class = "form-control input-sm select-select2", @id = "ddlEstadoFigura", @Name = "EstadoFiguraId" })
                                                 @Html.ValidationMessageFor(p => p.Figura.EstadoFiguraId)
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             @Html.LabelFor(p => p.Figura.EstadoPedidoId, new { @class = "col-sm-2 control-label" })
                                             <div class="col-sm-6">
-                                                @Html.DropDownListFor(p => p.Figura.EstadoPedidoId, new SelectList(Model.EstadosPedido, "Key", "Value"), new { @class = "form-control input-sm select-select2", @id = "ddlEstadoPedido" })
+                                                @Html.DropDownListFor(p => p.Figura.EstadoPedidoId, new SelectList(Model.EstadosPedido, "Key", "Value"), new { @class = "form-control input-sm select-select2", @id = "ddlEstadoPedido", @Name = "EstadoPedidoId" })
                                                 @Html.ValidationMessageFor(p => p.Figura.EstadoPedidoId)
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             @Html.LabelFor(p => p.Figura.Precio, new { @class = "col-sm-2 control-label" })
                                             <div class="col-sm-6">
-                                                @Html.TextBoxFor(p => p.Figura.Precio, new { @class = "form-control", @id = "txtPrecio" })
+                                                @Html.TextBoxFor(p => p.Figura.Precio, new { @class = "form-control", @id = "txtPrecio", @Name = "Precio" })
                                             </div>
                                         </div>
                                     </div>
@@ -311,115 +276,34 @@
                                         <div class="form-group">
                                             @Html.LabelFor(p => p.Figura.FechaPedido, new { @class = "col-sm-4 control-label" })
                                             <div class="col-sm-6">
-                                                @Html.TextBoxFor(p => p.Figura.FechaPedido, new { @class = "form-control", @id = "txtFechaPedido", @type = "date" })
+                                                @Html.TextBoxFor(p => p.Figura.FechaPedido, new { @class = "form-control", @id = "txtFechaPedido", @type = "date", @Name = "FechaPedido" })
                                                 @Html.ValidationMessageFor(p => p.Figura.FechaPedido)
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             @Html.LabelFor(p => p.Figura.FechaEnvio, new { @class = "col-sm-4 control-label" })
                                             <div class="col-sm-6">
-                                                @Html.TextBoxFor(p => p.Figura.FechaEnvio, new { @class = "form-control", @id = "txtFechaEnvio", @type = "date" })
+                                                @Html.TextBoxFor(p => p.Figura.FechaEnvio, new { @class = "form-control", @id = "txtFechaEnvio", @type = "date", @Name = "FechaEnvio" })
                                                 @Html.ValidationMessageFor(p => p.Figura.FechaEnvio)
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             @Html.LabelFor(p => p.Figura.FechaLlegada, new { @class = "col-sm-4 control-label" })
                                             <div class="col-sm-6">
-                                                @Html.TextBoxFor(p => p.Figura.FechaLlegada, new { @class = "form-control", @id = "txtFechaLlegada", @type = "date" })
+                                                @Html.TextBoxFor(p => p.Figura.FechaLlegada, new { @class = "form-control", @id = "txtFechaLlegada", @type = "date", @Name = "FechaLlegada" })
                                                 @Html.ValidationMessageFor(p => p.Figura.FechaLlegada)
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             @Html.LabelFor(p => p.Figura.Shipping, new { @class = "col-sm-4 control-label" })
                                             <div class="col-sm-6">
-                                                @Html.TextBoxFor(p => p.Figura.Shipping, new { @class = "form-control", @id = "txtShipping" })
+                                                @Html.TextBoxFor(p => p.Figura.Shipping, new { @class = "form-control", @id = "txtShipping", @Name = "Shipping" })
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        @*<div class="form-group">
-                                @Html.LabelFor(p => p.Figura.Nombre, new {@class = "col-sm-4 control-label"})
-                                <div class="col-sm-6">
-                                    @Html.TextAreaFor(p => p.Figura.Nombre, new {@class = "form-control", @id = "txtNombre", @rows = "3"})
-                                    @Html.ValidationMessageFor(p => p.Figura.Nombre)
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                @Html.LabelFor(p => p.Figura.TiendaId, new {@class = "col-sm-4 control-label"})
-                                <div class="col-sm-6">
-                                    @Html.DropDownListFor(p => p.Figura.TiendaId, new SelectList(Model.Tiendas, "Key", "Value"), new {@class = "form-control input-sm select-select2", @id = "ddlTienda"})
-                                    @Html.ValidationMessageFor(p => p.Figura.TiendaId)
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                @Html.LabelFor(p => p.Figura.EscultorId, new {@class = "col-sm-4 control-label"})
-                                <div class="col-sm-6">
-                                    @Html.DropDownListFor(p => p.Figura.EscultorId, new SelectList(Model.Escultores, "Key", "Value"), new {@class = "form-control input-sm select-select2", @id = "ddlEscultor"})
-                                    @Html.ValidationMessageFor(p => p.Figura.EscultorId)
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                @Html.LabelFor(p => p.Figura.EstadoFiguraId, new {@class = "col-sm-4 control-label"})
-                                <div class="col-sm-6">
-                                    @Html.DropDownListFor(p => p.Figura.EstadoFiguraId, new SelectList(Model.EstadosFigura, "Key", "Value"), new {@class = "form-control input-sm select-select2", @id = "ddlEstadoFigura"})
-                                    @Html.ValidationMessageFor(p => p.Figura.EstadoFiguraId)
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                @Html.LabelFor(p => p.Figura.EstadoPedidoId, new {@class = "col-sm-4 control-label"})
-                                <div class="col-sm-6">
-                                    @Html.DropDownListFor(p => p.Figura.EstadoPedidoId, new SelectList(Model.EstadosPedido, "Key", "Value"), new {@class = "form-control input-sm select-select2", @id = "ddlEstadoPedido"})
-                                    @Html.ValidationMessageFor(p => p.Figura.EstadoPedidoId)
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                @Html.LabelFor(p => p.Figura.FechaPedido, new {@class = "col-sm-4 control-label"})
-                                <div class="col-sm-6">
-                                    @Html.TextBoxFor(p => p.Figura.FechaPedido, new {@class = "form-control", @id = "txtFechaPedido", @type = "date"})
-                                    @Html.ValidationMessageFor(p => p.Figura.FechaPedido)
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                @Html.LabelFor(p => p.Figura.FechaRelease, new {@class = "col-sm-4 control-label"})
-                                <div class="col-sm-6">
-                                    @Html.TextBoxFor(p => p.Figura.FechaRelease, new {@class = "form-control", @id = "txtFechaRelease", @type = "date"})
-                                    @Html.ValidationMessageFor(p => p.Figura.FechaRelease)
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                @Html.LabelFor(p => p.Figura.FechaLlegada, new {@class = "col-sm-4 control-label"})
-                                <div class="col-sm-6">
-                                    @Html.TextBoxFor(p => p.Figura.FechaLlegada, new {@class = "form-control", @id = "txtFechaLlegada", @type = "date"})
-                                    @Html.ValidationMessageFor(p => p.Figura.FechaLlegada)
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                @Html.LabelFor(p => p.Figura.Precio, new {@class = "col-sm-4 control-label"})
-                                <div class="col-sm-6">
-                                    @Html.TextBoxFor(p => p.Figura.Precio, new {@class = "form-control", @id = "txtPrecio"})
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                @Html.LabelFor(p => p.Figura.Shipping, new {@class = "col-sm-4 control-label"})
-                                <div class="col-sm-6">
-                                    @Html.TextBoxFor(p => p.Figura.Shipping, new {@class = "form-control", @id = "txtShipping"})
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                @Html.LabelFor(p => p.Figura.PrecioTotal, new { @class = "col-sm-4 control-label" })
-                                <div class="col-sm-6">
-                                    @Html.TextBoxFor(p => p.Figura.PrecioTotal, new { @class = "form-control", @id = "txtPrecioTotal", @disabled = "disabled"})
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                @Html.LabelFor(p => p.Figura.PrecioTotalSoles, new { @class = "col-sm-4 control-label" })
-                                <div class="col-sm-6">
-                                   @Html.TextBoxFor(p => p.Figura.PrecioTotalSoles, new { @class = "form-control", @id = "txtPrecioTotalSoles", @disabled = "disabled" })
-                                </div>
-                            </div>*@
                     </form>
                 </div>
 

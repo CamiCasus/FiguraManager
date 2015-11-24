@@ -10,6 +10,7 @@ namespace Domain.MainModule.Entities
         public int EscultorId { get; set; }
         public int EstadoFiguraId { get; set; }
         public int EstadoPedidoId { get; set; }
+        public string Imagen { get; set; }
         public DateTime FechaPedido { get; set; }
         public DateTime FechaRelease { get; set; }
         public DateTime? FechaLlegada { get; set; }

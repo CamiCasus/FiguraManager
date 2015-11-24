@@ -34,7 +34,8 @@ namespace Application.MainModule.DTO.AutoMapper
                     x => x.MapFrom(p => p.FechaLlegada != null ? DateTime.Parse(p.FechaLlegada) : default(DateTime?)))
                 .ForMember(p => p.FechaEnvio,
                     x => x.MapFrom(p => p.FechaEnvio != null ? DateTime.Parse(p.FechaEnvio) : default(DateTime?)))
-                .ForMember(p => p.FechaRelease, x => x.MapFrom(p => DateTime.Parse(p.FechaRelease)));
+                .ForMember(p => p.FechaRelease, x => x.MapFrom(p => DateTime.Parse(p.FechaRelease)))
+                .ForMember(p => p.Imagen, x => x.Ignore());
         }
     }
 }

@@ -134,8 +134,9 @@
 
 /*=============================   Fin Estilos form dentro de tab ===========================*/
 
-#divImagen {
+#imgImagen {
     height: 200px;
+    width: 170px;
     background: gray;
     border: black dashed 3px;
     text-align: center;
