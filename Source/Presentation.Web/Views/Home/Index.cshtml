@@ -125,10 +125,9 @@
                     FechaEnvio: $("#txtFechaEnvio").val(),
                     Precio: $("#txtPrecio").val(),
                     Shipping: $("#txtShipping").val(),
-                    Imagen: $("#txtImagen")[0].files[0]
-                };
-
-                
+                    Imagen: $("#txtImagen")[0].files[0],
+                    RutaImagen: $("#imgImagen").attr("src")
+                };                
 
                 $.blockUI({ css: { border: 'none' }, message: $("#ajaxloader") });
 

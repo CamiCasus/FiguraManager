@@ -66,11 +66,14 @@ namespace Application.MainModule
         [CommitsOperationAspect]
         public ValidationResultDto Create(FiguraDto entityDto)
         {
-            var fileNameArchivo = GenerarArchivo(entityDto);
-
             var entity = MapperHelper.Map<FiguraDto, Figura>(entityDto);
-            entity.Estado = (int) TipoEstado.Activo;
-            entity.Imagen = string.Format("~/Figuras/{0}", fileNameArchivo);
+
+            if(entityDto.Imagen != null)
+            {
+                var fileNameArchivo = GenerarArchivo(entityDto);
+                entity.Estado = (int)TipoEstado.Activo;
+                entity.Imagen = string.Format("~/Figuras/{0}", fileNameArchivo);
+            }           
 
             var validateResult = _figuraService.Add(entity);
 
@@ -83,10 +86,15 @@ namespace Application.MainModule
         [CommitsOperationAspect]
         public ValidationResultDto Update(FiguraDto entityDto)
         {
-            var fileNameArchivo = GenerarArchivo(entityDto);
-
             var entity = MapperHelper.Map<FiguraDto, Figura>(entityDto);
-            entity.Imagen = string.Format("/Figuras/{0}", fileNameArchivo);
+
+            if (entityDto.Imagen != null)
+            {
+                var fileNameArchivo = GenerarArchivo(entityDto);
+                entity.Imagen = string.Format("/Figuras/{0}", fileNameArchivo);
+            }
+            else
+                entity.Imagen = entityDto.RutaImagen;           
 
             var validateResult = _figuraService.Update(entity);
 
