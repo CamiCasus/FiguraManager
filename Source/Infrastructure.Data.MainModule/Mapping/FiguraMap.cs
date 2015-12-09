@@ -7,7 +7,7 @@ namespace Infrastructure.Data.MainModule.Mapping
     {
         public FiguraMap()
         {
-            Property(p => p.Nombre).IsRequired().HasMaxLength(100);
+            Property(p => p.Nombre).IsRequired().HasMaxLength(int.MaxValue);
             Property(p => p.TiendaId).IsRequired();
             Property(p => p.EscultorId).IsRequired();
             Property(p => p.FechaPedido).IsRequired();

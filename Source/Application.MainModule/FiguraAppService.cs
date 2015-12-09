@@ -50,13 +50,15 @@ namespace Application.MainModule
         {
             var fechaInicioDate = DateTime.Parse(fechaInicio);
             var fechaFinDate = DateTime.Parse(fechaFin);
-            
+
             var entityList =
                 _figuraService.Find(
                     p =>
                         p.EstadoPedidoId == (int) TipoPedido.InStock
                             ? (p.FechaPedido >= fechaInicioDate && p.FechaPedido <= fechaFinDate)
-                            : (p.FechaRelease >= fechaInicioDate && p.FechaRelease <= fechaFinDate)).ToList();
+                            : (p.FechaEnvio != null
+                                ? (p.FechaEnvio >= fechaInicioDate && p.FechaEnvio <= fechaFinDate)
+                                : (p.FechaRelease >= fechaInicioDate && p.FechaRelease <= fechaFinDate))).ToList();
 
             var entityDtoList = MapperHelper.Map<IEnumerable<Figura>, IEnumerable<FiguraDto>>(entityList);
 

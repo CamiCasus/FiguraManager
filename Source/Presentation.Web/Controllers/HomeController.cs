@@ -36,8 +36,6 @@ namespace Presentation.Web.Controllers
         [HttpPostAction(TipoPermiso.Ninguno)]
         public JsonResult Registrar(FiguraDto figuraDto)
         {
-            var aaaaa = Request.Files;
-
             var jsonResponse = new JsonResponse();
             figuraDto.RutaFisicaImagen = Server.MapPath("~/Figuras/");
 
