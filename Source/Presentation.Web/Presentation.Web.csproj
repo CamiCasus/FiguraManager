@@ -180,8 +180,45 @@
     <Content Include="Content\tiendas\mandarake_logo.png" />
     <Content Include="Content\tiendas\nipponyassan_logo.png" />
     <Content Include="Content\tiendas\solarisjapan_logo.png" />
+    <Content Include="Figuras\1.jpg" />
+    <Content Include="Figuras\10.jpg" />
+    <Content Include="Figuras\11.jpg" />
+    <Content Include="Figuras\12.jpg" />
+    <Content Include="Figuras\13.jpg" />
+    <Content Include="Figuras\14.jpg" />
+    <Content Include="Figuras\15.jpg" />
+    <Content Include="Figuras\16.jpg" />
+    <Content Include="Figuras\17.jpg" />
+    <Content Include="Figuras\18.jpg" />
+    <Content Include="Figuras\19.jpg" />
+    <Content Include="Figuras\2.jpg" />
+    <Content Include="Figuras\20.jpg" />
+    <Content Include="Figuras\21.jpg" />
+    <Content Include="Figuras\22.jpg" />
+    <Content Include="Figuras\23.jpg" />
+    <Content Include="Figuras\25.jpg" />
+    <Content Include="Figuras\26.jpg" />
+    <Content Include="Figuras\27.jpg" />
+    <Content Include="Figuras\28.jpg" />
+    <Content Include="Figuras\29.jpg" />
+    <Content Include="Figuras\3.jpg" />
+    <Content Include="Figuras\30.jpg" />
+    <Content Include="Figuras\33.jpg" />
+    <Content Include="Figuras\34.jpg" />
+    <Content Include="Figuras\35.jpg" />
+    <Content Include="Figuras\36.jpg" />
+    <Content Include="Figuras\37.jpg" />
+    <Content Include="Figuras\38.jpg" />
+    <Content Include="Figuras\4.jpg" />
+    <Content Include="Figuras\5.jpg" />
+    <Content Include="Figuras\6.jpg" />
+    <Content Include="Figuras\7.jpg" />
+    <Content Include="Figuras\8.jpg" />
+    <Content Include="Figuras\9.jpg" />
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -198,6 +235,8 @@
     <Content Include="packages.config" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <None Include="Properties\PublishProfiles\0e8407a7-0ee0-4-231-b9ee - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\0e8407a7-0ee0-4-231-b9ee - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\FigureManager.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
